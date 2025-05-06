@@ -1,0 +1,39 @@
+:root {
+    --modal-large-width: 800px;
+    --modal-large-height: 636px;
+}
+
+/* Large Modal */
+.k-window.k-dialog:has(.f-modal-large) {
+    border-color: var(--primary-lightest);
+    color: var(--secondary-darkest);
+    background-color: var(--neutral-white);
+    border-radius: 6px;
+    box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014, 0px 0px 0px 1px #E5E9EE;
+    width: var(--modal-large-width) !important;
+    height: var(--modal-large-height);
+}
+
+.k-window-titlebar.k-dialog-titlebar {
+    border-color: var(--primary-lightest);
+    background-color: var(--neutral-white);
+    color: var(--secondary-darkest);
+    font-weight: 600;
+    padding: 20px 24px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.k-dialog-actions {
+    padding: 24px;
+    border-top: 1px solid var(--primary-lightest);
+}
+
+.k-dialog-actions .k-button.k-button-solid-base {
+    width: 91px !important;
+    height: 44px;
+    padding: 12px 20px;
+    border: 1px solid var(--secondary-lightest);
+    border-radius: 100px;
+    background: var(--neutral-lightest);
+    box-shadow: 0px 1px 2px 0px #0000000D;
+}
