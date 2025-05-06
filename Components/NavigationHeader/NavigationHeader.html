@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div
+      id="header"
+      class="f-navigation-header-main"
+      data-role="view"
+      data-bind="source: headerViewModel"
+    >
+      <div class="f-navigation-header-main-top">
+        <div class="f-navigation-options">
+          <div class="f-company-logo">Catalog</div>
+          <button class="f-burger" data-bind="click: toggleMenu">
+            &#9776;
+          </button>
+
+          <div class="f-navigation f-desktop-nav">
+            <div class="f-navigation-item">
+              <a class="f-navigation-link" href="#">
+                <span>Accounting</span>
+                <i class="ph ph-caret-down"></i>
+              </a>
+            </div>
+            <div class="f-navigation-item">
+              <a class="f-navigation-link" href="#"><span>Claims</span>
+                <i class="ph ph-caret-down"></i></a>
+              <div class="f-dropdown">
+                <div><a class="f-navigation-link" href="#">Open Claims</a></div>
+                <div><a class="f-navigation-link" href="#">Archived Claims</a></div>
+              </div>
+            </div>
+            <div class="f-navigation-item">
+              <a class="f-navigation-link" href="#"><span>Policy</span>
+                <i class="ph ph-caret-down"></i></a>
+            </div>
+            <div class="f-navigation-item">
+              <a class="f-navigation-link" href="#"><span>Billing</span>
+                <i class="ph ph-caret-down"></i></a>
+              <div class="f-dropdown">
+                <div><a class="f-navigation-link" href="#">Invoices</a></div>
+                <div><a class="f-navigation-link" href="#">Payments</a></div>
+              </div>
+            </div>
+            <div class="f-navigation-item">
+              <a class="f-navigation-link" href="#"><span>Reports</span>
+                <i class="ph ph-caret-down"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-avatar-section">
+          <div style="display: flex; align-items: center;">
+            <div id="dropdown-section">
+              <input 
+                    class="f-dropdown-styles"
+                    data-role="dropdownlist"
+                    data-auto-bind="false"
+                    data-value-primitive="true"
+                    data-text-field="Name"
+                    data-value-field="Id"
+                    data-bind="value: selectedName,
+                                source: dummyDropdownData" />
+            </div>
+            <div style="border: 1px solid #E3E5EB; height: 32px; border-radius: 0px 4px 4px 0px; display: flex; align-items: center; padding: 8px 12px ;">
+              <i class="ph ph-magnifying-glass" style="color: var(--neutral-light);"></i>
+              <input style="border: none; outline: none;"></input>
+            </div>
+          </div>
+          <button class="f-icon-btn">
+            <i class="ph ph-clock-counter-clockwise"></i>
+          </button>
+          <button class="f-icon-btn">
+            <i class="ph ph-star"></i>
+          </button>
+          <hr style="height: 14px">
+          <button class="f-icon-btn">
+            <i class="ph ph-gear"></i>
+          </button>
+          <button class="f-icon-btn">
+            <i class="ph ph-bell"></i>
+          </button>
+          <button class="f-icon-btn">
+            <span class="k-icon k-i-cog"></span>
+          </button>
+          <div class="f-avatar-container">
+            <img
+              class="f-avatar"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="User Avatar"
+            />
+            <span>Dwight Schrute</span>
+            <i class="ph ph-caret-down"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Popup Menu -->
+      <div
+        id="mobileMenu"
+        class="f-navigation f-mobile-nav"
+        data-bind="visible: menuVisible"
+        style="
+          display: none;
+          padding: 12px;
+          border: 1px solid var(--f-border-color);
+          margin-top: 12px;
+        "
+      >
+        <div class="f-navigation-item">
+          <a class="f-navigation-link" href="#">Accounting</a>
+        </div>
+        <div class="f-navigation-item">
+          <a class="f-navigation-link" href="#">Claims</a>
+          <div class="f-dropdown" style="position: relative; display: block">
+            <div><a class="f-navigation-link" href="#">Open Claims</a></div>
+            <div><a class="f-navigation-link" href="#">Archived Claims</a></div>
+          </div>
+        </div>
+        <div class="f-navigation-item"><a class="f-navigation-link" href="#">Policy</a></div>
+        <div class="f-navigation-item">
+          <a class="f-navigation-link" href="#">Billing</a>
+          <div class="f-dropdown" style="position: relative; display: block">
+            <div><a class="f-navigation-link" href="#">Invoices</a></div>
+            <div><a class="f-navigation-link" href="#">Payments</a></div>
+          </div>
+        </div>
+        <div class="f-navigation-item"><a class="f-navigation-link" href="#">Reports</a></div>
+      </div>
+    </div>
+</body>
+<script>
+  var vm = kendo.observable({
+        selectedName: null,
+        dummyDropdownData: new kendo.data.DataSource({
+            data: [
+                {
+                    Id: 1,
+                    Name: "Claims"
+                },
+                {
+                    Id: 2,
+                    Name: "Policy"
+                },
+                {
+                    Id: 3,
+                    Name: "Billing"
+                }
+            ]
+        })
+    })
+    $(document).ready(() => {
+        kendo.bind($('#dropdown-section'), vm);
+    })
+</script>
+</html>

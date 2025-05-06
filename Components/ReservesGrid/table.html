@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="claims-summary-main-content">
+        <div data-role="grid" 
+            data-toolbar="[{template: kendo.template($('#table-header').html())}]"
+            data-columns="[
+                { 
+                    'field': 'arrow',
+                    title: ' ',
+                    width: '50px',
+                    template: '<div><i class=\'ph ph-caret-down\'></i></div>'
+                },
+                { 
+                    field: 'Id',
+                    title: '#',
+                    width: '50px',
+                    template: '<div class=\'f-number-tag\'>#=Id#</div>'                    
+                },
+                { 
+                    'field': 'Claimant', 
+                    title: 'CLAIMANT',
+                    template: '<a href=\'\\\\#\'>#=Claimant#</a>'
+                },
+                { 'field': 'CoveredItem', title: 'COVERED ITEM'},
+                {
+                    field: 'Adjuster', 
+                    title: 'ADJUSTER',
+                    template: vm.getAdjusterTemplate
+                },
+                { 'field': 'Coverage', title: 'COVERAGE'},
+                { 'field': 'Cause', title: 'CAUSE'},
+                { 
+                    field: 'Actions', 
+                    title: 'ACTIONS',
+                    template: '<button class=\'f-action-tag f-clickable\'><i class=\'ph ph-dots-three-vertical\'></i></button>'
+                },
+            ]"
+            data-bind="source: dummyData"
+            data-scrollable="false"
+
+        >
+    </div>
+    </main>
+</body>
+
+<script>
+    var vm = kendo.observable({
+        dummyData: new kendo.data.DataSource({
+            data: [
+                {
+                    Id: 1,
+                    Claimant: 'Brianne Test',
+                    CoveredItem: 'Policy',
+                    Adjuster: { name: 'Rajesh Prabhu', avatar: 'RP'},
+                    Coverage: 'Equipment Breakdown Limit (Pro)',
+                    Cause: '🔥 Fire',
+                },
+                {
+                    Id: 2,
+                    Claimant: 'John Doe',
+                    CoveredItem: 'An Item Here',
+                    Adjuster: { name: 'Aaron Schulz', avatar: 'AS'},
+                    Coverage: 'Covering this stuff',
+                    Cause: '🌪️ Hurricane',
+                },
+                {
+                    Id: 3,
+                    Claimant: 'Jane Doe',
+                    CoveredItem: 'Different Item',
+                    Adjuster: { name: 'Savitha Krishna-Murthy', avatar: 'SK'},
+                    Coverage: 'Another Example Coverage',
+                    Cause: '💰 Theft',
+                }
+            ]
+        }),
+        getAdjusterTemplate: function (row) {
+            return `<span class='f-avatar' data-text='${row.Adjuster.avatar}'></span><span>${row.Adjuster.name}</span>`
+        },
+    })
+    $(document).ready(() => {
+        kendo.bind($('main'), vm);
+        $('.f-avatar').each((index, element) => {
+            $(element).kendoAvatar({
+                type: 'text',
+                text: $(element).data('text'),
+            })
+        })
+    })
+</script>
+
+<script id="table-header" type="text/x-kendo-template">
+    <header class="f-table-header">
+        <div class="f-table-header-group">
+            <span class='f-table-label'>Reserves</span>
+            <span class="f-tag">13 total</span>
+        </div>
+        <div>
+            <button class='f-grid-header-btn f-clickable'><i class="ph ph-plus"></i><span>Add Reserve</span></button>
+            <button class='f-grid-header-btn f-clickable'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></button>
+        </div>
+    </header>
+</script>
+
+</html>

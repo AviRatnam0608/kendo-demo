@@ -1,0 +1,276 @@
+
+.f-claims-summary-header-main{
+    background: var(--header-gradient);
+    display: flex;
+    flex-direction: row;
+    color:white;
+    
+}
+
+.f-claims-summary-header-column{
+    flex-direction: column;
+    padding: 10px;
+    width: 96%;
+    padding-left: 0;
+    position: relative;
+    left: 32px;
+
+}
+
+
+
+.f-claims-summary-header-main-information-row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.f-claims-summary-header-main-information-col{
+    font-size: 16px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    flex-wrap: wrap;
+}
+
+
+.f-flag-container{
+    display: flex;
+    gap: 16px;
+    padding-top: 10px;
+}
+
+
+.f-aligned-label {
+    display: inline-flex;
+    align-items: center; /* Vertically center the text and icon */
+    gap: 4px; /* Optional: adds a little spacing between text and icon */
+}
+
+.f-aligned-label i {
+    font-size: 1em; /* Ensures icon size matches the text size */
+    line-height: 1; /* Prevents weird vertical stretching */
+}
+
+
+
+/* BUTTONS */
+
+.f-claims-summary-header-main-information-actions-div{
+    display: flex;
+    gap:8px;
+    align-items:center;
+}
+
+.f-claims-summary-header-main-information-actions-div button{
+
+    border-radius: 84px;
+    border: 1px solid;
+}
+.f-claims-summary-header-main-information-actions-div button:hover{
+    cursor: pointer;
+}
+
+
+
+.f-claims-summary-header-altButton{
+    background-color: white;
+    color: #131519;
+    font-weight: 670;
+}
+
+.f-button-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.f-claims-summary-header-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.f-claims-summary-header-altButton:hover {
+    background-color: #e0e0e0;
+}
+.f-action-icon-div{
+    display: flex;
+    gap: 24px;
+}
+.f-action-icon-div i{
+    padding: 4px;
+
+}
+.f-icon-hover-bg {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px; /* space around icon */
+    font-size: 20px; /* icon size */
+    border-radius: 50%; /* matches background shape */
+    transition: background-color 0.2s ease;
+  }
+  
+  .f-icon-hover-bg:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+
+.f-claims-summary-header-main button {
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: none;
+}
+
+/* END BUTTONS */
+
+
+.f-claims-summary-header-main-information-claimnumber{
+    font-size: 40px;
+    margin: 0;
+}
+
+.f-claims-summary-header-main-information-status-icon{
+    display: flex;
+    justify-content: center;
+}
+
+.f-spinner-icon{
+    background-image: url(icons/spinner.png);
+   display: block; 
+   width: 20px;
+   height: 20px;
+   margin-right: 6px;
+}
+
+.f-policyholder-icon{
+    background-image: url(icons/policyholder.png);
+    display: block; 
+    width: 12.75px;
+    height: 12.75px;
+    margin-right: 6px;
+}
+
+
+.f-claims-summary-header-main-information-dateOfLoss{
+    font-size: 14px;
+    font-weight: 380;
+    color: #CBD0D9;
+    margin-left: -8px;
+}
+
+
+
+
+.f-claims-summary-header-secondary-information{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 6px 0;
+}
+.f-claims-summary-header-secondary-information label{
+    display: flex;
+        align-items: center;
+}
+
+
+.f-information-label{
+    color: #BDC4CB;
+    display: flex;
+    align-items: center;
+}
+.f-information-value{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.f-information-label i{
+    margin-right: 4px;
+}
+
+
+.f-no-underline {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle; /* optional, centers with text */
+    margin-left: 4px; /* optional, space between text and icon */
+}
+
+.f-claims-summary-header-secondary-information-separator{
+    border-right: 1px solid #585F69;
+}
+
+
+.ph-fill ph-plus-circle{
+    font-size: 16px;
+    
+}
+
+.claim-number-dropdown{
+    color: var(--neutral-white);
+    background-color: transparent;
+}
+
+.claim-number-dropdown:hover, .k-button-solid-base:hover, .k-button-solid-base.k-hover:hover{
+    background-color: transparent;
+    color: var(--neutral-lighter)
+}
+
+.k-popup{
+    background: var(--header-gradient)
+}
+.k-group .k-menu-group .k-reset .k-menu-group-md{
+    background: var(--header-gradient)
+
+}
+
+.f-top-bottom-label-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.f-claims-header-information{
+    display: flex;
+    gap: 20px;
+}
+
+
+.f-claims-number-span{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .f-claims-summary-header-secondary-information {
+        gap: 20px; 
+        font-size: 14px; 
+        margin-top: 10px;
+    }
+    .f-claims-summary-header-main-information-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .f-claims-summary-header-main-information-actions-div {
+        justify-content: flex-start;
+    }
+    .f-claims-summary-header-main-information-actions-div button {
+        font-size: 12px;
+        height: 36px;
+        width: 140px;
+    }
+    .f-claims-summary-header-main {
+        padding-bottom: 12px;
+    }
+  }
+
+
+

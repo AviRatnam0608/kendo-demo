@@ -1,0 +1,160 @@
+/* === Font Sizes and Line Heights in rem === */
+.f-text-large {
+    font-size: 1.25rem;     /* 20px */
+    line-height: 1.875rem;  /* 30px */
+  }
+  
+  .f-text-medium {
+    font-size: 1.125rem;    /* 18px */
+    line-height: 1.6875rem; /* 27px */
+  }
+  
+  .f-text-regular {
+    font-size: 1rem;        /* 16px */
+    line-height: 1.5rem;    /* 24px */
+  }
+  
+  .f-text-small {
+    font-size: 0.875rem;    /* 14px */
+    line-height: 1.3125rem; /* 21px */
+  }
+  
+  .f-text-tiny {
+    font-size: 0.75rem;     /* 12px */
+    line-height: 1.125rem;  /* 18px */
+  }
+  
+  /* === Font Weight Utilities === */
+  .f-weight-extra-bold {
+    font-weight: 800;
+  }
+  
+  .f-weight-bold {
+    font-weight: 700;
+  }
+  
+  .f-weight-semi-bold {
+    font-weight: 600;
+  }
+  
+  .f-weight-medium {
+    font-weight: 500;
+  }
+  
+  .f-weight-normal {
+    font-weight: 400;
+  }
+  
+  .f-weight-light {
+    font-weight: 300;
+  }
+
+  /* background color utility classes */
+  /* === Neutral Backgrounds === */
+.f-bg-neutral-white       { background-color: var(--neutral-white); }
+.f-bg-neutral-lightest    { background-color: var(--neutral-lightest); }
+.f-bg-neutral-lighter     { background-color: var(--neutral-lighter); }
+.f-bg-neutral-light       { background-color: var(--neutral-light); }
+.f-bg-neutral             { background-color: var(--neutral); }
+.f-bg-neutral-dark        { background-color: var(--neutral-dark); }
+.f-bg-neutral-darker      { background-color: var(--neutral-darker); }
+.f-bg-neutral-darkest     { background-color: var(--neutral-darkest); }
+
+/* === Primary Backgrounds === */
+.f-bg-primary-lightest    { background-color: var(--primary-lightest); }
+.f-bg-primary-lighter     { background-color: var(--primary-lighter); }
+.f-bg-primary-light       { background-color: var(--primary-light); }
+.f-bg-primary             { background-color: var(--primary); }
+.f-bg-primary-dark        { background-color: var(--primary-dark); }
+.f-bg-primary-darker      { background-color: var(--primary-darker); }
+.f-bg-primary-darkest     { background-color: var(--primary-darkest); }
+
+/* === Secondary Backgrounds === */
+.f-bg-secondary-lightest  { background-color: var(--secondary-lightest); }
+.f-bg-secondary-lighter   { background-color: var(--secondary-lighter); }
+.f-bg-secondary-light     { background-color: var(--secondary-light); }
+.f-bg-secondary           { background-color: var(--secondary); }
+.f-bg-secondary-dark      { background-color: var(--secondary-dark); }
+.f-bg-secondary-darker    { background-color: var(--secondary-darker); }
+.f-bg-secondary-darkest   { background-color: var(--secondary-darkest); }
+
+/* === Success Backgrounds === */
+.f-bg-success-lightest    { background-color: var(--success-lightest); }
+.f-bg-success-lighter     { background-color: var(--success-lighter); }
+.f-bg-success-light       { background-color: var(--success-light); }
+.f-bg-success             { background-color: var(--success); }
+.f-bg-success-dark        { background-color: var(--success-dark); }
+.f-bg-success-darker      { background-color: var(--success-darker); }
+.f-bg-success-darkest     { background-color: var(--success-darkest); }
+
+/* === Alert Backgrounds === */
+.f-bg-alert-lightest      { background-color: var(--alert-lightest); }
+.f-bg-alert-lighter       { background-color: var(--alert-lighter); }
+.f-bg-alert-light         { background-color: var(--alert-light); }
+.f-bg-alert               { background-color: var(--alert); }
+.f-bg-alert-dark          { background-color: var(--alert-dark); }
+.f-bg-alert-darker        { background-color: var(--alert-darker); }
+.f-bg-alert-darkest       { background-color: var(--alert-darkest); }
+
+/* === Error Backgrounds === */
+.f-bg-error-lightest      { background-color: var(--error-lightest); }
+.f-bg-error-lighter       { background-color: var(--error-lighter); }
+.f-bg-error-light         { background-color: var(--error-light); }
+.f-bg-error               { background-color: var(--error); }
+.f-bg-error-dark          { background-color: var(--error-dark); }
+.f-bg-error-darker        { background-color: var(--error-darker); }
+.f-bg-error-darkest       { background-color: var(--error-darkest); }
+
+
+/* === Button Sizes === */
+.f-btn-lg {
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+    max-width: 12.5rem;       /* 200px */
+  }
+  
+  .f-btn-md {
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+  }
+  
+  .f-btn-sm {
+    padding: 0.5rem 0.75rem;   /* 8px 12px */
+  }
+  
+  .f-btn-xs {
+    padding: 0.25rem 0.5rem;   /* 4px 8px */
+  }
+  
+
+
+/* Flags */
+.f-flag-neutral{
+  display: flex;
+  gap:6px;
+  align-items: center;
+  padding: 2px 4px;
+  border: 1px solid var(--neutral-light);
+  border-radius: .3rem;
+  color: var(--neutral-light);
+}
+
+.f-flag-primary{
+  display: flex;
+  gap:6px;
+  align-items: center;
+  padding: 2px 4px;
+  border: 1px solid var(--primary-light);
+  border-radius: .3rem;
+  color: var(--primary-light);
+
+}
+
+.f-flag-error{
+  display: flex;
+  gap:6px;
+  align-items: center;
+  padding: 2px 4px;
+  border: 1px solid var(--error-light);
+  border-radius: .3rem;
+  color: var(--error-light);
+
+}

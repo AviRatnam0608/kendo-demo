@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ui Mockups</title>
+    
+</head>
+<body>
+
+    <header class="f-claims-summary-header-main">
+
+        <div class="f-claims-summary-header-column">
+
+            <div class="f-flag-container">
+                <span title="flag" class="f-flag-primary"><i class="ph-fill  ph-flag"></i>Flag</span>
+                <span title="flag" class="f-flag-neutral"><i class="ph-fill  ph-flag"></i>Flag</span>
+                <span title="flag" class="f-flag-error"><i class="ph-fill  ph-flag"></i>Flag</span>
+
+            </div>
+
+            <div class="f-claims-summary-header-main-information-row">
+                <div class="f-claims-summary-header-main-information-col main-info-item">
+                    <span class="f-claims-number-span">
+
+                        <button class="claim-number-dropdown" data-role="dropdownbutton"
+                        data-items='[
+                        { text: "BOP2400180"},
+                        { text: "BOP2400180"},
+                        { text: "BOP2400180"},
+                        { text: "BOP2400180"},
+                        { text: "BOP2400180"},
+                        ]'
+                   
+                        >
+
+                            <h5 class="f-claims-summary-header-main-information-claimnumber f-weight-normal">BOP2400180</h5>
+                            <i class="ph ph-caret-down f-text-large"></i>    
+                        </button>
+
+
+                        
+                    </span>
+
+                    <div class="f-claims-header-information">
+                        <label class="f-top-bottom-label-container">
+                            <span class="f-information-label">
+                              Status at DOL
+                            </span>
+                            <span><label class="f-claims-summary-header-main-information-status-icon"><span class="f-spinner-icon"></span>Active</label></span>
+                        </label>
+    
+                        <label class="f-top-bottom-label-container">
+                            <span class="f-information-label">
+                              Insured
+                            </span>
+                            <span><label class="f-information-value">Jane Doe</label></span>
+                        </label>
+    
+                        <label class="f-top-bottom-label-container">
+                            <span class="f-information-label">
+                              Policy
+                            </span>
+                            <span><label class="f-information-value">DWF0000014</label></span>
+                        </label>
+    
+                        <label class="f-top-bottom-label-container">
+                            <span class="f-information-label">
+                              Date Of Loss
+                            </span>
+                            <span><label class="">3/5/2025</label></span>
+                        </label>
+                        
+                        <label class="f-top-bottom-label-container">
+                            <span class="f-information-label">
+                             Policy period
+                            </span>
+                            <span><label class="">10/28/2024 - 10/28/2025</label></span>
+                        </label>
+                    </div>
+
+
+
+                </div>
+                <div class="f-claims-summary-header-main-information-actions-div">
+                    <div class="f-action-icon-div f-text-large">
+                        <i class="ph ph-bell f-icon-hover-bg"></i>
+                        <i class="ph ph-list-checks f-icon-hover-bg"></i>
+                        <i class="ph ph-paperclip f-icon-hover-bg"></i>
+                        <i class="ph ph-calendar-blank f-icon-hover-bg"></i>
+                        <i class="ph ph-book f-icon-hover-bg"></i>
+                    </div>
+                    <button class="f-bg-neutral-white f-weight-semi-bold f-btn-lg"><span class="f-button-icon-container">Quick Actions<i class="ph-fill ph-caret-down"></i></span></button>
+                </div>
+            </div>            
+        </div>
+    </header>
+
+
+    
+</body>
+
+
+    <script>
+            var viewModel = kendo.observable({
+
+
+        });
+        kendo.bind($(".f-claims-summary-header-main"), viewModel);
+    </script>
+</html>

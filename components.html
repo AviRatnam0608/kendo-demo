@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ui Mockups</title>
+    <link href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="MainVariables.css">
+    <link rel="stylesheet" href="FinysUtilityClasses.css">
+    <link rel="stylesheet" href="MainStyles.css">
+    <script src="kendo.all.min.js"></script>
+    <script src="kendo-ui-jquery-license.js"></script>
+    <!-- ComponentStyles -->
+
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
+  <style>
+      .container {
+        max-width: 80%;
+        margin: 1rem auto;
+      }
+  </style>
+</head>
+    <body  class="" >
+      <div class="container">
+        <input 
+          data-role="dropdownlist" 
+          data-text-field="name"
+          data-value-field="id"
+          data-bind="source: listData" 
+        >
+      </div>
+    </body>
+
+
+    <script>
+        const listData = new kendo.data.DataSource({
+            data: [
+              {
+                id: 1,
+                name: 'test1',
+              },
+              {
+                id: 2,
+                name: 'test1',
+              },
+              {
+                id: 3,
+                name: 'test1',
+              },
+            ]
+          })
+        const vm = kendo.observable({
+          
+        })
+
+        $(document).ready(()=>{
+          kendo.bind($('body'), vm)
+        })
+    </script>
+</html>

@@ -1,0 +1,135 @@
+:root {
+    --f-spacing: 16px;
+  }
+
+  .f-navigation-header-main {
+    display: flex;
+    flex-direction: column;
+    padding: var(--f-spacing);
+    background-color: var(--neutral-white);
+    border-bottom: 1px solid var(--secondary-light);
+  }
+
+  .f-navigation-header-main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--f-spacing);
+  }
+
+  .f-navigation-options {
+    display: flex;
+    align-items: center;
+    gap: var(--f-spacing);
+    flex-wrap: wrap;
+  }
+
+  .f-company-logo {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.25rem;
+  }
+
+  .f-navigation {
+    display: flex;
+    gap: var(--f-spacing);
+    align-items: center;
+  }
+
+  .f-navigation-item {
+    position: relative;
+    padding: 3px;
+  }
+
+  .f-navigation-item:hover {
+    background: var(--secondary-lightest);
+    border-radius: 5px;
+  }
+
+  .f-navigation-link {
+    text-decoration: none;
+    color: var(--primary-darkest);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .f-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--neutral-white);
+    border: 1px solid var(--secondary-light);
+    margin-top: 3px;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 5px;
+  }
+
+  .f-options-dropdown {
+    height: 50px; 
+    border:1px solid var(--neutral-lighter); 
+    border-radius: 4px 0px 0px 4px; 
+    border-right: none; 
+    outline:none; 
+    background-color: var(--neutral-lightest); 
+    padding: 8px 12px;
+  }
+
+  .f-navigation-item:hover .f-dropdown {
+    display: block;
+  }
+
+  .f-avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .f-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+  }
+
+  .f-icon-btn .ph {
+    font-size: 16px;
+  }
+
+  .f-avatar-container {
+    display: flex; 
+    align-items: center; 
+    gap: 7px;
+    color: var(--neutral-darkest);
+    white-space: nowrap;
+  }
+
+  .f-burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .f-mobile-nav {
+    display: none;
+    flex-direction: column;
+    padding-top: var(--f-spacing);
+    border-top: 1px solid var(--secondary-light);
+  }
+
+  /* Small screen styles */
+  @media screen and (max-width: 780px)  {
+    .f-navigation {
+      display: none;
+    }
+
+    .f-burger {
+      display: block;
+    }
+  }
