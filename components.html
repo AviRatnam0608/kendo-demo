@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="MainVariables.css">
     <link rel="stylesheet" href="FinysUtilityClasses.css">
     <link rel="stylesheet" href="MainStyles.css">
+    <link rel="stylesheet" href="./FinysToggleSwitchStyles.css">
+    <link rel="stylesheet" href="./FinysModalStyles.css">
+
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
@@ -91,21 +94,21 @@
           <input 
               class="f-toggle-switch f-toggle-switch-large"
               data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
           <label class="f-text-regular">Some text</label>
         </div>
         <div class="container">
           <input 
               class="f-toggle-switch f-toggle-switch-medium"
               data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
           <label class="f-text-small">Some text</label>
         </div>
         <div class="container">
           <input 
               class="f-toggle-switch f-toggle-switch-small"
               data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
           <label class="f-text-tiny">Some text</label>
         </div>
       </section>
@@ -114,14 +117,17 @@
       <section>
         <h1>Modal</h1>
         <div class="container">
-          <input
-          class="f-dropdown my-dropdown"
-            data-role="dropdownlist" 
-            data-text-field="name"
-            data-value-field="id"
-            data-bind="value: basicDropdownValue, source: listData, isSelected: basicDropdownValue" 
-          data-option-label="Select an option"
-          >
+          <button data-bind="click: showModal">Show Modal</button>
+          <div 
+              class="f-modal f-modal-large"
+              data-role="dialog"
+              data-title="Software Update"
+              data-width="450"
+              data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+              data-modal="false"
+              data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+              data-bind="dialogOpen: isModalVisible, events: { close: onClose}">
+          </div>
         </div>
       </section>
       <hr>   
@@ -130,6 +136,23 @@
 
 
     <script>
+      //isSelected: basicDropdownValue
+          kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+            init: function (widget, bindings, options) {
+                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
+            },
+            refresh: function () {
+                var that = this;
+                var value = that.bindings["dialogOpen"].get();
+                var dialog = $(that.element).data("kendoDialog");
+
+                if (value) {
+                    dialog.open();
+                } else {
+                    dialog.close();
+                }
+            }
+        });
         const listData = new kendo.data.DataSource({
             data: [
               {
@@ -147,113 +170,36 @@
             ]
           })
         const vm = kendo.observable({
-          
+          isChecked: true,
+          isEnabled: true,
+          isVisible: true,
+          isModalVisible: true,
+          isModalEnabled: true,
+          isDisabled: false,
+          onChange: function (e) {
+              console.log("event :: change (" + (e.checked ? "checked" : "unchecked") + ")");
+          },
+          isClosable: true,
+          isEnabled: false,
+          onClose: function (e) {
+              this.set("isModalVisible", false);
+              this.set("isModalEnabled", true);
+          },
+          showModal: function (e) {
+              this.set("isModalVisible", true);
+              this.set("isModalEnabled", false);
+          },
         })
 
+        function onRemind(e) {
+          console.log("Action :: Remind me later");
+        }
+
+        function onInstall(e) {
+          console.log("Action :: Install update");
+        }
       $(document).ready(()=>{
         kendo.bind($('body'), vm)
       })
     </script>
-    
-    <style>
-      :root {
-        --small-toggle-width: 32px;
-        --small-toggle-height: 20px;
-        --small-toggle-thumb: 0.75rem;
-
-        --medium-toggle-width: 36px;
-        --medium-toggle-height: 22px;
-        --medium-toggle-thumb: 0.875rem;
-
-        --large-toggle-width: 40px;
-        --large-toggle-height: 24px;
-        --large-toggle-thumb: 1rem;
-      }
-
-      .f-toggle-switch .k-switch-label-on, .k-switch-label-off {
-        display: none;
-      }
-
-      /* Small */
-      .f-toggle-switch.f-toggle-switch-small.k-switch-md .k-switch-track {
-        width: var(--small-toggle-width);
-        height: var(--small-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-small.k-switch-md {
-        width: var(--small-toggle-width);
-        height: var(--small-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-small.k-switch-md .k-switch-thumb {
-        width: var(--small-toggle-thumb);
-        height: var(--small-toggle-thumb);
-      }
-
-      /* Medium */
-      .f-toggle-switch.f-toggle-switch-medium.k-switch-md .k-switch-track {
-        width: var(--medium-toggle-width);
-        height: var(--medium-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-medium.k-switch-md {
-        width: var(--medium-toggle-width);
-        height: var(--medium-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-medium.k-switch-md .k-switch-thumb {
-        width: var(--medium-toggle-thumb);
-        height: var(--medium-toggle-thumb);
-      }
-
-      /* Large */
-      .f-toggle-switch.f-toggle-switch-large.k-switch-md .k-switch-track {
-        width: var(--large-toggle-width);
-        height: var(--large-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-large.k-switch-md {
-        width: var(--large-toggle-width);
-        height: var(--large-toggle-height);
-      }
-
-      .f-toggle-switch.f-toggle-switch-large.k-switch-md .k-switch-thumb {
-        width: var(--large-toggle-thumb);
-        height: var(--large-toggle-thumb);
-      }
-
-      /* General */
-
-      .k-switch-off .k-switch-thumb, .k-switch-on .k-switch-thumb {
-        border-color: var(--neutral-white);
-      }
-
-      .f-toggle-switch.k-switch-off .k-switch-track {
-        border: 1px solid var(--neutral-light);
-        background-color: var(--neutral-lighter);
-      }
-
-      .f-toggle-switch.k-switch-off .k-switch-track:hover {
-        border: 1px solid var(--neutral);
-        background-color: var(--neutral-light);
-      }
-
-      .f-toggle-switch.k-switch-md.k-switch-on .k-switch-thumb-wrap{
-        left: calc(100% - 0.65rem);
-      }
-
-      .f-toggle-switch.k-switch-md.k-switch-off .k-switch-thumb-wrap{
-        left: 0.70rem;
-      }
-
-      .f-toggle-switch.k-switch-on .k-switch-track{
-        border-color: color-mix(in srgb, var(--neutral-darkest) 10%, transparent);
-        background-color: var(--primary);
-      }
-
-      .k-switch-on:focus .k-switch-track, .k-switch-on.k-focus .k-switch-track {
-        outline: 2px solid 
-        color-mix(in srgb, var(--primary) 25%, transparent);
-      }
-    </style>
 </html>
