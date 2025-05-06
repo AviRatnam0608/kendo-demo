@@ -71,54 +71,189 @@
       }
   </style>
 </head>
-    <body  class="" >
-      <div class="container">
-        <input
+    <body class="" >
+      <section>
+        <h1>Dropdown</h1>
+        <div class="container">
+          <input 
+            data-role="dropdownlist" 
+            data-text-field="name"
+            data-value-field="id"
+            data-bind="source: listData" 
+          >
+        </div>
+      </section>
+      <hr>
+    
+      <section>
+        <h1>Toggle</h1>
+        <div class="container">
+          <input 
+              class="f-toggle-switch f-toggle-switch-large"
+              data-role="switch"
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+          <label class="f-text-regular">Some text</label>
+        </div>
+        <div class="container">
+          <input 
+              class="f-toggle-switch f-toggle-switch-medium"
+              data-role="switch"
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+          <label class="f-text-small">Some text</label>
+        </div>
+        <div class="container">
+          <input 
+              class="f-toggle-switch f-toggle-switch-small"
+              data-role="switch"
+              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }" />
+          <label class="f-text-tiny">Some text</label>
+        </div>
+      </section>
+      <hr>
+    
+      <section>
+        <h1>Modal</h1>
+        <div class="container">
+          <input
           class="f-dropdown my-dropdown"
-          data-role="dropdownlist" 
-          data-text-field="name"
-          data-value-field="id"
-          data-bind="value: basicDropdownValue, source: listData, isSelected: basicDropdownValue" 
+            data-role="dropdownlist" 
+            data-text-field="name"
+            data-value-field="id"
+            data-bind="value: basicDropdownValue, source: listData, isSelected: basicDropdownValue" 
           data-option-label="Select an option"
-        >
-      </div>
+          >
+        </div>
+      </section>
+      <hr>   
+    
     </body>
 
 
     <script>
-      kendo.data.binders.isSelected = kendo.data.Binder.extend({
-        refresh: function () {
-            const value = this.bindings["isSelected"].get();
-
-            if(!value) {
-              $(this.element).removeClass('f-selected');
-            } else {
-              $(this.element).addClass('f-selected');
-            }
-        }
-      });
-      const vm = kendo.observable({
-        listData: new kendo.data.DataSource({
-          data: [
-            {
-              id: 1,
-              name: 'test1',
-            },
-            {
-              id: 2,
-              name: 'test2',
-            },
-            {
-              id: 3,
-              name: 'test3',
-            },
-          ]
-        }),
-        basicDropdownValue: null,
-      })
+        const listData = new kendo.data.DataSource({
+            data: [
+              {
+                id: 1,
+                name: 'test1',
+              },
+              {
+                id: 2,
+                name: 'test1',
+              },
+              {
+                id: 3,
+                name: 'test1',
+              },
+            ]
+          })
+        const vm = kendo.observable({
+          
+        })
 
       $(document).ready(()=>{
         kendo.bind($('body'), vm)
       })
     </script>
+    
+    <style>
+      :root {
+        --small-toggle-width: 32px;
+        --small-toggle-height: 20px;
+        --small-toggle-thumb: 0.75rem;
+
+        --medium-toggle-width: 36px;
+        --medium-toggle-height: 22px;
+        --medium-toggle-thumb: 0.875rem;
+
+        --large-toggle-width: 40px;
+        --large-toggle-height: 24px;
+        --large-toggle-thumb: 1rem;
+      }
+
+      .f-toggle-switch .k-switch-label-on, .k-switch-label-off {
+        display: none;
+      }
+
+      /* Small */
+      .f-toggle-switch.f-toggle-switch-small.k-switch-md .k-switch-track {
+        width: var(--small-toggle-width);
+        height: var(--small-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-small.k-switch-md {
+        width: var(--small-toggle-width);
+        height: var(--small-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-small.k-switch-md .k-switch-thumb {
+        width: var(--small-toggle-thumb);
+        height: var(--small-toggle-thumb);
+      }
+
+      /* Medium */
+      .f-toggle-switch.f-toggle-switch-medium.k-switch-md .k-switch-track {
+        width: var(--medium-toggle-width);
+        height: var(--medium-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-medium.k-switch-md {
+        width: var(--medium-toggle-width);
+        height: var(--medium-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-medium.k-switch-md .k-switch-thumb {
+        width: var(--medium-toggle-thumb);
+        height: var(--medium-toggle-thumb);
+      }
+
+      /* Large */
+      .f-toggle-switch.f-toggle-switch-large.k-switch-md .k-switch-track {
+        width: var(--large-toggle-width);
+        height: var(--large-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-large.k-switch-md {
+        width: var(--large-toggle-width);
+        height: var(--large-toggle-height);
+      }
+
+      .f-toggle-switch.f-toggle-switch-large.k-switch-md .k-switch-thumb {
+        width: var(--large-toggle-thumb);
+        height: var(--large-toggle-thumb);
+      }
+
+      /* General */
+
+      .k-switch-off .k-switch-thumb, .k-switch-on .k-switch-thumb {
+        border-color: var(--neutral-white);
+      }
+
+      .f-toggle-switch.k-switch-off .k-switch-track {
+        border: 1px solid var(--neutral-light);
+        background-color: var(--neutral-lighter);
+      }
+
+      .f-toggle-switch.k-switch-off .k-switch-track:hover {
+        border: 1px solid var(--neutral);
+        background-color: var(--neutral-light);
+      }
+
+      .f-toggle-switch.k-switch-md.k-switch-on .k-switch-thumb-wrap{
+        left: calc(100% - 0.65rem);
+      }
+
+      .f-toggle-switch.k-switch-md.k-switch-off .k-switch-thumb-wrap{
+        left: 0.70rem;
+      }
+
+      .f-toggle-switch.k-switch-on .k-switch-track{
+        border-color: color-mix(in srgb, var(--neutral-darkest) 10%, transparent);
+        background-color: var(--primary);
+      }
+
+      .k-switch-on:focus .k-switch-track, .k-switch-on.k-focus .k-switch-track {
+        outline: 2px solid 
+        color-mix(in srgb, var(--primary) 25%, transparent);
+      }
+    </style>
 </html>
