@@ -13,7 +13,7 @@
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
-
+    <link rel="stylesheet" href="dropdown.css">
     <link
     rel="stylesheet"
     type="text/css"
@@ -31,73 +31,14 @@
       }
 
       .container {
+        display: flex;
         max-width: 80%;
         margin: 1rem auto;
+        gap: 2rem;
       }
-
-    /* finys styles */
-      .f-dropdown {
-        border: 1px solid var(--neutral-lighter);
-        background-color: var(--neutral-lightest);
-        border-radius: 0.375rem;
-        color: var(--neutral);
-        padding: 0.625rem 0.75rem;
-      }
-
-      .f-dropdown .k-input-button {
-        color: var(--neutral-darkest);
-        padding: 0;
-      }
-
-      .f-dropdown .k-input-inner {
-        padding: 0;
-      }
-
-      .f-dropdown:hover {
-        border: 1px solid var(--neutral-light);
-        background-color: var(--neutral-lighter);
-      }
-
-      .f-dropdown:focus {
-        border: 1px solid var(--primary);
-        box-shadow: 0px 1px 2px 0px #0000000D;
-        box-shadow: 0px 0px 0px 2px #C2E0FF;
-        background-color: var(--neutral-white);
-      }
-
-      .f-dropdown.f-selected {
-        background-color: var(--neutral-white);
-        color: var(--neutral-darkest);
-      }
-
-      .k-popup {
-        box-shadow: 0px 4px 6px -2px #00000008;
-        box-shadow: 0px 12px 16px -4px #00000014;
-      }
-
-      .k-list-container {
-        margin-top: 0.5rem;
-      }
-
-      .k-list-container,
-      .k-list-container.k-popup .k-list {
-        border-radius: 6px;
-      }
-
-      .k-list-container.k-popup .k-list li {
-        font-weight: bold;
-      }
-
-      .k-list-container.k-popup .k-selected.k-focus {
-        background-color: var(--primary-lightest);
-        color: var(--neutral-darkest);
-        box-shadow: none;
-      }
-
-
   </style>
 </head>
-    <body  class="" >
+    <body class="" >
       <div class="container">
         <input
           class="f-dropdown my-dropdown"
@@ -110,6 +51,38 @@
             isSelected: basicDropdownValue" 
           data-option-label="Select an option"
         >
+
+        <input
+          class="f-dropdown my-dropdown"
+          data-role="dropdownlist" 
+          data-text-field="name"
+          data-value-field="id"
+          data-bind="
+            value: groupDropdownValue, 
+            source: groupListData, 
+            isSelected: groupDropdownValue" 
+          data-option-label="Select an option"
+          data-value-template="test"
+          data-group-template="test"
+        >
+
+        <div class="f-group-dropdown">
+            <input
+            class="f-group-dropdown-input"
+            placeholder="Select an option"
+            data-bind=""
+            >
+            <div class="f-group-dropdown-content">
+              <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+              </ul>
+            </div>
+        </div>
+
+        
       </div>
     </body>
 
@@ -125,6 +98,13 @@
             }
         }
       });
+
+      $('.f-group-dropdown-input').on('focus', function(e) {
+        $(e.currentTarget).next().addClass('f-focus');
+      })
+      $('.f-group-dropdown-input').on('blur', function(e) {
+        $(e.currentTarget).next().removeClass('f-focus');
+      })
       const vm = kendo.observable({
         listData: new kendo.data.DataSource({
           data: [
@@ -142,11 +122,53 @@
             },
           ]
         }),
+        groupListData: new kendo.data.DataSource({
+          data: [
+            {
+              id: 1,
+              name: 'Apple',
+              group: 'Eins'
+            },
+            {
+              id: 2,
+              name: 'Banana',
+              group: 'Eins',
+            },
+            {
+              id: 3,
+              name: 'Beef',
+              group: 'Zwei',
+            },
+            {
+              id: 4,
+              name: 'Pork',
+              group: 'Zwei',
+            },
+            {
+              id: 5,
+              name: 'Poultry',
+              group: 'Zwei',
+            },
+
+            {
+              id: 6,
+              name: 'Water',
+              group: 'Drei',
+            },
+          ],
+          group: {field: 'group'}
+        }),
         basicDropdownValue: null,
+        groupDropdownValue: null,
       })
 
       $(document).ready(()=>{
         kendo.bind($('body'), vm)
       })
+    </script>
+
+    <script id="test" type="x-kendo-template">
+      <div>Another test</div>
+
     </script>
 </html>
