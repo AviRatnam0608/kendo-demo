@@ -69,6 +69,32 @@
         background-color: var(--neutral-white);
         color: var(--neutral-darkest);
       }
+
+      .k-popup {
+        box-shadow: 0px 4px 6px -2px #00000008;
+        box-shadow: 0px 12px 16px -4px #00000014;
+      }
+
+      .k-list-container {
+        margin-top: 0.5rem;
+      }
+
+      .k-list-container,
+      .k-list-container.k-popup .k-list {
+        border-radius: 6px;
+      }
+
+      .k-list-container.k-popup .k-list li {
+        font-weight: bold;
+      }
+
+      .k-list-container.k-popup .k-selected.k-focus {
+        background-color: var(--primary-lightest);
+        color: var(--neutral-darkest);
+        box-shadow: none;
+      }
+
+
   </style>
 </head>
     <body  class="" >
@@ -78,7 +104,10 @@
           data-role="dropdownlist" 
           data-text-field="name"
           data-value-field="id"
-          data-bind="value: basicDropdownValue, source: listData, isSelected: basicDropdownValue" 
+          data-bind="
+            value: basicDropdownValue, 
+            source: listData, 
+            isSelected: basicDropdownValue" 
           data-option-label="Select an option"
         >
       </div>
@@ -86,14 +115,13 @@
 
 
     <script>
-      kendo.data.binders.isSelected = kendo.data.Binder.extend({
-        refresh: function () {
+      kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
+        refresh: function() {
             const value = this.bindings["isSelected"].get();
-
-            if(!value) {
-              $(this.element).removeClass('f-selected');
+            if(!value?.id) {
+              $(this.element.element).closest('.f-dropdown.k-picker').removeClass('f-selected')
             } else {
-              $(this.element).addClass('f-selected');
+              $(this.element.element).closest('.f-dropdown.k-picker').addClass('f-selected')
             }
         }
       });
