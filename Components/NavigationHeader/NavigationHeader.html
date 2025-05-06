@@ -57,7 +57,7 @@
           <div style="display: flex; align-items: center;">
             <div id="dropdown-section">
               <input 
-                    class="f-dropdown-styles"
+                    class="f-dropdown-styles f-border-rounded-left f-text-small f-weight-semi-bold"
                     data-role="dropdownlist"
                     data-auto-bind="false"
                     data-value-primitive="true"
@@ -134,27 +134,31 @@
     </div>
 </body>
 <script>
-  var vm = kendo.observable({
-        selectedName: null,
+  const vm1 = kendo.observable({
+        selectedName: 2,
         dummyDropdownData: new kendo.data.DataSource({
             data: [
                 {
                     Id: 1,
-                    Name: "Claims"
+                    Name: "All"
                 },
                 {
                     Id: 2,
-                    Name: "Policy"
+                    Name: "Claims"
                 },
                 {
                     Id: 3,
+                    Name: "Policy"
+                },
+                {
+                    Id: 4,
                     Name: "Billing"
                 }
             ]
         })
     })
     $(document).ready(() => {
-        kendo.bind($('#dropdown-section'), vm);
+        kendo.bind($('#dropdown-section'), vm1);
     })
 </script>
 </html>

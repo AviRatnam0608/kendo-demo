@@ -158,3 +158,13 @@
   color: var(--error-light);
 
 }
+
+/* Border radius rounding options */
+
+.f-border-rounded-right {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.f-border-rounded-left {
+  border-radius: 4px 0px 0px 4px;
+}

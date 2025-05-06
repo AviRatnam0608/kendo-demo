@@ -69,6 +69,13 @@
     border-radius: 5px;
   }
 
+  .f-dropdown-styles {
+    height: 50px;
+    width: auto;
+    border-right: none;
+    padding: 0.5rem;
+  }
+
   .f-options-dropdown {
     height: 50px; 
     border:1px solid var(--neutral-lighter); 
@@ -94,7 +101,15 @@
     border: none;
     cursor: pointer;
     font-size: large;
+    padding: 0.25rem;
   }
+
+  .f-icon-btn:focus {
+    background-color: var(--neutral-lightest);
+    border: none; 
+    border-radius: 100%;
+    aspect-ratio: 1 / 1; /* Ensures it's a square */
+  } 
 
   .f-icon-btn .ph {
     font-size: 16px;
