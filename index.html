@@ -13,9 +13,10 @@
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
-    <link rel="stylesheet" href="/Components/ClaimsHeader/ClaimsHeader.css">
-    <link rel="stylesheet" href="/Components/NavigationHeader/NavigationHeader.css">
-    <link rel="stylesheet" href="/Components/ReservesGrid/wwwroot/css/reserves-grid.css">
+    <link rel="stylesheet" href="./Components/ClaimsHeader/ClaimsHeader.css">
+    <link rel="stylesheet" href="./Components/NavigationHeader/NavigationHeader.css">
+    <link rel="stylesheet" href="./Components/ReservesGrid/wwwroot/css/reserves-grid.css">
+
 
     <link
     rel="stylesheet"
@@ -41,9 +42,9 @@
 
     <script>
         $(document).ready(()=>{
-          $("#claims-summary").load("/Components/ClaimsHeader/ClaimsHeader.html"); 
-          $("#nav-header").load("/Components/NavigationHeader/NavigationHeader.html"); 
-          $("#reserve-grid").load("/Components/ReservesGrid/table.html"); 
+          $("#claims-summary").load("./Components/ClaimsHeader/ClaimsHeader.html"); 
+          $("#nav-header").load("./Components/NavigationHeader/NavigationHeader.html"); 
+          $("#reserve-grid").load("./Components/ReservesGrid/table.html"); 
 
         })
     </script>

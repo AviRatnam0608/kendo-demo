@@ -25,9 +25,49 @@
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
   />
   <style>
+    /* transient styles */
+      .my-dropdown {
+        max-width: 200px;
+      }
+
       .container {
         max-width: 80%;
         margin: 1rem auto;
+      }
+
+    /* finys styles */
+      .f-dropdown {
+        border: 1px solid var(--neutral-lighter);
+        background-color: var(--neutral-lightest);
+        border-radius: 0.375rem;
+        color: var(--neutral);
+        padding: 0.625rem 0.75rem;
+      }
+
+      .f-dropdown .k-input-button {
+        color: var(--neutral-darkest);
+        padding: 0;
+      }
+
+      .f-dropdown .k-input-inner {
+        padding: 0;
+      }
+
+      .f-dropdown:hover {
+        border: 1px solid var(--neutral-light);
+        background-color: var(--neutral-lighter);
+      }
+
+      .f-dropdown:focus {
+        border: 1px solid var(--primary);
+        box-shadow: 0px 1px 2px 0px #0000000D;
+        box-shadow: 0px 0px 0px 2px #C2E0FF;
+        background-color: var(--neutral-white);
+      }
+
+      .f-dropdown.f-selected {
+        background-color: var(--neutral-white);
+        color: var(--neutral-darkest);
       }
   </style>
 </head>
@@ -74,11 +114,13 @@
       <section>
         <h1>Modal</h1>
         <div class="container">
-          <input 
+          <input
+          class="f-dropdown my-dropdown"
             data-role="dropdownlist" 
             data-text-field="name"
             data-value-field="id"
-            data-bind="source: listData" 
+            data-bind="value: basicDropdownValue, source: listData, isSelected: basicDropdownValue" 
+          data-option-label="Select an option"
           >
         </div>
       </section>
@@ -105,17 +147,12 @@
             ]
           })
         const vm = kendo.observable({
-          isChecked: true,
-          isEnabled: true,
-          isVisible: true,
-          onChange: function (e) {
-              console.log("event :: change (" + (e.checked ? "checked" : "unchecked") + ")");
-          }
+          
         })
 
-        $(document).ready(()=>{
-          kendo.bind($('body'), vm)
-        })
+      $(document).ready(()=>{
+        kendo.bind($('body'), vm)
+      })
     </script>
     
     <style>
