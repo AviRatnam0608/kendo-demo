@@ -38,9 +38,16 @@
 
         <div class="input-container">
             <label class="f-h-label">Name</label>
-            <input class="k-invalid" id="textbox2" />
+            <input name="username" required class="k-invalid" id="textbox2" />
 
         </div>
+
+        <div class="input-container">
+            <label class="f-h-label">Phone #</label>
+            <input id="maskedtextbox" />
+
+        </div>
+
 
 
     </body>
@@ -53,9 +60,14 @@
             clearButton: true
             });
             $("#textbox2").kendoTextBox({
-            value: "John Smith",
+            value: "",
             clearButton: true
             });
+            $("#finys-main").kendoValidator().data("kendoValidator").validateInput($("input[name=username]"));
+
+            $("#maskedtextbox").kendoMaskedTextBox({
+            mask: "(000) 000-0000"
+        });
 
         })
     </script>
