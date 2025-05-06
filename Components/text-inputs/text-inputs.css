@@ -1,0 +1,33 @@
+#finys-main .k-input-solid{
+    border: 1px solid #D8D9DA;
+    border-radius: 6px;
+    filter: blur(5%);
+    transition-duration: 400ms;
+    width: 200px;
+}
+
+#finys-main .k-input-solid:hover{
+    background-color: #F7F8F9;
+    transition-duration: 400ms;
+}
+
+
+#finys-main .k-input-solid:focus, .k-input-solid.k-focus{
+    border-color: var(--primary) !important;
+    box-shadow: 0px 0px 4px 0px #C2E0FF;
+}
+
+
+#finys-main .k-input-solid .k-invalid{
+    border-color: var(--error) !important;
+}
+
+
+
+
+.input-container{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 8px;
+}
