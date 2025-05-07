@@ -153,3 +153,24 @@ th:nth-child(2) .k-cell-inner>.k-link {
     text-decoration: underline;
     text-underline-offset: 0.188rem;
 }
+
+.k-animation-container .k-menu-popup.k-popup {
+    border-radius: 0.375rem;
+    border: 0.0625rem solid var(--neutral-lighter);
+    margin-top: 0.5rem;
+}
+
+.k-animation-container .k-menu-popup.k-popup .k-menu-item:focus .k-menu-link {
+    box-shadow: none;
+    background-color: var(--primary-lightest);
+}
+
+.k-animation-container .k-menu-popup.k-popup .k-item .k-menu-link-text {
+    padding: 0.5rem 0;
+    color: var(--neutral-darkest);
+}
+
+
+.k-menu-group .k-item>.k-link:active, .k-menu-group .k-item>.k-link.k-active, .k-menu-group .k-item>.k-link.k-selected, .k-menu.k-context-menu .k-item>.k-link:active, .k-menu.k-context-menu .k-item>.k-link.k-active, .k-menu.k-context-menu .k-item>.k-link.k-selected {
+    background-color: var(--primary-lightest);
+}
