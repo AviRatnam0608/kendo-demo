@@ -65,6 +65,12 @@ main.claims-summary-main-content .f-table-header {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
+    background-color: var(--neutral-lightest);
+}
+
+.f-action-tag:hover {
+    background-color: var(--neutral-lighter);
+    color: var(--neutral-darkest)
 }
 
 .f-clickable {
