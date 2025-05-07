@@ -1,8 +1,8 @@
-#finys-main{
+#finys-text-input-container{
     padding: 20px;
 }
 
-#finys-main .k-input-solid{
+#finys-text-input-container .k-input-solid{
     border: 1px solid #D8D9DA;
     border-radius: 6px;
     filter: blur(5%);
@@ -11,26 +11,26 @@
     padding: 4px;
 }
 
-#finys-main .k-input-solid:hover{
+#finys-text-input-container .k-input-solid:hover{
     background-color: #F7F8F9;
     transition-duration: 400ms;
 }
 
 
-#finys-main .k-input-solid:focus, .k-input-solid.k-focus{
+#finys-text-input-container .k-input-solid:focus, .k-input-solid.k-focus{
     border-color: var(--primary) !important;
     box-shadow: 0px 0px 4px 0px #C2E0FF;
     caret-color:  var(--primary-light) !important;
 }
 
 
-#finys-main .k-input-solid.k-invalid{
+#finys-text-input-container .k-input-solid.k-invalid{
     border-color: var(--error) !important;
     caret-color:  var(--error) !important;
 
 }
 
-#finys-main .k-form-hint, .k-form-error {
+#finys-text-input-container .k-form-hint, .k-form-error {
     font-style: normal;
 }
 
