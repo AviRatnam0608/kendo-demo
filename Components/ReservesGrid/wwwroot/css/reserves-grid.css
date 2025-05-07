@@ -136,16 +136,19 @@ th:nth-child(2) .k-cell-inner>.k-link {
 
 .f-grid-header-btn {
     padding: 0.5rem 1rem;
-    background-color: #F6F6F6;
+    background-color: var(--neutral-lightest);
     border: 0.063rem solid transparent;
     border-radius: 3.75rem;
-    background-color: #F6F6F6;
     border: 0.063rem solid #1315191A;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     font-weight: bold;
+}
+
+.f-grid-header-btn:hover {
+    background-color: var(--neutral-lighter);
 }
 
 .k-grid a {
