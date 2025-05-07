@@ -66,36 +66,36 @@
                     data-bind="value: selectedName,
                                 source: dummyDropdownData" />
             </div>
-            <div style="border: 1px solid #E3E5EB; height: 32px; border-radius: 0px 4px 4px 0px; display: flex; align-items: center; padding: 8px 12px ;">
-              <i class="ph ph-magnifying-glass" style="color: var(--neutral-light);"></i>
+            <div class="f-search-input">
+              <i class="ph ph-magnifying-glass" style="color: var(--neutral-darkest); opacity: 60%;"></i>
               <input style="border: none; outline: none;"></input>
             </div>
           </div>
-          <button class="f-icon-btn">
-            <i class="ph ph-clock-counter-clockwise"></i>
-          </button>
-          <button class="f-icon-btn">
-            <i class="ph ph-star"></i>
-          </button>
-          <hr style="height: 14px">
-          <button class="f-icon-btn">
-            <i class="ph ph-gear"></i>
-          </button>
-          <button class="f-icon-btn">
-            <i class="ph ph-bell"></i>
-          </button>
-          <button class="f-icon-btn">
-            <span class="k-icon k-i-cog"></span>
-          </button>
-          <div class="f-avatar-container">
-            <img
-              class="f-avatar"
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="User Avatar"
-            />
-            <span>Dwight Schrute</span>
-            <i class="ph ph-caret-down"></i></a>
-          </div>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <button class="f-icon-btn">
+              <i class="ph ph-clock-counter-clockwise"></i>
+            </button>
+            <button class="f-icon-btn">
+              <i class="ph ph-star"></i>
+            </button>
+            <hr class="f-divider">
+            <button class="f-icon-btn">
+              <i class="ph ph-gear"></i>
+            </button>
+            <button class="f-icon-btn">
+              <i class="ph ph-bell"></i>
+            </button>
+            <div class="f-avatar-container">
+              <img
+                class="f-avatar"
+                style="margin: 0;"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="User Avatar"
+              />
+              <span class="f-text-tiny f-weight-medium">Dwight Schrute</span>
+              <i class="ph ph-caret-down"></i></a>
+            </div>
+          </div>          
         </div>
       </div>
 

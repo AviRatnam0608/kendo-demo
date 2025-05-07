@@ -56,6 +56,16 @@
     gap: 8px;
   }
 
+  .f-divider {
+    height: 24px;
+    border: 1px solid var(--secondary-lightest);
+    border-radius: 10px;
+  }
+
+  .f-search-input {
+    border: 1px solid #E3E5EB; height: 40px; border-radius: 0px 4px 4px 0px; display: flex; align-items: center; padding: 8px 12px ; box-sizing: border-box;
+  }
+
   .f-dropdown {
     display: none;
     position: absolute;
@@ -70,7 +80,7 @@
   }
 
   .f-dropdown-styles {
-    height: 50px;
+    height: 40px;
     width: auto;
     border-right: none;
     padding: 0.5rem;
@@ -100,16 +110,9 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: large;
-    padding: 0.25rem;
+    padding: 0;
+    aspect-ratio: 1 / 1;
   }
-
-  .f-icon-btn:focus {
-    background-color: var(--neutral-lightest);
-    border: none; 
-    border-radius: 100%;
-    aspect-ratio: 1 / 1; /* Ensures it's a square */
-  } 
 
   .f-icon-btn .ph {
     font-size: 16px;
@@ -118,7 +121,7 @@
   .f-avatar-container {
     display: flex; 
     align-items: center; 
-    gap: 7px;
+    gap: 10px;
     color: var(--neutral-darkest);
     white-space: nowrap;
   }
