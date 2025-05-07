@@ -79,7 +79,28 @@
 
       <section>
         <h1>Text Editor</h1>
-        <textarea class="f-editor" data-role="editor"></textarea>
+        <textarea class="f-editor" 
+          data-role="editor"
+          data-tools="[
+            [
+              'bold',
+              'italic',
+              'underline'
+            ],
+            [
+              'justifyLeft',
+              'justifyCenter',
+              'justifyRight',
+              'justifyFull'
+            ],
+            {
+              name: 'custom',
+              template: function() {
+                return '<button class=\'f-button f-clickable\'><div class=\'f-border-gradient-content\'><i class=\'ph ph-plus\'></i><span>Copy</span></div></button>'
+              }
+            }
+          ]"
+        ></textarea>
       </section>
       <hr>
     
