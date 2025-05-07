@@ -21,6 +21,7 @@
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
     <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="editor.css">
     <link
     rel="stylesheet"
     type="text/css"
@@ -37,8 +38,7 @@
         max-width: 200px;
       }
 
-      .container {
-        display: flex;
+      .container, section {
         max-width: 80%;
         margin: 1rem auto;
         gap: 2rem;
@@ -74,6 +74,12 @@
             data-option-label="Select an option"
           >          
         </div>
+      </section>
+      <hr>
+
+      <section>
+        <h1>Text Editor</h1>
+        <textarea class="f-editor" data-role="editor"></textarea>
       </section>
       <hr>
     
