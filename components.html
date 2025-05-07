@@ -62,32 +62,13 @@
             data-role="dropdownlist" 
             data-text-field="name"
             data-value-field="id"
+            data-height="300"
             data-bind="
               value: groupDropdownValue, 
               source: groupListData, 
               isSelected: groupDropdownValue" 
             data-option-label="Select an option"
-            data-value-template="test"
-            data-group-template="test"
-          >
-  
-          <div class="f-group-dropdown">
-              <input
-              class="f-group-dropdown-input"
-              placeholder="Select an option"
-              data-bind=""
-              >
-              <div class="f-group-dropdown-content">
-                <ul>
-                  <li>item 1</li>
-                  <li>item 2</li>
-                  <li>item 3</li>
-                  <li>item 4</li>
-                </ul>
-              </div>
-          </div>
-  
-          
+          >          
         </div>
       </section>
       <hr>
@@ -194,7 +175,7 @@
           isChecked: true,
           isEnabled: true,
           isVisible: true,
-          isModalVisible: true,
+          isModalVisible: false,
           isModalEnabled: true,
           isDisabled: false,
           onChange: function (e) {
@@ -259,6 +240,31 @@
                 name: 'Water',
                 group: 'Drei',
               },
+              {
+                id: 7,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 8,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 9,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 10,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 11,
+                name: 'Water',
+                group: 'Drei',
+              },
             ],
             group: {field: 'group'}
           }),
@@ -276,10 +282,5 @@
       $(document).ready(()=>{
         kendo.bind($('body'), vm)
       })
-    </script>
-
-    <script id="test" type="x-kendo-template">
-      <div>Another test</div>
-
     </script>
 </html>
