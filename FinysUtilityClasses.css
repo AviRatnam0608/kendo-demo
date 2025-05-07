@@ -107,23 +107,22 @@
 
 
 /* === Button Sizes === */
-.f-btn-lg {
-    padding: 0.75rem 1.25rem; /* 12px 20px */
-    max-width: 12.5rem;       /* 200px */
-  }
+.f-button-large {
+  padding: var(--large-padding); 
+  max-width: 12.5rem;       
+}
   
-  .f-btn-md {
-    padding: 0.625rem 1.25rem; /* 10px 20px */
-  }
-  
-  .f-btn-sm {
-    padding: 0.5rem 0.75rem;   /* 8px 12px */
-  }
-  
-  .f-btn-xs {
-    padding: 0.25rem 0.5rem;   /* 4px 8px */
-  }
-  
+.f-button-medium {
+  padding: var(--medium-padding); 
+}
+
+.f-button-small {
+  padding: var(--small-padding);   
+}
+
+.f-button-xsmall {
+  padding: var(--xsmall-padding);   
+}
 
 
 /* Flags */

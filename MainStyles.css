@@ -1,6 +1,7 @@
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("./FinysButtonStyles.css"); 
 
 :root {
     --body-font: 'Inter Tight', sans-serif;
@@ -71,36 +72,3 @@ h6{
     background-color: #002347;
     font-weight: normal;
 }
-
-.f-button {
-    background-color: var(--neutral-lightest);
-    border: 0;
-    border-radius: 3.75rem;
-    padding: 0.063rem;
-    font-weight: bold;
-    box-shadow: 0px 1px 2px 0px #0000000D;
-    display: inline-flex;
-    background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%);
-    cursor: pointer;
-}
-
-.f-button:hover {
-    background-color: var(--neutral-lighter);
-}
-
-.f-button > .f-border-gradient-content {
-    background: var(--neutral-lightest); /* Inner background */
-    border-radius: inherit;
-    width: 100%;
-    display: inline-flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-}
-
-.f-button:hover > .f-border-gradient-content {
-    background: var(--neutral-lighter);
-}
-

@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="./FinysModalStyles.css">
     <link rel="stylesheet" href="./FinysModalStyles.css">
     <link rel="stylesheet" href="./FinysTextInputStyles.css">
-
-
+    <link rel="stylesheet" href="./FinysButtonStyles.css">
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
@@ -96,7 +95,7 @@
             {
               name: 'custom',
               template: function() {
-                return '<button class=\'f-button f-clickable\'><div class=\'f-border-gradient-content\'><i class=\'ph ph-plus\'></i><span>Copy</span></div></button>'
+                return '<button class=\'f-button f-clickable\'><div class=\'f-button-content\'><i class=\'ph ph-plus\'></i><span>Copy</span></div></button>'
               }
             }
           ]"
@@ -171,6 +170,139 @@
       </div>
 
       </section>
+
+      <hr>
+      <section>
+        <h1>Buttons</h1>
+        <div class="section">
+          <button 
+            class="f-button "
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <h3>Primary</h3>
+          <button 
+            class="f-button f-button-primary f-button-large"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-primary f-button-medium"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-primary f-button-small"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-primary f-button-xsmall"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
+            </div>          
+          </button>
+
+          <h3>Secondary</h3>
+          <button 
+            class="f-button f-button-secondary f-button-large"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-secondary f-button-medium"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-secondary f-button-small"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-secondary f-button-xsmall"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
+            </div>
+          </button>
+
+          <h3>Tertiary</h3>
+          <button 
+            class="f-button f-button-tertiary f-button-large"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-tertiary f-button-medium"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-tertiary f-button-small"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-tertiary f-button-xsmall"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
+            </div>
+          </button>
+
+          <h3>Destructive</h3>
+          <button 
+            class="f-button f-button-destructive f-button-large"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-destructive f-button-medium"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-destructive f-button-small"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              Action
+            </div>
+          </button>
+          <button 
+            class="f-button f-button-destructive f-button-xsmall"
+            data-bind="click: testClick">
+            <div class="f-button-content">
+              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
+            </div>
+          </button>
+        </div>
+      </section>
     
     </body>
 
@@ -235,6 +367,9 @@
           isDisabled: false,
           onChange: function (e) {
               console.log("event :: change (" + (e.checked ? "checked" : "unchecked") + ")");
+          },
+          testClick: function() {
+            console.log("test")
           },
           isClosable: true,
           isEnabled: false,

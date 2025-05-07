@@ -1,4 +1,5 @@
 :root {
+    /* Colors */
     /* Neutrals */
     --neutral-white: #FFFFFF;
     --neutral-lightest: #F2F2F2;
@@ -50,18 +51,24 @@
     --error-lighter: #fcd8df;
     --error-light: #f7788f;
     --error: #f43f5f;
-    --error-dark: #c3324c;
+    --error-dark: #C3324C;
     --error-darker: #611926;
     --error-darkest: #49121c;
 
 
     --header-gradient: linear-gradient(365deg, hsla(211, 100%, 18%, 1) 0%, hsla(212, 96%, 19%, 1) 17%, hsla(213, 93%, 21%, 1) 39%, hsla(214, 90%, 23%, 1) 62%, hsla(215, 87%, 25%, 1) 78%, hsla(216, 83%, 28%, 1) 100%);
 
+    /* Padding */
+    --large-padding: 0.75rem 1.25rem; /* 12px 20px */
+    --medium-padding: 0.5rem 1rem; /* 8px 16px */
+    --small-padding: 0.375rem 0.75rem; /* 8px 12px */
+    --xsmall-padding: 0.25rem; /* 4px 4px */
 
-
-
-
-
-
-
+    /* Font Sizes */
+    --font-size-xxlarge: 1.25rem;
+    --font-size-xlarge: 1.125rem;
+    --font-size-default: 1rem;
+    --font-size-medium: 0.875rem;
+    --font-size-small: 0.75rem;
+    --font-size-tiny: 0.625rem;
   }
