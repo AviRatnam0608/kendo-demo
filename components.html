@@ -16,7 +16,7 @@
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
-
+    <link rel="stylesheet" href="dropdown.css">
     <link
     rel="stylesheet"
     type="text/css"
@@ -34,43 +34,10 @@
       }
 
       .container {
+        display: flex;
         max-width: 80%;
         margin: 1rem auto;
-      }
-
-    /* finys styles */
-      .f-dropdown {
-        border: 1px solid var(--neutral-lighter);
-        background-color: var(--neutral-lightest);
-        border-radius: 0.375rem;
-        color: var(--neutral);
-        padding: 0.625rem 0.75rem;
-      }
-
-      .f-dropdown .k-input-button {
-        color: var(--neutral-darkest);
-        padding: 0;
-      }
-
-      .f-dropdown .k-input-inner {
-        padding: 0;
-      }
-
-      .f-dropdown:hover {
-        border: 1px solid var(--neutral-light);
-        background-color: var(--neutral-lighter);
-      }
-
-      .f-dropdown:focus {
-        border: 1px solid var(--primary);
-        box-shadow: 0px 1px 2px 0px #0000000D;
-        box-shadow: 0px 0px 0px 2px #C2E0FF;
-        background-color: var(--neutral-white);
-      }
-
-      .f-dropdown.f-selected {
-        background-color: var(--neutral-white);
-        color: var(--neutral-darkest);
+        gap: 2rem;
       }
   </style>
 </head>
@@ -78,12 +45,30 @@
       <section>
         <h1>Dropdown</h1>
         <div class="container">
-          <input 
+          <input
+            class="f-dropdown my-dropdown"
             data-role="dropdownlist" 
             data-text-field="name"
             data-value-field="id"
-            data-bind="source: listData" 
+            data-bind="
+              value: basicDropdownValue, 
+              source: listData, 
+              isSelected: basicDropdownValue" 
+            data-option-label="Select an option"
           >
+  
+          <input
+            class="f-dropdown my-dropdown"
+            data-role="dropdownlist" 
+            data-text-field="name"
+            data-value-field="id"
+            data-height="300"
+            data-bind="
+              value: groupDropdownValue, 
+              source: groupListData, 
+              isSelected: groupDropdownValue" 
+            data-option-label="Select an option"
+          >          
         </div>
       </section>
       <hr>
@@ -153,6 +138,23 @@
                 }
             }
         });
+        kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
+          refresh: function() {
+              const value = this.bindings["isSelected"].get();
+              if(!value?.id) {
+                $(this.element.element).closest('.f-dropdown.k-picker').removeClass('f-selected')
+              } else {
+                $(this.element.element).closest('.f-dropdown.k-picker').addClass('f-selected')
+              }
+          }
+        });
+
+        $('.f-group-dropdown-input').on('focus', function(e) {
+          $(e.currentTarget).next().addClass('f-focus');
+        })
+        $('.f-group-dropdown-input').on('blur', function(e) {
+          $(e.currentTarget).next().removeClass('f-focus');
+        })
         const listData = new kendo.data.DataSource({
             data: [
               {
@@ -173,7 +175,7 @@
           isChecked: true,
           isEnabled: true,
           isVisible: true,
-          isModalVisible: true,
+          isModalVisible: false,
           isModalEnabled: true,
           isDisabled: false,
           onChange: function (e) {
@@ -189,6 +191,85 @@
               this.set("isModalVisible", true);
               this.set("isModalEnabled", false);
           },
+          listData: new kendo.data.DataSource({
+          data: [
+            {
+              id: 1,
+              name: 'test1',
+            },
+            {
+              id: 2,
+              name: 'test2',
+            },
+            {
+              id: 3,
+              name: 'test3',
+            },
+          ]
+          }),
+          groupListData: new kendo.data.DataSource({
+            data: [
+              {
+                id: 1,
+                name: 'Apple',
+                group: 'Eins'
+              },
+              {
+                id: 2,
+                name: 'Banana',
+                group: 'Eins',
+              },
+              {
+                id: 3,
+                name: 'Beef',
+                group: 'Zwei',
+              },
+              {
+                id: 4,
+                name: 'Pork',
+                group: 'Zwei',
+              },
+              {
+                id: 5,
+                name: 'Poultry',
+                group: 'Zwei',
+              },
+
+              {
+                id: 6,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 7,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 8,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 9,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 10,
+                name: 'Water',
+                group: 'Drei',
+              },
+              {
+                id: 11,
+                name: 'Water',
+                group: 'Drei',
+              },
+            ],
+            group: {field: 'group'}
+          }),
+          basicDropdownValue: null,
+          groupDropdownValue: null,
         })
 
         function onRemind(e) {

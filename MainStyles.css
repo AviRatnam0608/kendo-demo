@@ -3,17 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+    --body-font: 'Inter Tight', sans-serif;
+    --header-font: 'EB Garamond', serif;
+    --kendo-font-family: var(--body-font);
     box-sizing: border-box;
 }
 
 body{
-    font-family: "Inter Tight", sans-serif;
+    font-family: var(--body-font);
     font-style: normal;
     height: 100%;
     margin: 0 !important;
 }
 h1, h2, h3, h4, h5{
-    font-family: "EB Garamond", serif;
+    font-family: var(--header-font);
+}
+
+button {
+    font-size: 1em;
 }
 
 .f-bg-gradient-shapes {

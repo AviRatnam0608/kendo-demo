@@ -7,7 +7,7 @@ div[data-role="grid"] table {
 }
 
 th.k-table-th.k-header {
-    border-left: 1px solid transparent;
+    border-left: 0.0625rem solid transparent;
     background-color: white;
 }
 
@@ -46,7 +46,7 @@ main.claims-summary-main-content .f-table-header {
 
 .f-tag {
     background-color: #F6F6F6;
-    border: 1px solid #1315191A;
+    border: 0.0625rem solid #1315191A;
     padding: 0.188rem 0.438rem;
     border-radius: 4.875rem;
     font-size: 0.8rem;
@@ -54,14 +54,14 @@ main.claims-summary-main-content .f-table-header {
 
 .f-number-tag {
     background-color: #F6F6F6;
-    border: 1px solid #1315191A;
+    border: 0.0625rem solid #1315191A;
     padding: 0.188rem 0.563rem;
     border-radius: 4.875rem;
 }
 
 .f-action-tag {
     background-color: #F6F6F6;
-    border: 1px solid #1315191A;
+    border: 0.0625rem solid #1315191A;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -77,7 +77,7 @@ main.claims-summary-main-content .f-table-header {
 }
 
 .f-avatar .k-avatar-text > span {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
     vertical-align: middle;
 }
@@ -92,10 +92,10 @@ main.claims-summary-main-content .f-table-header {
 .k-grid .k-table-td {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-    border-left: 1px solid transparent;
+    border-left: 0.0625rem solid transparent;
     color: #3E3F40;
     font-weight: 670;
-    border-bottom: 1px solid #E7ECF0;
+    border-bottom: 0.0625rem solid #E7ECF0;
 }
 
 .k-grid .k-table-row:last-child .k-table-td {
@@ -120,7 +120,7 @@ th:nth-child(2) .k-cell-inner>.k-link {
 
 .k-grid-toolbar.k-toolbar {
     padding: 0;
-    border-radius: 6pt 6pt 0 0;
+    border-radius: 0.375rem 0.375rem 0 0;
     background-color: white;
 }
 
