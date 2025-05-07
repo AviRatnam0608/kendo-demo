@@ -1,13 +1,13 @@
 :root {
     /* Neutrals */
-    --neutral-white: #ffffff;
-    --neutral-lightest: #f2f2f2;
-    --neutral-lighter: #d8d9da;
-    --neutral-light: #b2b4b5;
-    --neutral: #7f8285;
-    --neutral-dark: #4c5054;
-    --neutral-darker: #191e23;
-    --neutral-darkest: #00050B;
+    --neutral-white: #FFFFFF;
+    --neutral-lightest: #F2F2F2;
+    --neutral-lighter: #D8D9DA;
+    --neutral-light: #B2B4B5;
+    --neutral: #75787A;
+    --neutral-dark: #333A40;
+    --neutral-darker: #1E2328;
+    --neutral-darkest: #191E23;
   
     /* Primary */
     --primary-lightest: #e5f0fb;
@@ -21,11 +21,11 @@
     /* Secondary*/
     --secondary-lightest: #e5e9ee;
     --secondary-lighter: #ccd4de;
-    --secondary-light: #4c688c;
-    --secondary: #002c58;
+    --secondary-light: #4C6B8C;
+    --secondary: #002C5B;
     --secondary-dark: #002348;
     --secondary-darker: #001124;
-    --secondary-darkest: #000d1b;
+    --secondary-darkest: #000D1B;
 
     /* Success */
     --success-lightest: #e9f4f2;
@@ -34,11 +34,11 @@
     --success: #259986;
     --success-dark: #1d7a6b;
     --success-darker: #0e3d35;
-    --success-darkest: #082d28;
+    --success-darkest: #0B2D28;
 
     /* Alert */
     --alert-lightest: #fff6e5;
-    --alert-lighter: #fff0cc;
+    --alert-lighter: #FFEDCC;
     --alert-light: #ffc14c;
     --alert: #ffa700;
     --alert-dark: #cc8500;

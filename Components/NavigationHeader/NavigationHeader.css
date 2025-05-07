@@ -49,7 +49,7 @@
 
   .f-navigation-link {
     text-decoration: none;
-    color: var(--primary-darkest);
+    color: var(--neutral-darkest);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -63,7 +63,13 @@
   }
 
   .f-search-input {
-    border: 1px solid #E3E5EB; height: 40px; border-radius: 0px 4px 4px 0px; display: flex; align-items: center; padding: 8px 12px ; box-sizing: border-box;
+    border: 1px solid #E3E5EB; 
+    height: 2.5rem; 
+    border-radius: 0px 4px 4px 0px; 
+    display: flex; 
+    align-items: center; 
+    padding: 8px 12px ; 
+    box-sizing: border-box;
   }
 
   .f-dropdown {
@@ -80,7 +86,7 @@
   }
 
   .f-dropdown-styles {
-    height: 40px;
+    height: 2.5rem;
     width: auto;
     border-right: none;
     padding: 0.5rem;
@@ -115,7 +121,7 @@
   }
 
   .f-icon-btn .ph {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .f-avatar-container {
