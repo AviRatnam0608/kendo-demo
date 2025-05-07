@@ -134,21 +134,36 @@ th:nth-child(2) .k-cell-inner>.k-link {
     background-color: white;
 }
 
-.f-grid-header-btn {
-    padding: 0.5rem 1rem;
+.f-button {
+    padding: 0;
     background-color: var(--neutral-lightest);
-    border: 0.063rem solid transparent;
+    border: 0;
     border-radius: 3.75rem;
-    border: 0.063rem solid #1315191A;
+    padding: 0.063rem;
+    font-weight: bold;
+    box-shadow: 0px 1px 2px 0px #0000000D;
     display: inline-flex;
+    background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%);
+}
+
+.f-button:hover {
+    background-color: var(--neutral-lighter);
+}
+
+.f-button > .f-border-gradient-content {
+    background: var(--neutral-lightest); /* Inner background */
+    border-radius: inherit;
+    width: 100%;
+    display: inline-flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    font-weight: bold;
+    padding: 0.5rem 1rem;
 }
 
-.f-grid-header-btn:hover {
-    background-color: var(--neutral-lighter);
+.f-button:hover > .f-border-gradient-content {
+    background: var(--neutral-lighter);
 }
 
 .k-grid a {

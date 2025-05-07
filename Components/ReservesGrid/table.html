@@ -103,15 +103,15 @@
             <span class="f-tag">13 total</span>
         </div>
         <div>
-            <button class='f-grid-header-btn f-clickable'><i class="ph ph-plus"></i><span>Add Reserve</span></button>
-            <button class='f-grid-header-btn f-clickable'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></button>
+            <button class='f-button f-clickable'><div class='f-border-gradient-content'><i class="ph ph-plus"></i><span>Add Reserve</span></div></button>
+            <button class='f-button f-clickable'><div class='f-border-gradient-content'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></div></button>
         </div>
     </header>
 </script>
 
 <script id="dropdown-button-template" type="text/x-kendo-template">
     <button 
-        class='f-action-tag' 
+        class='f-button f-action-tag' 
         data-role="dropdownbutton"
         data-items='[
                         { id: "keep-text", text: "Keep Text Only", icon: "clipboard-text", click: function(e) { kendoConsole.log("event :: click \#" + $(e.currentTarget).attr("id")); }},
@@ -120,7 +120,7 @@
                         { id: "paste-default", text: "Set Default Paste", click: function(e){ kendoConsole.log("event :: click \#" + $(e.currentTarget).attr("id"));  } }
                     ]'
     >
-        <i class='ph ph-dots-three-vertical'></i>
+        <div class='f-border-gradient-content'><i class='ph ph-dots-three-vertical'></i></div>
     </button>
 </script>
 
