@@ -131,9 +131,9 @@
   display: flex;
   gap:6px;
   align-items: center;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border: 1px solid var(--neutral-light);
-  border-radius: .3rem;
+  border-radius: .375rem;
   color: var(--neutral-light);
 }
 
@@ -141,9 +141,9 @@
   display: flex;
   gap:6px;
   align-items: center;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border: 1px solid var(--primary-light);
-  border-radius: .3rem;
+  border-radius: .375rem;
   color: var(--primary-light);
 
 }
@@ -152,9 +152,9 @@
   display: flex;
   gap:6px;
   align-items: center;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border: 1px solid var(--error-light);
-  border-radius: .3rem;
+  border-radius: .375rem;
   color: var(--error-light);
 
 }

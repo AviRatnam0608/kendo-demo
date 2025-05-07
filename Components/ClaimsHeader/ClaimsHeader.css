@@ -9,11 +9,11 @@
 
 .f-claims-summary-header-column{
     flex-direction: column;
-    padding: 10px;
+    padding: 0.625rem;
     width: 96%;
     padding-left: 0;
     position: relative;
-    left: 32px;
+    left: 2rem;
 
 }
 
@@ -29,26 +29,26 @@
 }
 
 .f-claims-summary-header-main-information-col{
-    font-size: 16px;
-    gap: 16px;
+    font-size: 1rem;
+    gap: 1.5rem;
     display: flex;
     align-items: center;
-    padding: 6px 0;
+    padding: 0.375rem 0;
     flex-wrap: wrap;
 }
 
 
 .f-flag-container{
     display: flex;
-    gap: 16px;
-    padding-top: 10px;
+    gap: 1rem;
+    padding-top: 0.625rem;
 }
 
 
 .f-aligned-label {
     display: inline-flex;
     align-items: center; /* Vertically center the text and icon */
-    gap: 4px; /* Optional: adds a little spacing between text and icon */
+    gap: 0.25rem; /* Optional: adds a little spacing between text and icon */
 }
 
 .f-aligned-label i {
@@ -62,14 +62,14 @@
 
 .f-claims-summary-header-main-information-actions-div{
     display: flex;
-    gap:8px;
+    gap:.5rem;
     align-items:center;
 }
 
 .f-claims-summary-header-main-information-actions-div button{
 
-    border-radius: 84px;
-    border: 1px solid;
+    border-radius: 5.25rem;
+    border: 0.063rem solid;
 }
 .f-claims-summary-header-main-information-actions-div button:hover{
     cursor: pointer;
@@ -87,7 +87,11 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 8px;
+    gap: .5rem;
+    font-size: 0.875rem;
+}
+.f-button-icon-container .ph-caret-down{
+    font-size: 1.125;
 }
 
 .f-claims-summary-header-button:hover {
@@ -98,10 +102,10 @@
 }
 .f-action-icon-div{
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
 }
 .f-action-icon-div i{
-    padding: 4px;
+    padding: 0.25rem;
 
 }
 .f-icon-hover-bg {
@@ -109,8 +113,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px; /* space around icon */
-    font-size: 20px; /* icon size */
+    padding: .5rem; /* space around icon */
+    font-size: 1rem; /* icon size */
     border-radius: 50%; /* matches background shape */
     transition: background-color 0.2s ease;
   }
@@ -170,9 +174,9 @@
 .f-claims-summary-header-secondary-information{
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    padding: 6px 0;
+    padding: 0.375rem 0;
 }
 .f-claims-summary-header-secondary-information label{
     display: flex;
@@ -191,9 +195,10 @@
     text-decoration: underline;
     cursor: pointer;
     font-weight: 500;
+    text-underline-offset:  0.188rem;
 }
 .f-information-label i{
-    margin-right: 4px;
+    margin-right: 0.25rem;
 }
 
 
@@ -201,22 +206,23 @@
     text-decoration: none;
     display: inline-block;
     vertical-align: middle; /* optional, centers with text */
-    margin-left: 4px; /* optional, space between text and icon */
+    margin-left: 0.25rem; /* optional, space between text and icon */
 }
 
 .f-claims-summary-header-secondary-information-separator{
-    border-right: 1px solid #585F69;
+    border-right: 0.063rem solid #585F69;
 }
 
 
 .ph-fill ph-plus-circle{
-    font-size: 16px;
+    font-size: 1rem;
     
 }
 
 .claim-number-dropdown{
     color: var(--neutral-white);
     background-color: transparent;
+    padding: 0;
 }
 
 .claim-number-dropdown:hover, .k-button-solid-base:hover, .k-button-solid-base.k-hover:hover{
@@ -236,6 +242,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.125rem;
 }
 
 
@@ -247,7 +254,7 @@
 
 .f-claims-number-span{
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
     align-items: center;
 }
 
