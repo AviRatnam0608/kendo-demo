@@ -26,6 +26,7 @@
 .k-dialog-actions {
     padding: 24px;
     border-top: 1px solid var(--primary-lightest);
+    justify-content: flex-end;
 }
 
 .k-dialog-actions .k-button.k-button-solid-base {
@@ -36,4 +37,8 @@
     border-radius: 100px;
     background: var(--neutral-lightest);
     box-shadow: 0px 1px 2px 0px #0000000D;
+}
+
+.k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch > button {
+    max-width: 10rem;
 }
