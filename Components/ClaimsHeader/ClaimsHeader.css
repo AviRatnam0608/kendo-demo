@@ -124,6 +124,7 @@
 .f-claims-summary-header-main button {
     transition: background-color 0.2s ease, color 0.2s ease;
     border: none;
+    gap: 14px;
 }
 
 /* END BUTTONS */
@@ -180,13 +181,16 @@
 
 
 .f-information-label{
+    font-size: 0.875rem;
     color: #BDC4CB;
     display: flex;
     align-items: center;
+    font-weight: 400;
 }
 .f-information-value{
     text-decoration: underline;
     cursor: pointer;
+    font-weight: 500;
 }
 .f-information-label i{
     margin-right: 4px;
@@ -237,7 +241,7 @@
 
 .f-claims-header-information{
     display: flex;
-    gap: 20px;
+    gap: 1.875rem;
 }
 
 
