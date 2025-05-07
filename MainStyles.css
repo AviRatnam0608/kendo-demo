@@ -1,10 +1,12 @@
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --body-font: 'Inter Tight', sans-serif;
     --header-font: 'EB Garamond', serif;
     --kendo-font-family: var(--body-font);
+    box-sizing: border-box;
 }
 
 body{
