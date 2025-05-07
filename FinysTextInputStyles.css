@@ -34,6 +34,18 @@
     font-style: normal;
 }
 
+.k-maskedtextbox ::placeholder{
+    color: var(--neutral-light);
+}
+
+.k-form-error.k-invalid-msg::before{
+    content: "\e4f8";
+    font-family: "Phosphor" !important;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+}
+
 
 
 .input-container{
