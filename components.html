@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./FinysModalStyles.css">
     <link rel="stylesheet" href="./FinysTextInputStyles.css">
     <link rel="stylesheet" href="./FinysButtonStyles.css">
+    <link rel="stylesheet" href="./FinysDatePicker.css">
+
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
@@ -303,6 +305,17 @@
           </button>
         </div>
       </section>
+
+
+
+      <hr>
+      <section >
+        <h1>Date Picker</h1>
+          <div class="section">
+            <input id="datepicker" title="datetimepicker"/>
+
+          </div>
+        </section>  
     
     </body>
 
@@ -488,6 +501,129 @@
             $("#maskedtextbox").kendoMaskedTextBox({
             mask: "(000) 000-0000"
         });
+
+        createFinysDatePicker("datepicker");
+
+
+
       })
+
+
+      function createFinysDatePicker(id){
+
+
+
+        let callBack = (e)=>{
+
+            const datePicker = $(`#${id}`).data("kendoDatePicker");
+            const calendar = datePicker.dateView.calendar;
+            const calendarElement = calendar.element;
+
+
+            const minYear = 1900, maxYear = 2100;
+
+
+            const yearList = Array.from({ length: maxYear - minYear + 1 }, (_, i) => minYear + i);
+
+
+            const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+            ];
+
+            if (calendarElement.find(".f-calendar-header").length) return;
+
+            let customHeader = 
+            $(`
+            <div class="f-calendar-header">
+              <a class="f-previous-month-arrow"><i class="ph ph-caret-left"></i></a>
+              <div class="f-calendar-header-dropdown-group">
+                <input class="f-calendar-month-dropdown" />
+                <input class="f-calendar-year-dropdown" />
+
+              </div>
+              <a class="f-next-month-arrow"><i class="ph ph-caret-right"></i></a>
+            </div>
+              `);
+
+
+            //replace with new header
+            $(".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack").replaceWith(customHeader)
+
+            //remove footer
+            $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
+
+
+
+            let onMonthChange = (e)=>{
+              currentMonth = e.sender.select() - 1;
+              updateCalendar();
+            }
+            let onYearChange = (e)=>{
+              currentYear = parseInt(e.sender.value(), 10);
+              updateCalendar();
+            }
+
+
+            let currentDate = calendar.current();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+
+
+            const monthDropDown =$(".f-calendar-month-dropdown").kendoDropDownList({
+                optionLabel: 'Select a month',
+                dataSource: monthNames,
+                value: monthNames[currentMonth],
+                change: onMonthChange,
+                appendTo: calendar.element // CRUCIAL
+                }).data("kendoDropDownList");;
+                
+
+              const yearDropDown = $(".f-calendar-year-dropdown").kendoDropDownList({
+                optionLabel: 'Select a year',
+                dataSource: yearList,
+                value: currentYear,
+                change: onYearChange,
+                appendTo: calendar.element // CRUCIAL
+                }).data("kendoDropDownList");;
+
+
+                function updateCalendar() {
+                const newDate = new Date(currentYear, currentMonth, 1);
+                calendar.navigate(newDate, "month");
+              }
+              
+
+              customHeader.find(".f-previous-month-arrow").on("click", () => {
+                let newDate = new Date(currentYear, currentMonth - 1, 1);
+                currentMonth = newDate.getMonth();
+                currentYear = newDate.getFullYear();
+                monthDropDown.value(monthNames[currentMonth]);
+                yearDropDown.value(currentYear);
+                updateCalendar();
+              });
+
+              customHeader.find(".f-next-month-arrow").on("click", () => {
+                let newDate = new Date(currentYear, currentMonth + 1, 1);
+                currentMonth = newDate.getMonth();
+                currentYear = newDate.getFullYear();
+                monthDropDown.value(monthNames[currentMonth]);
+                yearDropDown.value(currentYear);
+                updateCalendar();
+              });
+
+          }
+
+          let calendar = $(`#${id}`).kendoDatePicker({
+          value: new Date(),
+          format: "yyyy-MM-dd",
+          open:callBack,
+          close: (e)=>{e.preventDefault(); }
+          }).data("kendoDatePicker");
+          calendar.element.addClass("FinysCalendar")
+
+
+
+      }
     </script>
 </html>

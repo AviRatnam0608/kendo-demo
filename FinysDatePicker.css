@@ -1,0 +1,81 @@
+.f-calendar-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    gap: 4px;
+    align-items: center;
+
+}
+
+.f-calendar-header-dropdown-group{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: 85%;
+}
+
+.f-calendar-header-dropdown-group  .k-dropdownlist{
+    border: 1px solid var(--neutral-lighter);
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    background-color: var(--neutral-white);
+}
+
+
+.f-calendar-month-dropdown{
+    width: 60%;
+}
+
+.f-calendar-year-dropdown{
+    width: 40%;
+}
+
+
+.f-next-month-arrow, .f-previous-month-arrow{
+    font-size: 1.25rem;
+    color:var(--neutral-dark);
+    cursor: pointer;
+}
+
+.f-next-month-arrow:hover, .f-previous-month-arrow:hover{     
+    color:var(--neutral-darkest);
+}
+
+
+
+.k-calendar-md{
+    font-size: 1rem;
+}
+.k-calendar .k-calendar-td.k-selected .k-link{
+    background-color: var(--primary);
+    border: 0px;
+    border-radius: 100%;
+}
+.k-calendar .k-calendar-td.k-selected .k-link:hover{
+    background-color: var(--primary-dark);
+    transition-duration: 200ms;
+}
+
+
+.k-calendar .k-other-month{
+    color: var(--neutral-light);
+
+}
+
+.k-calendar .k-calendar-td.k-focus .k-link{
+    box-shadow: 0 0 0 0px;
+}
+
+.k-calendar .k-calendar-td:focus .k-calendar-cell-inner,.k-calendar .k-calendar-td:focus .k-link,.k-calendar .k-calendar-td.k-focus .k-calendar-cell-inner,.k-calendar .k-calendar-td.k-focus .k-link::before{
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    position: absolute;
+    top: 24px;
+    content: "\A";
+    border-radius: 100%;
+    right: 12.5px;
+
+}
+.k-calendar .k-calendar-view .k-today{
+    color: var(--primary);
+}
