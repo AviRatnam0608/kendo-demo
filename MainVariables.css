@@ -71,4 +71,15 @@
     --font-size-medium: 0.875rem;
     --font-size-small: 0.75rem;
     --font-size-tiny: 0.625rem;
+
+    /* Font Weight */
+    --font-weight-100: 100;
+    --font-weight-200: 200;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+
   }
