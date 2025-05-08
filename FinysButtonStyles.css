@@ -1,9 +1,9 @@
 /* ---------------------------------------------- Generic ------------------------------------------------- */
 .f-button {
     border: 0;
-    border-radius: 3.75rem;
-    padding: 0.063rem;
-    font-weight: bold;
+    border-radius: 7.5em;
+    padding: 0.063em;
+    font-weight: 600;
     box-shadow: 0px 1px 2px 0px #0000000D;
     display: inline-flex;
     background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%);
@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
 }
 
 .f-button:hover > .f-button-content {
@@ -93,21 +93,17 @@
 
 /* ---------------------------------------------- Button Sizes ------------------------------------------------- */
 .f-button.f-button-large > .f-button-content {
-    padding: var(--large-padding);
     font-size: var(--font-size-default);
 }
 
 .f-button.f-button-medium > .f-button-content {
-    padding: var(--medium-padding);
     font-size: var(--font-size-medium);
 }
 
 .f-button.f-button-small > .f-button-content {
-    padding: var(--small-padding);
     font-size: var(--font-size-small);
 }
 
 .f-button.f-button-xsmall > .f-button-content {
-    padding: var(--xsmall-padding);
     font-size: var(--font-size-tiny);
 }
