@@ -65,11 +65,22 @@
   .f-search-input {
     border: 1px solid #E3E5EB; 
     height: 2.5rem; 
-    border-radius: 0px 4px 4px 0px; 
+    border-radius: 0px 6px 6px 0px; 
     display: flex; 
     align-items: center; 
     padding: 8px 12px ; 
     box-sizing: border-box;
+  }
+
+  .f-search-input input {
+    margin-left: 0.375rem;
+  }
+
+  .f-search-input input::placeholder {
+    font-family: "Inter Tight";
+    color: var(--neutral-darkest);
+    opacity: 0.6;
+    font-weight: 500;
   }
 
   .f-dropdown {
