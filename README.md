@@ -18,10 +18,12 @@ The goal of this system is to provide a consistent, scalable, and reusable compo
 
 ## Component Checklist
 
-- [x] Button
-- [x] Input Field
 - [x] Dropdown
+- [x] Text Editor
 - [x] Toggle Button
-- [ ] Modal
+- [x] Modal
+- [x] Text Inputs
+- [x] Buttons
+- [x] Date Picker
 
 _This checklist will grow as the design system evolves._
