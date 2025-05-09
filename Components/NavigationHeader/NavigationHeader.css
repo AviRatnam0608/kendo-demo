@@ -28,9 +28,8 @@
 }
 
 .f-company-logo {
-  font-weight: bold;
-  color: var(--primary);
-  font-size: 1.25rem;
+  width: 2.9375rem;
+  height: 2rem;
 }
 
 .f-navigation {
