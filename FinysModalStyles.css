@@ -37,6 +37,11 @@
   padding: 1.5rem;
 }
 
+.k-window.k-dialog:has(.f-modal-large)
+  .f-modal.f-modal-large.k-window-content.k-dialog-content {
+  font-size: large;
+}
+
 /* ------------------------------------ Large Modal Buttons ------------------------------------ */
 .k-window.k-dialog:has(.f-modal-large)
   .k-dialog-actions
@@ -101,6 +106,11 @@
   padding: 1.25rem 1.5rem;
 }
 
+.k-window.k-dialog:has(.f-modal-medium)
+  .f-modal.f-modal-medium.k-window-content.k-dialog-content {
+  font-size: medium;
+}
+
 /* ------------------------------------ Medium Modal Buttons ------------------------------------ */
 .k-window.k-dialog:has(.f-modal-medium)
   .k-dialog-actions
@@ -163,6 +173,11 @@
 
 .k-window.k-dialog:has(.f-modal-small) .k-dialog-actions {
   padding: 1rem 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-small)
+  .f-modal.f-modal-small.k-window-content.k-dialog-content {
+  font-size: small;
 }
 
 /* ------------------------------------ Small Modal Buttons ------------------------------------ */
