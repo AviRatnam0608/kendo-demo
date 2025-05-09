@@ -134,6 +134,8 @@
   border: 1px solid var(--neutral-light);
   border-radius: .375rem;
   color: var(--neutral-light);
+  font-size: 0.875rem;
+
 }
 
 .f-flag-primary{
@@ -144,7 +146,7 @@
   border: 1px solid var(--primary-light);
   border-radius: .375rem;
   color: var(--primary-light);
-
+  font-size: 0.875rem;
 }
 
 .f-flag-error{
@@ -155,6 +157,7 @@
   border: 1px solid var(--error-light);
   border-radius: .375rem;
   color: var(--error-light);
+  font-size: 0.875rem;
 
 }
 
