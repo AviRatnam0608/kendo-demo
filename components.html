@@ -141,36 +141,38 @@
     <section>
       <h1>Modal</h1>
       <div class="container">
-        <button data-bind="click: showModal">Show Modal</button>
+        <button data-bind="click: showModalLarge">Show Large Modal</button>
+        <button data-bind="click: showModalMedium">Show Medium Modal</button>
+        <button data-bind="click: showModalSmall">Show Small Modal</button>
         <div
           class="f-modal f-modal-large"
           data-role="dialog"
           data-title="Software Update"
           data-width="450"
-          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
           data-modal="false"
           data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+          data-bind="dialogOpen: isModalLargeVisible, events: { close: onClose}"
         ></div>
         <div
           class="f-modal f-modal-medium"
           data-role="dialog"
           data-title="Software Update"
           data-width="450"
-          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
           data-modal="false"
           data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+          data-bind="dialogOpen: isModalMediumVisible, events: { close: onClose}"
         ></div>
         <div
           class="f-modal f-modal-small"
           data-role="dialog"
           data-title="Software Update"
           data-width="450"
-          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
           data-modal="false"
           data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+          data-bind="dialogOpen: isModalSmallVisible, events: { close: onClose}"
         ></div>
       </div>
     </section>
@@ -389,7 +391,9 @@
       isChecked: true,
       isEnabled: true,
       isVisible: true,
-      isModalVisible: false,
+      isModalLargeVisible: false,
+      isModalMediumVisible: false,
+      isModalSmallVisible: false,
       isModalEnabled: true,
       isDisabled: false,
       onChange: function (e) {
@@ -406,8 +410,16 @@
         this.set("isModalVisible", false);
         this.set("isModalEnabled", true);
       },
-      showModal: function (e) {
-        this.set("isModalVisible", true);
+      showModalLarge: function (e) {
+        this.set("isModalLargeVisible", true);
+        this.set("isModalEnabled", false);
+      },
+      showModalMedium: function (e) {
+        this.set("isModalMediumVisible", true);
+        this.set("isModalEnabled", false);
+      },
+      showModalSmall: function (e) {
+        this.set("isModalSmallVisible", true);
         this.set("isModalEnabled", false);
       },
       listData: new kendo.data.DataSource({
@@ -492,11 +504,11 @@
     });
 
     function onRemind(e) {
-      console.log("Action :: Remind me later");
+      console.log("Action :: Cancel");
     }
 
     function onInstall(e) {
-      console.log("Action :: Install update");
+      console.log("Action :: Action");
     }
     $(document).ready(() => {
       kendo.bind($("body"), vm);
