@@ -1,99 +1,239 @@
 :root {
-    --modal-large-width: 50rem;
-    --modal-large-height: 39.75rem;
+  --modal-large-width: 50rem;
+  --modal-large-height: 39.75rem;
 
-    --modal-medium-width: 40rem;
-    --modal-medium-height: 30.5rem;
+  --modal-medium-width: 40rem;
+  --modal-medium-height: 30.5rem;
 
-    --modal-small-width: 30rem;
-    --modal-small-height: 21.875rem;
+  --modal-small-width: 30rem;
+  --modal-small-height: 21.875rem;
 }
 
 .k-window {
-    border-radius: 6px;
+  border-radius: 6px;
 }
 
-/* Large Modal */
+/* ------------------------------------ Large Modal ------------------------------------ */
 .k-window.k-dialog:has(.f-modal-large) {
-    border-color: var(--primary-lightest);
-    color: var(--secondary-darkest);
-    background-color: var(--neutral-white);
-    border-radius: 6px;
-    box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014, 0px 0px 0px 1px #E5E9EE;
-    width: var(--modal-large-width) !important;
-    height: var(--modal-large-height);
+  border-color: var(--primary-lightest);
+  color: var(--secondary-darkest);
+  background-color: var(--neutral-white);
+  border-radius: 6px;
+  box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014,
+    0px 0px 0px 1px #e5e9ee;
+  width: var(--modal-large-width) !important;
+  height: var(--modal-large-height);
 }
 
-/* Medium */
-.k-window.k-dialog:has(.f-modal-medium) {
-    border-color: var(--primary-lightest);
-    color: var(--secondary-darkest);
-    background-color: var(--neutral-white);
-    border-radius: 6px;
-    box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014, 0px 0px 0px 1px #E5E9EE;
-    width: var(--modal-medium-width) !important;
-    height: var(--modal-medium-height);
+.k-window.k-dialog:has(.f-modal-large) .k-window-title.k-dialog-title {
+  font-size: 1rem;
 }
 
-/* Small */
-.k-window.k-dialog:has(.f-modal-medium) {
-    border-color: var(--primary-lightest);
-    color: var(--secondary-darkest);
-    background-color: var(--neutral-white);
-    border-radius: 6px;
-    box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014, 0px 0px 0px 1px #E5E9EE;
-    width: var(--modal-small-width) !important;
-    height: var(--modal-small-height);
+.k-window.k-dialog:has(.f-modal-large) .k-window-titlebar.k-dialog-titlebar {
+  padding: 1.25rem 1.5rem;
 }
+
+.k-window.k-dialog:has(.f-modal-large) .k-dialog-actions {
+  padding: 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-large)
+  .f-modal.f-modal-large.k-window-content.k-dialog-content {
+  font-size: large;
+}
+
+/* ------------------------------------ Large Modal Buttons ------------------------------------ */
+.k-window.k-dialog:has(.f-modal-large)
+  .k-dialog-actions
+  .k-button.k-button-solid-base {
+  height: 2.75rem;
+  color: var(--neutral-darkest);
+  font-weight: var(--font-weight-600);
+  border: 1px solid var(--neutral-lighter);
+  border-radius: 7.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  cursor: pointer;
+  width: auto;
+}
+
+.k-window.k-dialog:has(.f-modal-large)
+  .k-dialog-actions
+  .k-button.k-button-solid-primary {
+  height: 2.75rem;
+  color: var(--neutral-white);
+  font-weight: var(--font-weight-600);
+  border-radius: 7.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  background-color: var(--primary);
+  border: 1px solid var(--primary-dark);
+  /* background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%); */
+  cursor: pointer;
+}
+
+.k-window.k-dialog:has(.f-modal-large)
+  .k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch
+  > button {
+  max-width: 5.4375rem;
+}
+
+/* ------------------------------------ Medium Modal ------------------------------------ */
+.k-window.k-dialog:has(.f-modal-medium) {
+  border-color: var(--primary-lightest);
+  color: var(--secondary-darkest);
+  background-color: var(--neutral-white);
+  border-radius: 6px;
+  box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014,
+    0px 0px 0px 1px #e5e9ee;
+  width: var(--modal-medium-width) !important;
+  height: var(--modal-medium-height);
+}
+
+.k-window.k-dialog:has(.f-modal-medium) .k-window-title.k-dialog-title {
+  font-size: 0.875rem;
+}
+
+.k-window.k-dialog:has(.f-modal-medium) .k-window-titlebar.k-dialog-titlebar {
+  padding: 1rem 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-medium) .k-dialog-actions {
+  padding: 1.25rem 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-medium)
+  .f-modal.f-modal-medium.k-window-content.k-dialog-content {
+  font-size: medium;
+}
+
+/* ------------------------------------ Medium Modal Buttons ------------------------------------ */
+.k-window.k-dialog:has(.f-modal-medium)
+  .k-dialog-actions
+  .k-button.k-button-solid-base {
+  height: 2.25rem;
+  color: var(--neutral-darkest);
+  font-weight: var(--font-weight-600);
+  border: 1px solid var(--neutral-lighter);
+  border-radius: 7.5em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  cursor: pointer;
+  width: auto;
+}
+
+.k-window.k-dialog:has(.f-modal-medium)
+  .k-dialog-actions
+  .k-button.k-button-solid-primary {
+  height: 2.25rem;
+  color: var(--neutral-white);
+  font-weight: var(--font-weight-600);
+  border-radius: 7.5em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  background-color: var(--primary);
+  border: 1px solid var(--primary-dark);
+  /* background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%); */
+  cursor: pointer;
+}
+
+.k-window.k-dialog:has(.f-modal-medium)
+  .k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch
+  > button {
+  max-width: 4.5625rem;
+}
+
+/* ------------------------------------ Small Modal ------------------------------------ */
+.k-window.k-dialog:has(.f-modal-small) {
+  border-color: var(--primary-lightest);
+  color: var(--secondary-darkest);
+  background-color: var(--neutral-white);
+  border-radius: 6px;
+  box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014,
+    0px 0px 0px 1px #e5e9ee;
+  width: var(--modal-small-width) !important;
+  height: var(--modal-small-height);
+}
+
+.k-window.k-dialog:has(.f-modal-small) .k-window-title.k-dialog-title {
+  font-size: 0.75rem;
+}
+
+.k-window.k-dialog:has(.f-modal-small) .k-window-titlebar.k-dialog-titlebar {
+  padding: 1rem 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-small) .k-dialog-actions {
+  padding: 1rem 1.5rem;
+}
+
+.k-window.k-dialog:has(.f-modal-small)
+  .f-modal.f-modal-small.k-window-content.k-dialog-content {
+  font-size: small;
+}
+
+/* ------------------------------------ Small Modal Buttons ------------------------------------ */
+.k-window.k-dialog:has(.f-modal-small)
+  .k-dialog-actions
+  .k-button.k-button-solid-base {
+  height: 1.75rem;
+  color: var(--neutral-darkest);
+  font-weight: var(--font-weight-600);
+  border: 1px solid var(--neutral-lighter);
+  border-radius: 7.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  cursor: pointer;
+  width: auto;
+}
+
+.k-window.k-dialog:has(.f-modal-small)
+  .k-dialog-actions
+  .k-button.k-button-solid-primary {
+  height: 1.75rem;
+  color: var(--neutral-white);
+  font-weight: var(--font-weight-600);
+  border-radius: 7.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+  display: inline-flex;
+  background-color: var(--primary);
+  border: 1px solid var(--primary-dark);
+  cursor: pointer;
+}
+
+.k-window.k-dialog:has(.f-modal-small)
+  .k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch
+  > button {
+  max-width: 3.75rem;
+}
+
+/* General */
 
 .k-window-titlebar.k-dialog-titlebar {
-    border-color: var(--primary-lightest);
-    background-color: var(--neutral-white);
-    color: var(--secondary-darkest);
-    font-weight: 600;
-    padding: 20px 24px;
-    border-radius: 6px 6px 0px 0px;
+  border-color: var(--primary-lightest);
+  background-color: var(--neutral-white);
+  color: var(--secondary-darkest);
+  font-weight: 600;
+  border-radius: 6px 6px 0px 0px;
 }
 
 .k-dialog-actions {
-    padding: 24px;
-    border-top: 1px solid var(--primary-lightest);
-    justify-content: flex-end;
-}
-
-.k-dialog-actions .k-button.k-button-solid-base {
-    height: 2.75rem;
-    color: var(--neutral-darkest);
-    font-weight: var(--font-weight-600);
-    border: 1px solid var(--neutral-lighter);
-    border-radius: 7.5em;
-    padding: 0.063em;
-    font-weight: 600;
-    box-shadow: 0px 1px 2px 0px #0000000D;
-    display: inline-flex;
-    /* background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%); */
-    cursor: pointer;
-}
-
-.k-dialog-actions .k-button.k-button-solid-primary {
-    height: 2.75rem;
-    color: var(--neutral-white);
-    font-weight: var(--font-weight-600);
-    border-radius: 7.5em;
-    padding: 0.063em;
-    font-weight: 600;
-    box-shadow: 0px 1px 2px 0px #0000000D;
-    display: inline-flex;
-    background-color: var(--primary);
-    border: 1px solid var(--primary-dark);
-    /* background: linear-gradient(0deg, rgba(19, 21, 25, 0.3) 0%, rgba(97, 107, 127, 0.21) 100%); */
-    cursor: pointer;
+  border-top: 1px solid var(--primary-lightest);
+  justify-content: flex-end;
 }
 
 .k-dialog-actions .k-button.k-button-solid-primary:hover {
-    background-color: var(--primary-dark);
-}
-
-.k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch > button {
-    max-width: 10rem;
+  background-color: var(--primary-dark);
 }
