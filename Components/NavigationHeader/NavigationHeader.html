@@ -15,6 +15,7 @@
       <div class="f-navigation-header-main-top">
         <div class="f-navigation-options">
           <div class="f-company-logo">Catalog</div>
+          <!-- <img src="/img/finysLogo.png" class="f-company-logo" /> -->
           <button class="f-burger" data-bind="click: toggleMenu">
             &#9776;
           </button>
@@ -48,7 +49,7 @@
             </div>
             <div class="f-navigation-item">
               <a class="f-navigation-link" href="#"><span>Reports</span>
-                <i class="ph ph-caret-down"></i></a>
+                <i class="ph ph-caret-down" ></i></a>
             </div>
           </div>
         </div>
@@ -67,23 +68,23 @@
                                 source: dummyDropdownData" />
             </div>
             <div class="f-search-input">
-              <i class="ph ph-magnifying-glass" style="color: var(--neutral-darker); opacity: 60%;"></i>
+              <i class="ph-light ph-magnifying-glass" style="color: var(--neutral); opacity: 60%;"></i>
               <input style="border: none; outline: none;" placeholder="Search"></input>
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 16px;">
             <button class="f-icon-btn">
-              <i class="ph ph-clock-counter-clockwise"></i>
+              <i class="ph-light ph-clock-counter-clockwise"></i>
             </button>
             <button class="f-icon-btn">
-              <i class="ph ph-star"></i>
+              <i class="ph-light ph-star"></i>
             </button>
             <hr class="f-divider">
             <button class="f-icon-btn">
-              <i class="ph ph-gear"></i>
+              <i class="ph-light ph-bell"></i>
             </button>
             <button class="f-icon-btn">
-              <i class="ph ph-bell"></i>
+              <i class="ph-light ph-gear"></i>
             </button>
             <div class="f-avatar-container">
               <img
@@ -93,9 +94,9 @@
                 alt="User Avatar"
               />
               <span class="f-text-tiny f-weight-medium">Dwight Schrute</span>
-              <i class="ph ph-caret-down"></i></a>
+              <i class="ph-light ph-caret-down"></i>
             </div>
-          </div>          
+          </div>
         </div>
       </div>
 
@@ -165,6 +166,8 @@
   .k-dropdownlist .k-icon:before {
     font-family: "Phosphor";
     content: "\e136";
+    font-size: 20px;
+    font-weight: 100;
   }
 </style>
 </html>

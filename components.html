@@ -1,88 +1,92 @@
 <!DOCTYPE html>
-<html style="height: 100%;" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html style="height: 100%" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ui Mockups</title>
-    <link href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css" rel="stylesheet" />
+    <link
+      href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="MainVariables.css">
-    <link rel="stylesheet" href="FinysUtilityClasses.css">
-    <link rel="stylesheet" href="MainStyles.css">
-    <link rel="stylesheet" href="./FinysToggleSwitchStyles.css">
-    <link rel="stylesheet" href="./FinysModalStyles.css">
-    <link rel="stylesheet" href="./FinysModalStyles.css">
-    <link rel="stylesheet" href="./FinysTextInputStyles.css">
-    <link rel="stylesheet" href="./FinysButtonStyles.css">
-    <link rel="stylesheet" href="./FinysDatePicker.css">
-
+    <link rel="stylesheet" href="MainVariables.css" />
+    <link rel="stylesheet" href="FinysUtilityClasses.css" />
+    <link rel="stylesheet" href="MainStyles.css" />
+    <link rel="stylesheet" href="./FinysToggleSwitchStyles.css" />
+    <link rel="stylesheet" href="./FinysModalStyles.css" />
+    <link rel="stylesheet" href="./FinysModalStyles.css" />
+    <link rel="stylesheet" href="./FinysTextInputStyles.css" />
+    <link rel="stylesheet" href="./FinysButtonStyles.css" />
+    <link rel="stylesheet" href="./FinysDatePicker.css" />
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
     <!-- ComponentStyles -->
-    <link rel="stylesheet" href="dropdown.css">
-    <link rel="stylesheet" href="editor.css">
+    <link rel="stylesheet" href="dropdown.css" />
+    <link rel="stylesheet" href="editor.css" />
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-  />
-  <style>
-    /* transient styles */
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <style>
+      /* transient styles */
       .my-dropdown {
         max-width: 200px;
       }
 
-      .container, section {
+      .container,
+      section {
         max-width: 80%;
         margin: 1rem auto;
         gap: 2rem;
       }
-  </style>
-</head>
-    <body class="" >
-      <section>
-        <h1>Dropdown</h1>
-        <div class="container">
-          <input
-            class="f-dropdown my-dropdown"
-            data-role="dropdownlist" 
-            data-text-field="name"
-            data-value-field="id"
-            data-bind="
+    </style>
+  </head>
+  <body class="">
+    <section>
+      <h1>Dropdown</h1>
+      <div class="container">
+        <input
+          class="f-dropdown my-dropdown"
+          data-role="dropdownlist"
+          data-text-field="name"
+          data-value-field="id"
+          data-bind="
               value: basicDropdownValue, 
               source: listData, 
-              isSelected: basicDropdownValue" 
-            data-option-label="Select an option"
-          >
-  
-          <input
-            class="f-dropdown my-dropdown"
-            data-role="dropdownlist" 
-            data-text-field="name"
-            data-value-field="id"
-            data-height="300"
-            data-bind="
+              isSelected: basicDropdownValue"
+          data-option-label="Select an option"
+        />
+
+        <input
+          class="f-dropdown my-dropdown"
+          data-role="dropdownlist"
+          data-text-field="name"
+          data-value-field="id"
+          data-height="300"
+          data-bind="
               value: groupDropdownValue, 
               source: groupListData, 
-              isSelected: groupDropdownValue" 
-            data-option-label="Select an option"
-          >          
-        </div>
-      </section>
-      <hr>
+              isSelected: groupDropdownValue"
+          data-option-label="Select an option"
+        />
+      </div>
+    </section>
+    <hr />
 
-      <section>
-        <h1>Text Editor</h1>
-        <textarea class="f-editor" 
-          data-role="editor"
-          data-tools="[
+    <section>
+      <h1>Text Editor</h1>
+      <textarea
+        class="f-editor"
+        data-role="editor"
+        data-tools="[
             [
               'bold',
               'italic',
@@ -101,460 +105,455 @@
               }
             }
           ]"
-        ></textarea>
-      </section>
-      <hr>
-    
-      <section>
-        <h1>Toggle</h1>
-        <div class="container">
-          <input 
-              class="f-toggle-switch f-toggle-switch-large"
-              data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
-          <label class="f-text-regular">Some text</label>
-        </div>
-        <div class="container">
-          <input 
-              class="f-toggle-switch f-toggle-switch-medium"
-              data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
-          <label class="f-text-small">Some text</label>
-        </div>
-        <div class="container">
-          <input 
-              class="f-toggle-switch f-toggle-switch-small"
-              data-role="switch"
-              data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
-          <label class="f-text-tiny">Some text</label>
-        </div>
-      </section>
-      <hr>
-    
-      <section>
-        <h1>Modal</h1>
-        <div class="container">
-          <button data-bind="click: showModal">Show Modal</button>
-          <div 
-              class="f-modal f-modal-large"
-              data-role="dialog"
-              data-title="Software Update"
-              data-width="450"
-              data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
-              data-modal="false"
-              data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-              data-bind="dialogOpen: isModalVisible, events: { close: onClose}">
-          </div>
-          <div 
-              class="f-modal f-modal-medium"
-              data-role="dialog"
-              data-title="Software Update"
-              data-width="450"
-              data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
-              data-modal="false"
-              data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-              data-bind="dialogOpen: isModalVisible, events: { close: onClose}">
-          </div>
-          <div 
-              class="f-modal f-modal-small"
-              data-role="dialog"
-              data-title="Software Update"
-              data-width="450"
-              data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
-              data-modal="false"
-              data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-              data-bind="dialogOpen: isModalVisible, events: { close: onClose}">
-          </div>
-        </div>
-      </section>
-      <hr>   
+      ></textarea>
+    </section>
+    <hr />
 
+    <section>
+      <h1>Toggle</h1>
+      <div class="container">
+        <input
+          class="f-toggle-switch f-toggle-switch-large"
+          data-role="switch"
+          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
+        />
+        <label class="f-text-regular">Some text</label>
+      </div>
+      <div class="container">
+        <input
+          class="f-toggle-switch f-toggle-switch-medium"
+          data-role="switch"
+          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
+        />
+        <label class="f-text-small">Some text</label>
+      </div>
+      <div class="container">
+        <input
+          class="f-toggle-switch f-toggle-switch-small"
+          data-role="switch"
+          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
+        />
+        <label class="f-text-tiny">Some text</label>
+      </div>
+    </section>
+    <hr />
 
-      <section id="finys-text-input-container">
-        <h1>Text inputs</h1>
+    <section>
+      <h1>Modal</h1>
+      <div class="container">
+        <button data-bind="click: showModal">Show Modal</button>
+        <div
+          class="f-modal f-modal-large"
+          data-role="dialog"
+          data-title="Software Update"
+          data-width="450"
+          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-modal="false"
+          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+        ></div>
+        <div
+          class="f-modal f-modal-medium"
+          data-role="dialog"
+          data-title="Software Update"
+          data-width="450"
+          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-modal="false"
+          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+        ></div>
+        <div
+          class="f-modal f-modal-small"
+          data-role="dialog"
+          data-title="Software Update"
+          data-width="450"
+          data-actions="[{ text: 'Remind me later', action: onRemind },{ text: 'Install update', action: onInstall, primary: true }]"
+          data-modal="false"
+          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+          data-bind="dialogOpen: isModalVisible, events: { close: onClose}"
+        ></div>
+      </div>
+    </section>
+    <hr />
 
-        <div class="input-container">
-          <label class="f-h-label">Name</label>
-          <input id="textbox" />
+    <section id="finys-text-input-container">
+      <h1>Text inputs</h1>
 
+      <div class="input-container">
+        <label class="f-h-label">Name</label>
+        <input id="textbox" />
       </div>
 
       <div class="input-container">
-          <label class="f-h-label">Name</label>
-          <input name="username" required class="k-invalid" id="textbox2" />
-
+        <label class="f-h-label">Name</label>
+        <input name="username" required class="k-invalid" id="textbox2" />
       </div>
 
       <div class="input-container">
-          <label class="f-h-label">Phone #</label>
-          <input placeholder="(___) ___-____" id="maskedtextbox" />
-
+        <label class="f-h-label">Phone #</label>
+        <input placeholder="(___) ___-____" id="maskedtextbox" />
       </div>
+    </section>
 
-      </section>
-
-      <hr>
-      <section>
-        <h1>Buttons</h1>
-        <div class="section">
-          <button 
-            class="f-button "
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <h3>Primary</h3>
-          <button 
-            class="f-button f-button-primary f-button-large"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-primary f-button-medium"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-primary f-button-small"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-primary f-button-xsmall"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
-            </div>          
-          </button>
-
-          <h3>Secondary</h3>
-          <button 
-            class="f-button f-button-secondary f-button-large"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-secondary f-button-medium"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-secondary f-button-small"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-secondary f-button-xsmall"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
-            </div>
-          </button>
-
-          <h3>Tertiary</h3>
-          <button 
-            class="f-button f-button-tertiary f-button-large"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-tertiary f-button-medium"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-tertiary f-button-small"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-tertiary f-button-xsmall"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
-            </div>
-          </button>
-
-          <h3>Destructive</h3>
-          <button 
-            class="f-button f-button-destructive f-button-large"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-destructive f-button-medium"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-destructive f-button-small"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              Action
-            </div>
-          </button>
-          <button 
-            class="f-button f-button-destructive f-button-xsmall"
-            data-bind="click: testClick">
-            <div class="f-button-content">
-              <i class="ph ph-cheers" style="font-size: 0.75rem;"></i>
-            </div>
-          </button>
-        </div>
-      </section>
-
-
-
-      <hr>
-      <section >
-        <h1>Date Picker</h1>
-          <div class="section">
-            <input id="datepicker" title="datetimepicker"/>
-
+    <hr />
+    <section>
+      <h1>Buttons</h1>
+      <div class="section">
+        <button class="f-button" data-bind="click: testClick">
+          <div class="f-button-content">Action</div>
+        </button>
+        <h3>Primary</h3>
+        <button
+          class="f-button f-button-primary f-button-large"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-primary f-button-medium"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-primary f-button-small"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-primary f-button-xsmall"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">
+            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
           </div>
-        </section>  
-    
-    </body>
+        </button>
 
+        <h3>Secondary</h3>
+        <button
+          class="f-button f-button-secondary f-button-large"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-secondary f-button-medium"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-secondary f-button-small"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-secondary f-button-xsmall"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">
+            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+          </div>
+        </button>
 
-    <script>
-      //isSelected: basicDropdownValue
-          kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
-            init: function (widget, bindings, options) {
-                kendo.data.Binder.fn.init.call(this, widget.element[0], bindings, options);
-            },
-            refresh: function () {
-                var that = this;
-                var value = that.bindings["dialogOpen"].get();
-                var dialog = $(that.element).data("kendoDialog");
+        <h3>Tertiary</h3>
+        <button
+          class="f-button f-button-tertiary f-button-large"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-tertiary f-button-medium"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-tertiary f-button-small"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-tertiary f-button-xsmall"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">
+            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+          </div>
+        </button>
 
-                if (value) {
-                    dialog.open();
-                } else {
-                    dialog.close();
-                }
-            }
-        });
-        kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
-          refresh: function() {
-              const value = this.bindings["isSelected"].get();
-              if(!value?.id) {
-                $(this.element.element).closest('.f-dropdown.k-picker').removeClass('f-selected')
-              } else {
-                $(this.element.element).closest('.f-dropdown.k-picker').addClass('f-selected')
-              }
-          }
-        });
+        <h3>Destructive</h3>
+        <button
+          class="f-button f-button-destructive f-button-large"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-destructive f-button-medium"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-destructive f-button-small"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">Action</div>
+        </button>
+        <button
+          class="f-button f-button-destructive f-button-xsmall"
+          data-bind="click: testClick"
+        >
+          <div class="f-button-content">
+            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+          </div>
+        </button>
+      </div>
+    </section>
 
-        $('.f-group-dropdown-input').on('focus', function(e) {
-          $(e.currentTarget).next().addClass('f-focus');
-        })
-        $('.f-group-dropdown-input').on('blur', function(e) {
-          $(e.currentTarget).next().removeClass('f-focus');
-        })
-        const listData = new kendo.data.DataSource({
-            data: [
-              {
-                id: 1,
-                name: 'test1',
-              },
-              {
-                id: 2,
-                name: 'test1',
-              },
-              {
-                id: 3,
-                name: 'test1',
-              },
-            ]
-          })
-        const vm = kendo.observable({
-          isChecked: true,
-          isEnabled: true,
-          isVisible: true,
-          isModalVisible: false,
-          isModalEnabled: true,
-          isDisabled: false,
-          onChange: function (e) {
-              console.log("event :: change (" + (e.checked ? "checked" : "unchecked") + ")");
-          },
-          testClick: function() {
-            console.log("test")
-          },
-          isClosable: true,
-          isEnabled: false,
-          onClose: function (e) {
-              this.set("isModalVisible", false);
-              this.set("isModalEnabled", true);
-          },
-          showModal: function (e) {
-              this.set("isModalVisible", true);
-              this.set("isModalEnabled", false);
-          },
-          listData: new kendo.data.DataSource({
-          data: [
-            {
-              id: 1,
-              name: 'test1',
-            },
-            {
-              id: 2,
-              name: 'test2',
-            },
-            {
-              id: 3,
-              name: 'test3',
-            },
-          ]
-          }),
-          groupListData: new kendo.data.DataSource({
-            data: [
-              {
-                id: 1,
-                name: 'Apple',
-                group: 'Eins'
-              },
-              {
-                id: 2,
-                name: 'Banana',
-                group: 'Eins',
-              },
-              {
-                id: 3,
-                name: 'Beef',
-                group: 'Zwei',
-              },
-              {
-                id: 4,
-                name: 'Pork',
-                group: 'Zwei',
-              },
-              {
-                id: 5,
-                name: 'Poultry',
-                group: 'Zwei',
-              },
+    <hr />
+    <section>
+      <h1>Date Picker</h1>
+      <div class="section">
+        <input id="datepicker" title="datetimepicker" />
+      </div>
+    </section>
+  </body>
 
-              {
-                id: 6,
-                name: 'Water',
-                group: 'Drei',
-              },
-              {
-                id: 7,
-                name: 'Water',
-                group: 'Drei',
-              },
-              {
-                id: 8,
-                name: 'Water',
-                group: 'Drei',
-              },
-              {
-                id: 9,
-                name: 'Water',
-                group: 'Drei',
-              },
-              {
-                id: 10,
-                name: 'Water',
-                group: 'Drei',
-              },
-              {
-                id: 11,
-                name: 'Water',
-                group: 'Drei',
-              },
-            ],
-            group: {field: 'group'}
-          }),
-          basicDropdownValue: null,
-          groupDropdownValue: null,
-        })
+  <script>
+    //isSelected: basicDropdownValue
+    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+      init: function (widget, bindings, options) {
+        kendo.data.Binder.fn.init.call(
+          this,
+          widget.element[0],
+          bindings,
+          options
+        );
+      },
+      refresh: function () {
+        var that = this;
+        var value = that.bindings["dialogOpen"].get();
+        var dialog = $(that.element).data("kendoDialog");
 
-        function onRemind(e) {
-          console.log("Action :: Remind me later");
+        if (value) {
+          dialog.open();
+        } else {
+          dialog.close();
         }
-
-        function onInstall(e) {
-          console.log("Action :: Install update");
+      },
+    });
+    kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
+      refresh: function () {
+        const value = this.bindings["isSelected"].get();
+        if (!value?.id) {
+          $(this.element.element)
+            .closest(".f-dropdown.k-picker")
+            .removeClass("f-selected");
+        } else {
+          $(this.element.element)
+            .closest(".f-dropdown.k-picker")
+            .addClass("f-selected");
         }
-      $(document).ready(()=>{
-        kendo.bind($('body'), vm)
+      },
+    });
 
+    $(".f-group-dropdown-input").on("focus", function (e) {
+      $(e.currentTarget).next().addClass("f-focus");
+    });
+    $(".f-group-dropdown-input").on("blur", function (e) {
+      $(e.currentTarget).next().removeClass("f-focus");
+    });
+    const listData = new kendo.data.DataSource({
+      data: [
+        {
+          id: 1,
+          name: "test1",
+        },
+        {
+          id: 2,
+          name: "test1",
+        },
+        {
+          id: 3,
+          name: "test1",
+        },
+      ],
+    });
+    const vm = kendo.observable({
+      isChecked: true,
+      isEnabled: true,
+      isVisible: true,
+      isModalVisible: false,
+      isModalEnabled: true,
+      isDisabled: false,
+      onChange: function (e) {
+        console.log(
+          "event :: change (" + (e.checked ? "checked" : "unchecked") + ")"
+        );
+      },
+      testClick: function () {
+        console.log("test");
+      },
+      isClosable: true,
+      isEnabled: false,
+      onClose: function (e) {
+        this.set("isModalVisible", false);
+        this.set("isModalEnabled", true);
+      },
+      showModal: function (e) {
+        this.set("isModalVisible", true);
+        this.set("isModalEnabled", false);
+      },
+      listData: new kendo.data.DataSource({
+        data: [
+          {
+            id: 1,
+            name: "test1",
+          },
+          {
+            id: 2,
+            name: "test2",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+        ],
+      }),
+      groupListData: new kendo.data.DataSource({
+        data: [
+          {
+            id: 1,
+            name: "Apple",
+            group: "Eins",
+          },
+          {
+            id: 2,
+            name: "Banana",
+            group: "Eins",
+          },
+          {
+            id: 3,
+            name: "Beef",
+            group: "Zwei",
+          },
+          {
+            id: 4,
+            name: "Pork",
+            group: "Zwei",
+          },
+          {
+            id: 5,
+            name: "Poultry",
+            group: "Zwei",
+          },
 
+          {
+            id: 6,
+            name: "Water",
+            group: "Drei",
+          },
+          {
+            id: 7,
+            name: "Water",
+            group: "Drei",
+          },
+          {
+            id: 8,
+            name: "Water",
+            group: "Drei",
+          },
+          {
+            id: 9,
+            name: "Water",
+            group: "Drei",
+          },
+          {
+            id: 10,
+            name: "Water",
+            group: "Drei",
+          },
+          {
+            id: 11,
+            name: "Water",
+            group: "Drei",
+          },
+        ],
+        group: { field: "group" },
+      }),
+      basicDropdownValue: null,
+      groupDropdownValue: null,
+    });
 
-        //text inputs
-        $("#textbox").kendoTextBox({
-            value: "John Smith",
-            clearButton: true
-            });
-            $("#textbox2").kendoTextBox({
-            value: "",
-            clearButton: true
-            });
-            $("#finys-text-input-container").kendoValidator().data("kendoValidator").validateInput($("input[name=username]"));
+    function onRemind(e) {
+      console.log("Action :: Remind me later");
+    }
 
-            $("#maskedtextbox").kendoMaskedTextBox({
-            mask: "(000) 000-0000"
-        });
+    function onInstall(e) {
+      console.log("Action :: Install update");
+    }
+    $(document).ready(() => {
+      kendo.bind($("body"), vm);
 
-        createFinysDatePicker("datepicker");
+      //text inputs
+      $("#textbox").kendoTextBox({
+        value: "John Smith",
+        clearButton: true,
+      });
+      $("#textbox2").kendoTextBox({
+        value: "",
+        clearButton: true,
+      });
+      $("#finys-text-input-container")
+        .kendoValidator()
+        .data("kendoValidator")
+        .validateInput($("input[name=username]"));
 
+      $("#maskedtextbox").kendoMaskedTextBox({
+        mask: "(000) 000-0000",
+      });
 
+      createFinysDatePicker("datepicker");
+    });
 
-      })
+    function createFinysDatePicker(id) {
+      let callBack = (e) => {
+        const datePicker = $(`#${id}`).data("kendoDatePicker");
+        const calendar = datePicker.dateView.calendar;
+        const calendarElement = calendar.element;
 
+        const minYear = 1900,
+          maxYear = 2100;
 
-      function createFinysDatePicker(id){
+        const yearList = Array.from(
+          { length: maxYear - minYear + 1 },
+          (_, i) => minYear + i
+        );
 
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
 
+        if (calendarElement.find(".f-calendar-header").length) return;
 
-        let callBack = (e)=>{
-
-            const datePicker = $(`#${id}`).data("kendoDatePicker");
-            const calendar = datePicker.dateView.calendar;
-            const calendarElement = calendar.element;
-
-
-            const minYear = 1900, maxYear = 2100;
-
-
-            const yearList = Array.from({ length: maxYear - minYear + 1 }, (_, i) => minYear + i);
-
-
-            const monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-            ];
-
-            if (calendarElement.find(".f-calendar-header").length) return;
-
-            let customHeader = 
-            $(`
+        let customHeader = $(`
             <div class="f-calendar-header">
               <a class="f-previous-month-arrow"><i class="ph ph-caret-left"></i></a>
               <div class="f-calendar-header-dropdown-group">
@@ -566,82 +565,80 @@
             </div>
               `);
 
+        //replace with new header
+        $(
+          ".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack"
+        ).replaceWith(customHeader);
 
-            //replace with new header
-            $(".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack").replaceWith(customHeader)
+        //remove footer
+        $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
 
-            //remove footer
-            $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
+        let onMonthChange = (e) => {
+          currentMonth = e.sender.select() - 1;
+          updateCalendar();
+        };
+        let onYearChange = (e) => {
+          currentYear = parseInt(e.sender.value(), 10);
+          updateCalendar();
+        };
 
+        let currentDate = calendar.current();
+        let currentMonth = currentDate.getMonth();
+        let currentYear = currentDate.getFullYear();
 
+        const monthDropDown = $(".f-calendar-month-dropdown")
+          .kendoDropDownList({
+            optionLabel: "Select a month",
+            dataSource: monthNames,
+            value: monthNames[currentMonth],
+            change: onMonthChange,
+          })
+          .data("kendoDropDownList");
 
-            let onMonthChange = (e)=>{
-              currentMonth = e.sender.select() - 1;
-              updateCalendar();
-            }
-            let onYearChange = (e)=>{
-              currentYear = parseInt(e.sender.value(), 10);
-              updateCalendar();
-            }
+        const yearDropDown = $(".f-calendar-year-dropdown")
+          .kendoDropDownList({
+            optionLabel: "Select a year",
+            dataSource: yearList,
+            value: currentYear,
+            change: onYearChange,
+          })
+          .data("kendoDropDownList");
 
+        function updateCalendar() {
+          const newDate = new Date(currentYear, currentMonth, 1);
+          calendar.navigate(newDate, "month");
+        }
 
-            let currentDate = calendar.current();
-            let currentMonth = currentDate.getMonth();
-            let currentYear = currentDate.getFullYear();
+        customHeader.find(".f-previous-month-arrow").on("click", () => {
+          let newDate = new Date(currentYear, currentMonth - 1, 1);
+          currentMonth = newDate.getMonth();
+          currentYear = newDate.getFullYear();
+          monthDropDown.value(monthNames[currentMonth]);
+          yearDropDown.value(currentYear);
+          updateCalendar();
+        });
 
+        customHeader.find(".f-next-month-arrow").on("click", () => {
+          let newDate = new Date(currentYear, currentMonth + 1, 1);
+          currentMonth = newDate.getMonth();
+          currentYear = newDate.getFullYear();
+          monthDropDown.value(monthNames[currentMonth]);
+          yearDropDown.value(currentYear);
+          updateCalendar();
+        });
+      };
 
-            const monthDropDown =$(".f-calendar-month-dropdown").kendoDropDownList({
-                optionLabel: 'Select a month',
-                dataSource: monthNames,
-                value: monthNames[currentMonth],
-                change: onMonthChange,
-                }).data("kendoDropDownList");;
-                
-
-              const yearDropDown = $(".f-calendar-year-dropdown").kendoDropDownList({
-                optionLabel: 'Select a year',
-                dataSource: yearList,
-                value: currentYear,
-                change: onYearChange,
-                }).data("kendoDropDownList");;
-
-
-                function updateCalendar() {
-                const newDate = new Date(currentYear, currentMonth, 1);
-                calendar.navigate(newDate, "month");
-              }
-              
-
-              customHeader.find(".f-previous-month-arrow").on("click", () => {
-                let newDate = new Date(currentYear, currentMonth - 1, 1);
-                currentMonth = newDate.getMonth();
-                currentYear = newDate.getFullYear();
-                monthDropDown.value(monthNames[currentMonth]);
-                yearDropDown.value(currentYear);
-                updateCalendar();
-              });
-
-              customHeader.find(".f-next-month-arrow").on("click", () => {
-                let newDate = new Date(currentYear, currentMonth + 1, 1);
-                currentMonth = newDate.getMonth();
-                currentYear = newDate.getFullYear();
-                monthDropDown.value(monthNames[currentMonth]);
-                yearDropDown.value(currentYear);
-                updateCalendar();
-              });
-
-          }
-
-          let calendar = $(`#${id}`).kendoDatePicker({
+      let calendar = $(`#${id}`)
+        .kendoDatePicker({
           value: new Date(),
           format: "yyyy-MM-dd",
-          open:callBack,
-          close: (e)=>{e.preventDefault(); }
-          }).data("kendoDatePicker");
-          calendar.element.addClass("FinysCalendar")
-
-
-
-      }
-    </script>
+          open: callBack,
+          close: (e) => {
+            e.preventDefault();
+          },
+        })
+        .data("kendoDatePicker");
+      calendar.element.addClass("FinysCalendar");
+    }
+  </script>
 </html>
