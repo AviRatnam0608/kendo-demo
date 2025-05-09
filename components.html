@@ -319,7 +319,7 @@
     </section>
 
     <hr />
-    <section>
+    <section id="date-picker-section">
       <h1>Date Picker</h1>
       <div class="section">
         <input id="datepicker" title="datetimepicker" />
@@ -643,14 +643,22 @@
       let calendar = $(`#${id}`)
         .kendoDatePicker({
           value: new Date(),
-          format: "yyyy-MM-dd",
+          format: "MM/dd/yyyy",
           open: callBack,
           close: (e) => {
             e.preventDefault();
           },
         })
         .data("kendoDatePicker");
-      calendar.element.addClass("FinysCalendar");
+      calendar.element.addClass("FinysDatePicker");
+
+      //move calendar button
+      let calButton = calendar.element.parent().find("button");
+      calButton.prev().insertAfter(calButton)
+
+      //replace with phosphor icon
+      calButton.find("span").removeClass().addClass("ph ph-calendar-blank").find("svg").remove();
+
     }
   </script>
 </html>
