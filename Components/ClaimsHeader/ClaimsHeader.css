@@ -86,12 +86,12 @@
 .f-button-icon-container{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     gap: .5rem;
     font-size: 0.875rem;
 }
 .f-button-icon-container .ph-caret-down{
-    font-size: 1.125;
+    font-size: 1.125rem;
 }
 
 .f-claims-summary-header-button:hover {
@@ -258,6 +258,10 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
+}
+.f-claims-number-span .claim-number-dropdown > .ph-caret-down{
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 
 
