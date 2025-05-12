@@ -152,3 +152,14 @@
     padding-left: 1rem;
   }
 
+  .f-templated-item-dropdown-container > div:nth-child(2) {
+    font-size: 0.75em;
+  }
+
+  .f-templated-item-dropdown-container > div:nth-child(3) {
+    font-size: 0.75em;
+  }
+
+  .f-templated-dropdown .k-input-value-text {
+    display: flex;
+  }

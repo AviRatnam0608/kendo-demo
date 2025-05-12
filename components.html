@@ -41,6 +41,10 @@
         max-width: 200px;
       }
 
+      .templated-dropdown {
+        max-width: 300px;
+      }
+
       .container,
       section {
         max-width: 80%;
@@ -76,6 +80,22 @@
               source: groupListData, 
               isSelected: groupDropdownValue"
           data-option-label="Select an option"
+        />
+
+        <input
+          class="f-dropdown f-templated-dropdown templated-dropdown"
+          data-role="dropdownlist"
+          data-text-field="AgentName"
+          data-value-field="AgentCode"
+          data-height="300"
+          data-bind="
+              value: templatedDropdownValue, 
+              source: templatedListData, 
+              isSelected: templatedDropdownValue"
+          data-option-label="{AgentId: null, DisplayValue: 'Select Agent...', SearchText:'Select Agent...',AgentName: null, AgentCode: null, AgencyName: null, AgencyCode: null, Address:null }"
+          data-option-label-template="option-template"
+          data-template="item-template"
+          data-value-template="value-template"
         />
       </div>
     </section>
@@ -518,8 +538,28 @@
         ],
         group: { field: "group" },
       }),
+      templatedListData: new kendo.data.DataSource({
+        data:[{
+            id: 1,
+            AgentCode: "AgentCode",
+            AgentName: 'AgentName',
+            AgencyCode: 'AgencyCode',
+            AgencyName: 'AgencyName',
+            Address: 'Address'
+          },
+          {
+            id: 2,
+            AgentCode: "AgentCode",
+            AgentName: 'AgentName',
+            AgencyCode: 'AgencyCode',
+            AgencyName: 'AgencyName',
+            Address: 'Address'
+          }
+        ],
+      }),
       basicDropdownValue: null,
       groupDropdownValue: null,
+      templatedDropdownValue: null,
     });
 
     function onRemind(e) {
@@ -680,4 +720,26 @@
 
     }
   </script>
+
+  <script id="item-template" type="text/x-kendo-template">
+    <div class="f-templated-item-dropdown-container">
+        <div>#: AgentCode # - #: AgentName #</div>
+        <div>#: AgencyCode # - #: AgencyName #</div>
+        <div>#: Address #</div>
+    </div>
+  </script>
+
+  <script id="value-template" type="text/x-kendo-template">
+    <div class="f-templated-item-dropdown-container">
+      <div>#: AgentCode # - #: AgentName #</div>
+      <div>#: AgencyCode # - #: AgencyName #</div>
+      <div>#: Address #</div>
+    </div>
+  </script>
+
+  <script id="option-template" type="text/x-kendo-template">
+    <div class="f-templated-option-dropdown-container">
+        <span> Select Agent... </span>
+    </div>
+</script>
 </html>
