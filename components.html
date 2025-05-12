@@ -325,6 +325,32 @@
         <input id="datepicker" title="datetimepicker" />
       </div>
     </section>
+
+    <hr />
+    <section>
+      <h1>Grid Controls</h1>
+      <div class="section">
+        <div
+          data-role="grid"
+          data-editable="true"
+          data-toolbar="['create', 'save']"
+          data-columns="[
+                        { 'field': 'ProductName', 'width': 270 },
+                        { 'field': 'UnitPrice' }
+                     ]"
+          data-pageable="{refresh:true, pageSize:10, pageSizes:[10,20,30,40,50,60,70,80,90,100], responsive: false}"
+          data-sortable="true"
+          data-filterable="true"
+          data-scrollable="true"
+          data-bind="source: products,
+                   visible: isVisible,
+                   events: {
+                       save: onSave
+                   }"
+          style="height: 400px"
+        ></div>
+      </div>
+    </section>
   </body>
 
   <script>
@@ -371,6 +397,7 @@
     $(".f-group-dropdown-input").on("blur", function (e) {
       $(e.currentTarget).next().removeClass("f-focus");
     });
+
     const listData = new kendo.data.DataSource({
       data: [
         {
