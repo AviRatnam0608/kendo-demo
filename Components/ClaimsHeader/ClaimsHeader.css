@@ -67,7 +67,7 @@
 }
 
 .f-claims-summary-header-main-information-actions-div button{
-
+    display: flex;
     border-radius: 5.25rem;
     border: 0.063rem solid;
 }
