@@ -1,0 +1,170 @@
+.f-grid .k-pager.k-grid-pager {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--neutral-white);
+}
+
+.f-grid .k-pager-info {
+    justify-content: flex-start;
+    flex: none;
+}
+
+.f-grid .k-pager-numbers-wrap {
+    order: 2;
+    flex: 1 1 0%;
+    justify-content: center;
+}
+
+.f-grid .k-picker .k-button .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e136";
+    fill: var(--neutral-darkest);
+    font-size: var(--font-size-small);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-sizes {
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+}
+
+.k-pager-sizes > span:last-of-type {
+    visibility: hidden; /* Hide original text */
+    position: relative;
+}
+
+.k-pager-sizes > span:last-of-type::after {
+    content: "Number of rows:";
+    visibility: visible;
+    font-size: var(--font-size-small);
+    color: var(--neutral);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-refresh {
+    order: 2;
+    justify-content: flex-start;
+    border-radius: 0.375rem;
+}
+
+.k-pager-refresh .k-icon svg {
+    display: none;
+  }
+
+.k-pager-refresh .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e038";
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-100);
+    color: var(--primary);
+}
+
+.f-grid .k-pager-info.k-label {
+    font-weight: var(--font-weight-500);
+    font-size: var(--font-size-small);
+}
+
+/* .f-grid .k-pager-refresh.k-button {
+    display: none;
+} */
+
+.f-grid .k-picker-solid {
+    background-color: var(--neutral-white);
+    border-radius: var(--standard-border-radius);
+    border: 1px solid var(--neutral-lighter);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+    font-size: var(--font-size-small);
+}
+
+.f-grid .k-pager-md {
+    padding-inline: 0.9375rem;
+    padding-block: 0.9375rem;
+}
+
+.f-grid .k-pager-numbers {
+    align-items: center;
+    gap: 0.125rem;
+    margin: 0px 11px;
+}
+
+.f-grid .k-pager-numbers-wrap .k-pager-nav {
+    border: 1px solid var(--neutral-lighter) !important;
+    border-radius: 50%;
+    font-weight: 600;
+    display: inline-flex;
+    background: var(--neutral-lightest) !important;
+    cursor: pointer;
+    margin: 0.3125rem ;
+}
+
+.f-grid .k-pager-numbers-wrap button:hover {
+    background: var(--neutral-lighter) !important;
+    border-color: var(--neutral-light);
+}
+
+.f-grid .k-icon svg {
+    display: none;
+  }
+
+.f-grid .k-pager-numbers-wrap button:nth-of-type(1) .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e132";
+    font-size: var(--font-size-small);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-numbers-wrap button:nth-of-type(2) .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e138";
+    font-size: var(--font-size-small);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-numbers-wrap button:nth-of-type(3) .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e13a";
+    font-size: var(--font-size-small);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-numbers-wrap button:nth-of-type(4) .k-icon:before {
+    font-family: "Phosphor";
+    content: "\e130";
+    font-size: var(--font-size-small);
+    color: var(--neutral-darkest);
+    font-weight: var(--font-weight-500);
+}
+
+.f-grid .k-pager-numbers button {
+    border-radius: var(--standard-border-radius);
+}
+
+.f-grid .k-pager-numbers .k-button.k-button-flat-primary {
+    width: 2rem;
+    height: 2rem;
+}
+
+.f-grid .k-pager-numbers .k-button.k-button-flat-primary.k-button-flat .k-button-text {
+    font-weight: var(--font-weight-500);
+    font-size: var(--font-size-default);
+}
+
+/* Selected pager number */
+.f-grid .k-pager-numbers .k-button.k-selected.k-button-flat-primary.k-button-flat {
+    background-color: var(--primary-lightest) !important;
+    color: var(--primary) !important;
+}
+
+/* Unselected pager number */
+.f-grid .k-pager-numbers .k-button.k-button-flat-primary.k-button-flat {
+    color: var(--neutral) !important;
+}
+
+.f-grid .k-pager-numbers .k-button.k-button-flat-primary.k-button-flat:hover {
+    background-color: var(--neutral-lightest) !important;
+}
