@@ -40,6 +40,7 @@
 
   .k-list-container {
     margin-top: 0.5rem;
+    border: 1px solid var(--neutral-light);
   }
 
   .k-list-container,
@@ -58,9 +59,9 @@
   }
 
   .k-list-container .k-list-content .k-first {
-    margin-top: 3rem;
+    margin-top: 2.75rem;
     position: relative;
-    border-top: 0.0625rem solid var(--neutral-light);
+    border-top: 0.0625rem solid var(--neutral-lighter);
   }
 
   .k-list-container .k-list-content .k-first > .k-list-item-group-label {
@@ -162,4 +163,11 @@
 
   .f-templated-dropdown .k-input-value-text {
     display: flex;
+  }
+
+  .k-list-container .k-list-group-sticky-header {
+    padding-left: 1.125rem;
+    color: var(--neutral);
+    font-weight: normal;
+    box-shadow: none;
   }
