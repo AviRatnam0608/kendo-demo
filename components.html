@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./FinysTextInputStyles.css" />
     <link rel="stylesheet" href="./FinysButtonStyles.css" />
     <link rel="stylesheet" href="./FinysDatePicker.css" />
+    <link rel="stylesheet" href="./FinysGridControlStyles.css" />
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
@@ -34,6 +35,11 @@
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
     />
     <style>
       /* transient styles */
@@ -331,22 +337,19 @@
       <h1>Grid Controls</h1>
       <div class="section">
         <div
+          class="f-grid"
           data-role="grid"
           data-editable="true"
-          data-toolbar="['create', 'save']"
           data-columns="[
-                        { 'field': 'ProductName', 'width': 270 },
-                        { 'field': 'UnitPrice' }
+                        { 'field': 'id', 'width': 270 },
+                        { 'field': 'name' }
                      ]"
-          data-pageable="{refresh:true, pageSize:10, pageSizes:[10,20,30,40,50,60,70,80,90,100], responsive: false}"
+          data-pageable="{refresh:true, pageable:true, pageSize:10, pageSizes:[10,20,30,40,50,60,70,80,90,100], responsive: false}"
           data-sortable="true"
           data-filterable="true"
           data-scrollable="true"
           data-bind="source: products,
-                   visible: isVisible,
-                   events: {
-                       save: onSave
-                   }"
+                   visible: isVisible"
           style="height: 400px"
         ></div>
       </div>
@@ -465,6 +468,60 @@
           },
         ],
       }),
+      products: new kendo.data.DataSource({
+        data: [
+          {
+            id: 1,
+            name: "test1",
+          },
+          {
+            id: 2,
+            name: "test2",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+          {
+            id: 3,
+            name: "test3",
+          },
+        ],
+        pageSize: 10
+      }),
+      
       groupListData: new kendo.data.DataSource({
         data: [
           {

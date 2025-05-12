@@ -13,6 +13,10 @@
   border-radius: 6px;
 }
 
+.k-window-titlebar-action .k-icon svg {
+  display: none;
+}
+
 /* ------------------------------------ Large Modal ------------------------------------ */
 .k-window.k-dialog:has(.f-modal-large) {
   border-color: var(--primary-lightest);
@@ -40,6 +44,13 @@
 .k-window.k-dialog:has(.f-modal-large)
   .f-modal.f-modal-large.k-window-content.k-dialog-content {
   font-size: large;
+}
+
+.k-window.k-dialog:has(.f-modal-large) .k-window-titlebar-action .k-icon:before{
+    font-family: "Phosphor";
+    content: "\e4f6";
+    font-size: 1.5rem;
+    color: var(--neutral);
 }
 
 /* ------------------------------------ Large Modal Buttons ------------------------------------ */
@@ -111,6 +122,13 @@
   font-size: medium;
 }
 
+.k-window.k-dialog:has(.f-modal-medium) .k-window-titlebar-action .k-icon:before{
+  font-family: "Phosphor";
+  content: "\e4f6";
+  font-size: var(--font-size-default);
+  color: var(--neutral);
+}
+
 /* ------------------------------------ Medium Modal Buttons ------------------------------------ */
 .k-window.k-dialog:has(.f-modal-medium)
   .k-dialog-actions
@@ -178,6 +196,13 @@
 .k-window.k-dialog:has(.f-modal-small)
   .f-modal.f-modal-small.k-window-content.k-dialog-content {
   font-size: small;
+}
+
+.k-window.k-dialog:has(.f-modal-small) .k-window-titlebar-action .k-icon:before{
+  font-family: "Phosphor";
+  content: "\e4f6";
+  font-size: var(--font-size-default);
+  color: var(--neutral);
 }
 
 /* ------------------------------------ Small Modal Buttons ------------------------------------ */
