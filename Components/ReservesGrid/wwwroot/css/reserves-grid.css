@@ -9,6 +9,7 @@ div[data-role="grid"] table {
 th.k-table-th.k-header {
     border-left: 0.0625rem solid transparent;
     background-color: white;
+    padding: 0.813rem 0.75rem;
 }
 
 .claims-summary-main-content {
@@ -39,6 +40,11 @@ main.claims-summary-main-content .f-table-header {
     font-size: 1.125rem;
 }
 
+.f-table-header-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .f-table-header-group h2 {
     display: inline-block;
     margin-right: 0.5rem;
@@ -50,6 +56,7 @@ main.claims-summary-main-content .f-table-header {
     padding: 0.188rem 0.438rem;
     border-radius: 4.875rem;
     font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .f-number-tag {
@@ -86,6 +93,8 @@ main.claims-summary-main-content .f-table-header {
     font-size: 0.75rem;
     font-weight: 500;
     vertical-align: middle;
+    height: 1.313rem;
+    width: 0.875rem;
 }
 
 /* Grid Styling */
