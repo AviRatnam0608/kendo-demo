@@ -1,6 +1,6 @@
 :root {
-  --modal-large-width: 50rem;
-  --modal-large-height: 39.75rem;
+  --modal-large-width: 50em;
+  --modal-large-height: 39.75em;
 
   --modal-medium-width: 40rem;
   --modal-medium-height: 30.5rem;
@@ -10,7 +10,14 @@
 }
 
 .k-window {
-  border-radius: 6px;
+  border-radius: 0.375em;
+}
+
+.k-window .k-icon:before {
+  font-family: "Phosphor";
+  content: "\e136";
+  font-size: 20px;
+  font-weight: 100;
 }
 
 /* ------------------------------------ Large Modal ------------------------------------ */
@@ -18,7 +25,6 @@
   border-color: var(--primary-lightest);
   color: var(--secondary-darkest);
   background-color: var(--neutral-white);
-  border-radius: 6px;
   box-shadow: 0px 8px 8px -4px #00000008, 0px 20px 24px -4px #00000014,
     0px 0px 0px 1px #e5e9ee;
   width: var(--modal-large-width) !important;
@@ -26,15 +32,15 @@
 }
 
 .k-window.k-dialog:has(.f-modal-large) .k-window-title.k-dialog-title {
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 .k-window.k-dialog:has(.f-modal-large) .k-window-titlebar.k-dialog-titlebar {
-  padding: 1.25rem 1.5rem;
+  padding: 1.25em 1.5em;
 }
 
 .k-window.k-dialog:has(.f-modal-large) .k-dialog-actions {
-  padding: 1.5rem;
+  padding: 1.5em;
 }
 
 .k-window.k-dialog:has(.f-modal-large)
@@ -46,12 +52,12 @@
 .k-window.k-dialog:has(.f-modal-large)
   .k-dialog-actions
   .k-button.k-button-solid-base {
-  height: 2.75rem;
+  height: 2.75em;
   color: var(--neutral-darkest);
   font-weight: var(--font-weight-600);
   border: 1px solid var(--neutral-lighter);
   border-radius: 7.5em;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 600;
   box-shadow: 0px 1px 2px 0px #0000000d;
   display: inline-flex;
@@ -62,11 +68,11 @@
 .k-window.k-dialog:has(.f-modal-large)
   .k-dialog-actions
   .k-button.k-button-solid-primary {
-  height: 2.75rem;
+  height: 2.75em;
   color: var(--neutral-white);
   font-weight: var(--font-weight-600);
   border-radius: 7.5em;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 600;
   box-shadow: 0px 1px 2px 0px #0000000d;
   display: inline-flex;
@@ -79,7 +85,7 @@
 .k-window.k-dialog:has(.f-modal-large)
   .k-dialog-actions.k-actions.k-hstack.k-justify-content-stretch
   > button {
-  max-width: 5.4375rem;
+  max-width: 5.4375em;
 }
 
 /* ------------------------------------ Medium Modal ------------------------------------ */
