@@ -721,8 +721,7 @@
               `);
 
         //replace with new header
-        $(
-          ".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack"
+        $(".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack"
         ).replaceWith(customHeader);
 
         //remove footer
@@ -759,6 +758,16 @@
           })
           .data("kendoDropDownList");
 
+
+          $(".f-calendar-month-dropdown").on("mousedown", e => 
+            $(e.target).attr("hasClosed", true)
+          ); 
+          $(".f-calendar-year-dropdown").on("mousedown", e => 
+            $(e.target).attr("hasClosed", true)
+          ); 
+          
+          
+
         function updateCalendar() {
           const newDate = new Date(currentYear, currentMonth, 1);
           calendar.navigate(newDate, "month");
@@ -789,7 +798,16 @@
           format: "MM/dd/yyyy",
           open: callBack,
           close: (e) => {
-            e.preventDefault();
+
+            let monthDD = $(".f-calendar-month-dropdown > span  >span.k-input-value-text");
+            let yearDD = $(".f-calendar-year-dropdown > span  >span.k-input-value-text");
+
+            if((monthDD && monthDD.attr("hasClosed") == "true") || (yearDD && yearDD.attr("hasClosed") == "true")){
+              e.preventDefault();
+            }
+            monthDD.attr("hasClosed", false)
+            yearDD.attr("hasClosed", false)
+            
           },
         })
         .data("kendoDatePicker");

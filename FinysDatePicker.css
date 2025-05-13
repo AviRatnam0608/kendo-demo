@@ -1,3 +1,10 @@
+
+
+.k-calendar .k-other-month{
+    color: var(--neutral-light);
+
+}
+
 .f-calendar-header{
     display: flex;
     justify-content: space-between;
@@ -23,10 +30,15 @@
 
 .f-calendar-month-dropdown{
     width: 60%;
+    font-weight: 500;
+    font-size: .85rem;
 }
 
 .f-calendar-year-dropdown{
     width: 40%;
+    font-weight: 500;
+    font-size: .85rem;
+
 }
 
 
@@ -56,16 +68,23 @@
 }
 
 
-.k-calendar .k-other-month{
-    color: var(--neutral-light);
 
-}
 
 .k-calendar .k-calendar-td.k-focus .k-link{
     box-shadow: 0 0 0 0px;
 }
 
-.k-calendar .k-calendar-td:focus .k-calendar-cell-inner,.k-calendar .k-calendar-td:focus .k-link,.k-calendar .k-calendar-td.k-focus .k-calendar-cell-inner,.k-calendar .k-calendar-td.k-focus .k-link::before{
+.k-calendar .k-calendar-td.k-selected.k-hover .k-link{
+    background-color: var(--primary);
+
+}
+
+.k-calendar .k-calendar-view .k-today{
+    color: var(--neutral-darker);
+    font-weight: 500;
+}
+
+td.k-calendar.k-today > ::before{
     width: 6px;
     height: 6px;
     background-color: var(--primary);
@@ -74,15 +93,17 @@
     content: "\A";
     border-radius: 100%;
     right: 12.5px;
-
 }
-.k-calendar .k-calendar-view .k-today{
-    color: var(--primary);
+div.k-calendar-view.k-calendar-monthview > table > tbody  td.k-calendar-td.k-today > a::before{
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    position: absolute;
+    top: 24px;
+    content: "\A";
+    border-radius: 100%;
+    right: 12.5px;
 }
-
-
-
-
 
 
 
@@ -90,6 +111,14 @@
     padding-bottom: 50px;
 }
 
+
+
+/* for dropdown */
+
+.k-calendar-container.k-popup .k-list-container.k-popup span.k-list-item-text{
+    font-size: .85rem;
+    font-weight: 500;
+}
 
 /* 
 for input */
