@@ -1,3 +1,13 @@
+tbody > tr td.k-table-td:first-child {
+    padding-right: 0;
+    padding-left: 1.375rem;
+}
+
+tbody > tr td.k-table-td:nth-child(2) {
+    padding-left: 0;
+    padding-left: 1.5rem;
+}
+
 div[data-role="grid"] {
     border-radius: 6pt;
 }
@@ -10,6 +20,8 @@ th.k-table-th.k-header {
     border-left: 0.0625rem solid transparent;
     background-color: white;
     padding: 0.813rem 0.75rem;
+    font-weight: 570;
+    color: var(--neutral-light);
 }
 
 .claims-summary-main-content {
@@ -92,7 +104,6 @@ main.claims-summary-main-content .f-table-header {
 .f-avatar .k-avatar-text > span {
     font-size: 0.75rem;
     font-weight: 500;
-    vertical-align: middle;
     height: 1.313rem;
     width: 0.875rem;
 }
@@ -174,4 +185,9 @@ th:nth-child(2) .k-cell-inner>.k-link {
 
 .k-menu-group .k-item>.k-link:active, .k-menu-group .k-item>.k-link.k-active, .k-menu-group .k-item>.k-link.k-selected, .k-menu.k-context-menu .k-item>.k-link:active, .k-menu.k-context-menu .k-item>.k-link.k-active, .k-menu.k-context-menu .k-item>.k-link.k-selected {
     background-color: var(--primary-lightest);
+}
+
+.f-grid-caret-down.ph-light.ph-caret-down {
+    font-size: 1.125em;
+    padding-left: 0.5rem;
 }
