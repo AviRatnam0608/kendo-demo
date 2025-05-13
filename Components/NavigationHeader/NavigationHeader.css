@@ -180,7 +180,7 @@
   gap: 0.5rem;
 }
 
-.f-navigation-link .k-link .k-icon:before{
+.f-navigation-item .k-link.k-menu-link .k-icon:before{
   font-family: "Phosphor";
   content: "\e136";
   font-size: var(--font-size-small);
@@ -189,8 +189,8 @@
   font-size: 0.875rem;
 }
 
-.f-navigation-link .k-link.k-menu-link {
-  padding-block: 8px 12px;
+.f-navigation-item .k-link.k-menu-link {
+  padding-block: 0;
   padding-inline: 8px 12px;
 }
 
