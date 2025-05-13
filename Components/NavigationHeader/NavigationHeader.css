@@ -34,19 +34,20 @@
 
 .f-navigation {
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
   align-items: center;
 }
 
 .f-navigation-item {
   position: relative;
-  padding: 3px;
-  border-radius: 4px;
+  padding: 7px 12px;
+  border-radius: 6px;
 }
 
 .f-navigation-item:hover {
-  background: var(--secondary-lightest);
-  border-radius: 5px;
+  background: var(--neutral-ultra-light);
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .f-navigation-link {

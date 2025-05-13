@@ -388,7 +388,8 @@
           data-filterable="true"
           data-scrollable="true"
           data-bind="source: products,
-                   visible: isVisible"
+                   visible: isVisible,
+                   events: { dataBound: showGridCounter }"
           style="height: 400px"
         ></div>
       </div>
@@ -396,6 +397,22 @@
   </body>
 
   <script>
+
+    // function showGridCounter(){
+    //   const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
+    //   const stringItem = $(".f-grid .k-pager-info.k-label").text();
+
+    //   const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
+
+    //   $(".f-grid .k-pager-info.k-label").html(`
+    //     <span>Items ${start} - ${end}  </span>
+    //     <span style="
+    //         color: var(--neutral);
+    //         margin-left: 4px;
+    //     "> of ${total}</span>`
+    //   );
+    // }
+
     //isSelected: basicDropdownValue
     kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
       init: function (widget, bindings, options) {
@@ -465,6 +482,19 @@
       isModalSmallVisible: false,
       isModalEnabled: true,
       isDisabled: false,
+      showGridCounter: function (){
+        const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
+        const stringItem = $(".f-grid .k-pager-info.k-label").text();
+        const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
+
+        $(".f-grid .k-pager-info.k-label::before").html(`
+          <span>Items ${start} - ${end}  </span>
+          <span style="
+              color: var(--neutral);
+              margin-left: 4px;
+          "> of ${total}</span>`
+        );
+      },
       onChange: function (e) {
         console.log(
           "event :: change (" + (e.checked ? "checked" : "unchecked") + ")"
