@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row-reverse;
     background-color: var(--neutral-white);
+    padding: 0.5rem 1.5rem;
 }
 
 .f-grid .k-pager-info {
@@ -63,6 +64,7 @@
 .f-grid .k-pager-info.k-label {
     font-weight: var(--font-weight-500);
     font-size: var(--font-size-small);
+    color: transparent;
 }
 
 /* .f-grid .k-pager-refresh.k-button {
@@ -76,6 +78,7 @@
     color: var(--neutral-darkest);
     font-weight: var(--font-weight-500);
     font-size: var(--font-size-small);
+    box-shadow: 0px 1px 2px 0px #0000000D;
 }
 
 .f-grid .k-pager-md {
@@ -160,6 +163,11 @@
     color: var(--primary) !important;
 }
 
+.f-grid .k-pager-numbers .k-button.k-selected.k-button-flat-primary.k-button-flat:hover {
+    background-color: var(--primary-lighter) !important;
+    cursor: pointer;
+}
+
 /* Unselected pager number */
 .f-grid .k-pager-numbers .k-button.k-button-flat-primary.k-button-flat {
     color: var(--neutral) !important;
@@ -167,4 +175,9 @@
 
 .f-grid .k-pager-numbers .k-button.k-button-flat-primary.k-button-flat:hover {
     background-color: var(--neutral-lightest) !important;
+}
+
+
+.k-button::before {
+    background: none;
 }
