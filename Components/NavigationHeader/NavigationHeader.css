@@ -40,7 +40,7 @@
 
 .f-navigation-item {
   position: relative;
-  padding: 7px 12px;
+  /* padding: 7px 12px; */
   border-radius: 6px;
 }
 
@@ -167,6 +167,31 @@
   flex-direction: column;
   padding-top: var(--f-spacing);
   border-top: 1px solid var(--secondary-light);
+}
+
+/* NEW STYLES FOR THE MENU ITEMS */
+.f-navigation-link .k-menu-link-text{
+  text-decoration: none;
+  color: var(--neutral-darkest);
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  font-size: var(--font-size-medium);
+  gap: 0.5rem;
+}
+
+.f-navigation-link .k-link .k-icon:before{
+  font-family: "Phosphor";
+  content: "\e136";
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  color: var(--neutral);
+  font-size: 0.875rem;
+}
+
+.f-navigation-link .k-link.k-menu-link {
+  padding-block: 8px 12px;
+  padding-inline: 8px 12px;
 }
 
 /* Small screen styles */

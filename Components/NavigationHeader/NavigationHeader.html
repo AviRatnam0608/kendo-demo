@@ -10,7 +10,6 @@
       id="header"
       class="f-navigation-header-main"
       data-role="view"
-      data-bind="source: headerViewModel"
     >
       <div class="f-navigation-header-main-top">
         <div class="f-navigation-options">
@@ -18,13 +17,36 @@
           <button class="f-burger" data-bind="click: toggleMenu">
             &#9776;
           </button>
-
           <div class="f-navigation f-desktop-nav">
-            <div class="f-navigation-item">
+            <!-- <div class="f-navigation-item">
               <a class="f-navigation-link" href="#">
                 <span>Accounting</span>
                 <i class="ph ph-caret-down"></i>
               </a>
+            </div> -->
+            <div class="f-navigation-item">
+              <ul 
+                  class="f-navigation-link"
+                  data-role="menu"
+                  data-bind="events: { select: onSelect },
+                              visible: isVisible"
+                  style="width: 100%;">
+                  <li>
+                      Products
+                      <ul>
+                          <li>
+                              Furniture
+                              <ul>
+                                  <li>Tables & Chairs</li>
+                                  <li>Sofas</li>
+                                  <li>Occasional Furniture</li>
+                                  <li>Children's Furniture</li>
+                                  <li>Beds</li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
             </div>
             <div class="f-navigation-item">
               <a class="f-navigation-link" href="#"><span>Claims</span>
@@ -136,6 +158,11 @@
 <script>
   const vm1 = kendo.observable({
         selectedName: 2,
+        isVisible: true,
+        onSelect: function (e) {
+            var text = $(e.item).children(".k-link").text();
+            console.log("event :: select(" + text + ")");
+        },
         dummyDropdownData: new kendo.data.DataSource({
             data: [
                 {
@@ -158,7 +185,7 @@
         })
     })
     $(document).ready(() => {
-        kendo.bind($('#dropdown-section'), vm1);
+        kendo.bind($('#header'), vm1);
     })
 </script>
 <style>

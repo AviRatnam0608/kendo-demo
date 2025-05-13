@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5{
 
 button {
     font-size: 1em;
+    font-family: var(--body-font);
 }
 
 .f-bg-gradient-shapes {
