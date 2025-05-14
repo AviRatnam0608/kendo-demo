@@ -44,11 +44,11 @@ class FinysDetailedDropDownList extends HTMLInputElement {
         script.setAttribute('id', this.getAttribute('data-value-template'));
         script.setAttribute('type', 'text/x-kendo-template');
         script.innerHTML = `
-         <div class="f-templated-item-dropdown-container">
-            <div>#: ${this.getAttribute('data-value-field')} # - #: ${this.getAttribute('data-text-field')} #</div>
-            <div>#: ${this.getAttribute('data-detail-left')} # - #: ${this.getAttribute('data-detail-right')} #</div>
-            <div>#: ${this.getAttribute('data-detail-bottom')} #</div>
-        </div>
+            <div class="f-templated-item-dropdown-container">
+                <div>#: ${this.getAttribute('data-value-field')} # - #: ${this.getAttribute('data-text-field')} #</div>
+                <div>#: ${this.getAttribute('data-detail-left')} # - #: ${this.getAttribute('data-detail-right')} #</div>
+                <div>#: ${this.getAttribute('data-detail-bottom')} #</div>
+            </div>
         `
         return script
     }
@@ -62,7 +62,7 @@ class FinysDetailedDropDownList extends HTMLInputElement {
                 <div style="font-size: 0.656rem">&nbsp;</div>
                 <div style="font-size: 1em">Select an option...</div>
                 <div>&nbsp;</div>
-                </div>
+            </div>
         `
         return script;
     }
