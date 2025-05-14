@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="./FinysButtonStyles.css" />
     <link rel="stylesheet" href="./FinysDatePicker.css" />
     <link rel="stylesheet" href="./FinysGridControlStyles.css" />
+    <link rel="stylesheet" href="./timepicker.css" />
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
+    <script defer src="components-library.js"></script>
     <!-- ComponentStyles -->
     <link rel="stylesheet" href="dropdown.css" />
     <link rel="stylesheet" href="editor.css" />
@@ -62,31 +64,24 @@
   <body class="">
     <section>
       <h1>Dropdown</h1>
-      <div class="container">
-        <input
-          class="f-dropdown my-dropdown"
-          data-role="dropdownlist"
-          data-text-field="name"
-          data-value-field="id"
-          data-bind="
-              value: basicDropdownValue, 
-              source: listData, 
-              isSelected: basicDropdownValue"
-          data-option-label="Select an option"
-        />
+      <div id="dropdowns-container" class="container">
+        <input 
+          is="finys-dropdownlist" 
+          class="my-dropdown" 
+          data-text-field="name" 
+          data-bind="value: basicDropdownValue,
+                            source: listData, 
+                            isSelected: basicDropdownValue" 
+          />
 
-        <input
-          class="f-dropdown my-dropdown"
-          data-role="dropdownlist"
-          data-text-field="name"
-          data-value-field="id"
-          data-height="300"
-          data-bind="
-              value: groupDropdownValue, 
-              source: groupListData, 
-              isSelected: groupDropdownValue"
-          data-option-label="Select an option"
-        />
+        <input 
+          is="finys-dropdownlist" 
+          class="my-dropdown" 
+          data-text-field="name" 
+          data-bind="value: groupDropdownValue,
+                            source: groupListData, 
+                            isSelected: groupDropdownValue" 
+          />
 
         <input
           class="f-dropdown f-templated-dropdown templated-dropdown"
@@ -106,6 +101,16 @@
       </div>
     </section>
     <hr />
+
+    <section>
+      <h1>Time Picker</h1>
+      <input
+        data-role="timepicker"
+        data-component-type="modern"
+      />
+      
+
+    </section>
 
     <section>
       <h1>Text Editor</h1>
@@ -683,7 +688,10 @@
     function onInstall(e) {
       console.log("Action :: Action");
     }
+    
     $(document).ready(() => {
+      const obj = new FinysTimePicker({ target: '#dropdowns-container'})
+      console.log(obj);
       kendo.bind($("body"), vm);
 
       //text inputs

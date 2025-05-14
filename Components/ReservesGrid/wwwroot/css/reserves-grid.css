@@ -191,3 +191,60 @@ th:nth-child(2) .k-cell-inner>.k-link {
     font-size: 1.125em;
     padding-left: 0.5rem;
 }
+
+.f-bare-button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td > a > svg {
+    display: none;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td > a {
+    text-decoration: none;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td[aria-expanded="true"] > a::before {
+    display: none;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td[aria-expanded="false"] > a::after {
+    display: none;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td > a::before {
+    content: '\e136';
+    font-family: "Phosphor-Light" !important;
+    font-weight: 500;
+    font-size: 1.125em;
+    position: absolute;
+}
+
+.k-master-row td.k-hierarchy-cell.k-table-td > a::after {
+    content: "\e13c";
+    font-family: "Phosphor-Light" !important;
+    font-weight: 500;
+    font-size: 1.125em;
+    position: absolute;
+}
+
+.f-inner-table-container {
+    padding: 0.25rem;
+    background-color: var(--neutral-lightest);
+}
+
+.f-inner-table-container table {
+    background-color: var(--neutral);
+}
+
+.k-detail-cell {
+    background-color: var(--neutral-lightest);
+}
+
+.k-hierarchy-cell:has(+ .k-detail-cell) {
+    background-color: var(--neutral-lightest);
+}

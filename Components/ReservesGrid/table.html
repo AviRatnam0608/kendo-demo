@@ -13,12 +13,6 @@
             data-toolbar="[{template: kendo.template($('#table-header').html())}]"
             data-columns="[
                 { 
-                    'field': 'arrow',
-                    title: ' ',
-                    width: '50px',
-                    template: '<div><i class=\'ph-light ph-caret-down f-grid-caret-down\'></i></div>'
-                },
-                { 
                     field: 'Id',
                     title: '#',
                     width: '50px',
@@ -45,6 +39,7 @@
             ]"
             data-bind="source: dummyData"
             data-scrollable="false"
+            data-detail-template="detail-template"
         >
     </div>
 
@@ -52,7 +47,7 @@
 </body>
 
 <script>
-    const vm = kendo.observable({
+    window.vm = kendo.observable({
         dummyData: new kendo.data.DataSource({
             data: [
                 {
@@ -81,9 +76,24 @@
                 }
             ]
         }),
+        otherDummyData: new kendo.data.DataSource({
+            data: [
+                {
+                    Id: 1,
+                    Group: 'Indemnity',
+                    Reserved: '99800',
+                    Paid: "200",
+                    Incurred: '10000',
+                    Status: 'Open',
+                },
+            ]
+        }),
         getAdjusterTemplate: function (row) {
             return `<span class='f-avatar' data-text='${row.Adjuster.avatar}'></span><span>${row.Adjuster.name}</span>`
         },
+        gridDetailInit: function(e) {
+            kendo.bind($(e.detailRow), this);
+        }
     })
     $(document).ready(() => {
         kendo.bind($('main'), vm);
@@ -94,6 +104,24 @@
             })
         })
     })
+</script>
+
+<script id="detail-template" type="text/x-kendo-template">
+    <div class="f-inner-table-container">
+        <div
+            data-role="grid"
+            data-columns="[
+                { field: 'Group' },
+                { field: 'Reserved' },
+                { field: 'Paid' },
+                { field: 'Incurred' },
+                { field: 'Status' },
+            ]"
+            data-bind="source: otherDummyData"
+        >
+
+        </div>
+    </div>
 </script>
 
 <script id="table-header" type="text/x-kendo-template">
