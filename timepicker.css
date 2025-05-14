@@ -4,15 +4,19 @@
 }
 
 .k-popup > .k-timeselector {
-    border-radius: 0.375rem;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    border-bottom: 1px solid var(--neutral-lightest);
 }
 
-.k-popup > .k-timeselector .k-title {
-    visibility: hidden;
+.k-popup > .k-timeselector .k-time-list-wrapper .k-title {
+    border-bottom: 1px solid var(--neutral-lightest);
 }
 
 .k-time-list-wrapper.k-focus::before,
-.k-time-list-wrapper.k-focus::after {
+.k-time-list-wrapper.k-focus::after,
+.k-time-list::before,
+.k-time-list::after {
     display: none;
 }
 
