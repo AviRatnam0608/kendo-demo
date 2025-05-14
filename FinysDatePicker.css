@@ -3,6 +3,7 @@
 div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td > a{
     color: var(--neutral-darker);
     font-weight: 500;
+    font-size: 1rem;
 }
 div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td.k-other-month > a {
     color: var(--neutral-light);
@@ -69,6 +70,8 @@ div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td.k-other-month
     color:var(--neutral-darkest);
 }
 
+.image.png
+
 
 
 .k-calendar-md{
@@ -93,7 +96,7 @@ div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td.k-other-month
 
 
 .k-calendar .k-calendar-td.k-focus .k-link{
-    box-shadow: 0 0 0 0px;
+    box-shadow: 0 0 0 0px !important;
 }
 
 .k-calendar .k-calendar-td.k-selected.k-hover .k-link{
