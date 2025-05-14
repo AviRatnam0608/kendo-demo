@@ -84,19 +84,17 @@
           />
 
         <input
-          class="f-dropdown f-templated-dropdown templated-dropdown"
-          data-role="dropdownlist"
+          is="finys-detailed-dropdownlist"
+          class="templated-dropdown"
           data-text-field="AgentName"
           data-value-field="AgentCode"
-          data-height="300"
+          data-detail-left="AgencyCode"
+          data-detail-right="AgencyName"
+          data-detail-bottom="Address"
           data-bind="
               value: templatedDropdownValue, 
               source: templatedListData, 
               isSelected: templatedDropdownValue"
-          data-option-label="{AgentId: null, DisplayValue: 'Select Agent...', SearchText:'Select Agent...',AgentName: null, AgentCode: null, AgencyName: null, AgencyCode: null, Address:null }"
-          data-option-label-template="option-template"
-          data-template="item-template"
-          data-value-template="value-template"
         />
       </div>
     </section>
@@ -860,28 +858,4 @@
 
     }
   </script>
-
-  <script id="item-template" type="text/x-kendo-template">
-    <div class="f-templated-item-dropdown-container">
-        <div>#: AgentCode # - #: AgentName #</div>
-        <div>#: AgencyCode # - #: AgencyName #</div>
-        <div>#: Address #</div>
-    </div>
-  </script>
-
-  <script id="value-template" type="text/x-kendo-template">
-    <div class="f-templated-item-dropdown-container">
-      <div>#: AgentCode # - #: AgentName #</div>
-      <div>#: AgencyCode # - #: AgencyName #</div>
-      <div>#: Address #</div>
-    </div>
-  </script>
-
-  <script id="option-template" type="text/x-kendo-template">
-    <div class="f-templated-item-dropdown-container">
-      <div style="font-size: 0.656rem">&nbsp;</div>
-      <div style="font-size: 1em">Select an option...</div>
-      <div>&nbsp;</div>
-    </div>
-</script>
 </html>
