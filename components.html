@@ -90,6 +90,12 @@
           data-option-label="Select an option"
         />
 
+        <input is="finys-dropdownlist" data-text-field="name" data-bind="value: groupDropdownValue, 
+                                                  source: groupListData, 
+                                                  isSelected: groupDropdownValue" 
+                                                  />
+        <my-card title="Hello" content="This is a custom element with other tags inside.">test</my-card>
+
         <input
           class="f-dropdown f-templated-dropdown templated-dropdown"
           data-role="dropdownlist"
@@ -115,6 +121,7 @@
         data-role="timepicker"
         data-component-type="modern"
       />
+      
 
     </section>
 
@@ -694,8 +701,10 @@
     function onInstall(e) {
       console.log("Action :: Action");
     }
-
+    
     $(document).ready(() => {
+      const obj = new FinysTimePicker({ target: '#dropdowns-container'})
+      console.log(obj);
       kendo.bind($("body"), vm);
 
       //text inputs
