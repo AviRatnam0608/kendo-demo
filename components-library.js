@@ -24,7 +24,12 @@ class FinysDetailedDropDownList extends HTMLInputElement {
         this.setAttribute('data-text-field', this.getAttribute('data-text-field') || 'name');
         this.setAttribute('data-value-field', this.getAttribute('data-value-field') || 'id');
         this.setAttribute('data-height', this.getAttribute('data-height') || '300');
-        this.setAttribute('data-option-label', this.getAttribute('data-option-label') || "{AgentId: null, DisplayValue: 'Select Agent...', SearchText:'Select Agent...',AgentName: null, AgentCode: null, AgencyName: null, AgencyCode: null, Address:null }");
+        this.setAttribute('data-text-field', this.getAttribute('data-text-field') || "textField");
+        this.setAttribute('data-value-field', this.getAttribute('data-value-field') || "valueField");
+        this.setAttribute('data-detail-left', this.getAttribute('data-detail-left') || "detailLeft");
+        this.setAttribute('data-detail-right', this.getAttribute('data-detail-right') || "detailRight");
+        this.setAttribute('data-detail-bottom', this.getAttribute('data-detail-bottom') || "detailBottom");
+        this.setAttribute('data-option-label', this.getAttribute('data-option-label') || this.getOptionLabel());
         this.setAttribute('data-option-label-template', this.getAttribute('data-option-label-template') || "option-template");
         this.setAttribute('data-template', this.getAttribute('data-template') || "item-template");
         this.setAttribute('data-value-template', this.getAttribute('data-value-template') || "value-template");
@@ -37,6 +42,16 @@ class FinysDetailedDropDownList extends HTMLInputElement {
         if(!document.getElementById(this.getAttribute('data-option-label-template'))) {
             document.querySelector('body').appendChild(this.getOptionTemplate())
         }
+    }
+
+    getOptionLabel() {
+        `{ 
+            ${this.getAttribute('data-text-field')}: null, 
+            ${this.getAttribute('data-value-field')}: null, 
+            ${this.getAttribute('data-detail-right')}: null, 
+            ${this.getAttribute('data-detail-left')}: null, 
+            ${this.getAttribute('data-detail-bottom')}: null 
+        }`;
     }
 
     getValueTemplate() {
