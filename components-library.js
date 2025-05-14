@@ -1,6 +1,5 @@
 class FinysTimePicker extends HTMLInputElement {
-    constructor() {
-      super();
+    connectedCallback() {
       this.setAttribute('data-role', 'timepicker');
       this.setAttribute('data-component-type', 'modern');
     }
