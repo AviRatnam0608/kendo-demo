@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="./FinysButtonStyles.css" />
     <link rel="stylesheet" href="./FinysDatePicker.css" />
     <link rel="stylesheet" href="./FinysGridControlStyles.css" />
+    <link rel="stylesheet" href="./timepicker.css" />
 
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
+    <script src="components-library.js"></script>
     <!-- ComponentStyles -->
     <link rel="stylesheet" href="dropdown.css" />
     <link rel="stylesheet" href="editor.css" />
@@ -62,7 +64,7 @@
   <body class="">
     <section>
       <h1>Dropdown</h1>
-      <div class="container">
+      <div id="dropdowns-container" class="container">
         <input
           class="f-dropdown my-dropdown"
           data-role="dropdownlist"
@@ -106,6 +108,15 @@
       </div>
     </section>
     <hr />
+
+    <section>
+      <h1>Time Picker</h1>
+      <input
+        data-role="timepicker"
+        data-component-type="modern"
+      />
+
+    </section>
 
     <section>
       <h1>Text Editor</h1>
@@ -683,6 +694,7 @@
     function onInstall(e) {
       console.log("Action :: Action");
     }
+
     $(document).ready(() => {
       kendo.bind($("body"), vm);
 
