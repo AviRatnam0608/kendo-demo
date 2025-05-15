@@ -2,6 +2,7 @@ class FinysTimePicker extends HTMLInputElement {
     connectedCallback() {
       this.setAttribute('data-role', 'timepicker');
       this.setAttribute('data-component-type', 'modern');
+      this.setAttribute('data-messages', `{set: 'Apply'}`)
     }
   }
 
@@ -110,6 +111,6 @@ class MyCard extends HTMLElement {
 }
 
 customElements.define('my-card', MyCard);
-customElements.define('finys-time-picker', FinysTimePicker, {extends: 'input'})
+customElements.define('finys-timepicker', FinysTimePicker, {extends: 'input'})
 customElements.define('finys-dropdownlist', FinysDropDownList, {extends: 'input'})
 customElements.define('finys-detailed-dropdownlist', FinysDetailedDropDownList, {extends: 'input'})
