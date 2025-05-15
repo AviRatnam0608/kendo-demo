@@ -11,6 +11,8 @@ div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td.k-other-month
 .k-calendar-view k-calendar-monthview{
     box-shadow: 0px 4px 6px -2px #00000008;
     box-shadow: 0px 12px 16px -4px #00000014;
+    padding: 4px 8px;
+    padding-bottom: 6px;
 }
 
 .k-widget.k-calendar.k-calendar-md, .k-calendar-container.k-popup{
@@ -51,11 +53,11 @@ div.k-calendar-view.k-calendar-monthview > table > tbody > tr > td.k-other-month
     font-size: .85rem;
 }
 
+
 .f-calendar-year-dropdown{
     width: 40%;
     font-weight: 500;
     font-size: .85rem;
-
 }
 
 
@@ -128,12 +130,21 @@ div.k-calendar-view.k-calendar-monthview > table > tbody  td.k-calendar-td.k-tod
 }
 
 
+.k-calendar-container .k-child-animation-container{
+    width: unset !important;
+}
+
+
 
 /* for dropdown */
 
 .k-calendar-container.k-popup .k-list-container.k-popup span.k-list-item-text{
-    font-size: .85rem;
+    font-size: .75rem;
     font-weight: 500;
+}
+
+.k-calendar-container.k-popup,.k-calendar-container.k-popup .k-child-animation-container,.k-calendar-container.k-popup .k-animation-container.k-animation-container-shown,.k-calendar-container.k-popup .k-list-container.k-popup {
+    width: 110px !important;
 }
 
 /* 
