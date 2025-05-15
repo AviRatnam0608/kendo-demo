@@ -764,12 +764,14 @@
         $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
 
         let onMonthChange = (e) => {
-          currentMonth = e.sender.select() - 1;
-          updateCalendar();
+          currentMonth = parseInt(e.sender.select() - 1);
+          if(isNaN(currentMonth) == false)
+            updateCalendar();
         };
         let onYearChange = (e) => {
           currentYear = parseInt(e.sender.value(), 10);
-          updateCalendar();
+          if(isNaN(currentYear) == false)
+            updateCalendar();
         };
 
         let currentDate = calendar.current();
