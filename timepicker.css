@@ -1,3 +1,20 @@
+.k-timepicker {
+    flex-direction: row-reverse;
+}
+
+
+.k-timepicker input[is="finys-timepicker"] {
+    background-color: var(--neutral-lightest);
+}
+
+.k-timepicker > button.k-input-button {
+    background-color: var(--neutral-lightest);
+}
+
+.k-timepicker > button.k-input-button:hover {
+    background-color: var(--neutral-lighter);
+}
+
 .k-popup:has(.k-timeselector) {
     border-radius: 0.375rem;
     margin-top: 0.5rem;
