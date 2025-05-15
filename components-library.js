@@ -99,20 +99,17 @@ class FinysDetailedDropDownList extends HTMLInputElement {
 }
 
 class FinysNestedGrid extends HTMLDivElement {
-    constructor() {
-        super();
-    }
-
+    // nested grids inside of nested grids must have a different data-detail-template-id
+    // and they must be bound to different data sources
     connectedCallback() {
         this.setAttribute('data-role', 'grid');
         this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
         this.setAttribute('data-scrollable', this.getAttribute('data-scrollable') || 'false');
         this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || 'detail-template');
+        this.templateHTML = this.innerHTML;
+        this.innerHTML = '';
         if(!document.getElementById(this.getAttribute('data-detail-template'))) {
             document.querySelector('body').appendChild(this.getDetailTemplate())
-        }
-        if(!document.getElementById('data-detail-template-2')) {
-            document.querySelector('body').appendChild(this.getNestedDetailTemplate())
         }
         if(!document.getElementById('table-header')) {
             document.querySelector('body').appendChild(this.getHeaderTemplate())
@@ -144,34 +141,7 @@ class FinysNestedGrid extends HTMLDivElement {
         script.setAttribute('type', 'text/x-kendo-template');
         script.innerHTML = `
             <div class="f-inner-table-container">
-                <div
-                    is="finys-nested-grid"
-                    data-toolbar="null"
-                    data-columns="[
-                        { field: 'Group' },
-                        { field: 'Reserved' },
-                        { field: 'Paid' },
-                        { field: 'Incurred' },
-                        { field: 'Status' },
-                    ]"
-                    data-detail-template="detail-template-2"
-                    data-bind="source: otherDummyData,
-                                events: { detailInit: initDetail }"
-                >
-
-                </div>
-            </div>
-        `
-        return script;
-    }
-
-    getNestedDetailTemplate() {
-        const script = document.createElement('script');
-        script.setAttribute('id', 'detail-template-2');
-        script.setAttribute('type', 'text/x-kendo-template');
-        script.innerHTML = `
-            <div class="f-inner-table-container">
-                this is a test
+                ${this.templateHTML}
             </div>
         `
         return script;
