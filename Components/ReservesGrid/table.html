@@ -9,8 +9,8 @@
 
 <body>
     <main class="claims-summary-main-content">
-        <div data-role="grid" 
-            data-toolbar="[{template: kendo.template($('#table-header').html())}]"
+        <div
+            is="finys-nested-grid"
             data-columns="[
                 { 
                     field: 'Id',
@@ -37,9 +37,10 @@
                     template: kendo.template($('#dropdown-button-template').html()),
                 },
             ]"
-            data-bind="source: dummyData"
-            data-scrollable="false"
-            data-detail-template="detail-template"
+            data-bind="source: dummyData,
+                        events: {
+                            detailInit: initDetail
+                        }"
         >
     </div>
 
@@ -48,6 +49,9 @@
 
 <script>
     window.vm = kendo.observable({
+        initDetail: function(e) {
+            kendo.bind($(e.detailRow), this)
+        },
         dummyData: new kendo.data.DataSource({
             data: [
                 {
@@ -91,10 +95,8 @@
         getAdjusterTemplate: function (row) {
             return `<span class='f-avatar' data-text='${row.Adjuster.avatar}'></span><span>${row.Adjuster.name}</span>`
         },
-        gridDetailInit: function(e) {
-            kendo.bind($(e.detailRow), this);
-        }
     })
+    
     $(document).ready(() => {
         kendo.bind($('main'), vm);
         $('.f-avatar').each((index, element) => {
@@ -104,37 +106,6 @@
             })
         })
     })
-</script>
-
-<script id="detail-template" type="text/x-kendo-template">
-    <div class="f-inner-table-container">
-        <div
-            data-role="grid"
-            data-columns="[
-                { field: 'Group' },
-                { field: 'Reserved' },
-                { field: 'Paid' },
-                { field: 'Incurred' },
-                { field: 'Status' },
-            ]"
-            data-bind="source: otherDummyData"
-        >
-
-        </div>
-    </div>
-</script>
-
-<script id="table-header" type="text/x-kendo-template">
-    <header class="f-table-header">
-        <div class="f-table-header-group">
-            <span class='f-table-label'>Reserves</span>
-            <span class="f-tag">13 total</span>
-        </div>
-        <div class="f-table-header-group">
-            <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-plus"></i><span>Add Reserve</span></div></button>
-            <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></div></button>
-        </div>
-    </header>
 </script>
 
 <script id="dropdown-button-template" type="text/x-kendo-template">
@@ -151,5 +122,6 @@
         <div class='f-button-content'><i class='ph ph-dots-three-vertical'></i></div>
     </button>
 </script>
-
 </html>
+
+

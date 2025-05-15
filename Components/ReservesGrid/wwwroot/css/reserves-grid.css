@@ -234,7 +234,6 @@ th:nth-child(2) .k-cell-inner>.k-link {
 
 .f-inner-table-container {
     padding: 0.25rem;
-    background-color: var(--neutral-lightest);
 }
 
 .f-inner-table-container table {
@@ -247,4 +246,16 @@ th:nth-child(2) .k-cell-inner>.k-link {
 
 .k-hierarchy-cell:has(+ .k-detail-cell) {
     background-color: var(--neutral-lightest);
+}
+
+tr.k-detail-row > td.k-table-td {
+    background-color: var(--neutral-ultra-light);
+}
+
+tr.k-detail-row > td.k-table-td:first-child {
+    box-shadow: inset 0.188rem 0 0 0 black;
+}
+
+tr.k-detail-row > td.k-table-td:last-child {
+    box-shadow: inset -0.188rem 0 0 0 black;
 }
