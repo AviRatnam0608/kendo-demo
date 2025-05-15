@@ -9,7 +9,7 @@ class FinysTimePicker extends HTMLInputElement {
 class FinysDropDownList extends HTMLInputElement {
     connectedCallback() {
         this.classList.add('f-dropdown');
-        this.setAttribute('data-role', this.getAttribute('data-role') || 'dropdownlist');
+        this.setAttribute('data-role', 'dropdownlist');
         this.setAttribute('data-text-field', this.getAttribute('data-text-field') || 'name');
         this.setAttribute('data-value-field', this.getAttribute('data-value-field') || 'id');
         this.setAttribute('data-height', this.getAttribute('data-height') || '300');
@@ -21,7 +21,7 @@ class FinysDetailedDropDownList extends HTMLInputElement {
     connectedCallback() {
         this.classList.add('f-dropdown');
         this.classList.add('f-templated-dropdown');
-        this.setAttribute('data-role', this.getAttribute('data-role') || 'dropdownlist');
+        this.setAttribute('data-role', 'dropdownlist');
         this.setAttribute('data-text-field', this.getAttribute('data-text-field') || 'name');
         this.setAttribute('data-value-field', this.getAttribute('data-value-field') || 'id');
         this.setAttribute('data-height', this.getAttribute('data-height') || '300');
@@ -98,6 +98,68 @@ class FinysDetailedDropDownList extends HTMLInputElement {
     }
 }
 
+class FinysNestedGrid extends HTMLDivElement {
+    constructor() {
+        super();
+    }
+
+    connectedCallback() {
+        this.setAttribute('data-role', 'grid');
+        this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
+        this.setAttribute('data-scrollable', this.getAttribute('data-scrollable') || 'false');
+        this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || 'detail-template');
+        if(!document.getElementById(this.getAttribute('data-detail-template'))) {
+            document.querySelector('body').appendChild(this.getDetailTemplate())
+        }
+        if(!document.getElementById('table-header')) {
+            document.querySelector('body').appendChild(this.getHeaderTemplate())
+        }
+    }
+
+    getHeaderTemplate() {
+        const script = document.createElement('script');
+        script.setAttribute('id', 'table-header');
+        script.setAttribute('type', 'text/x-kendo-template');
+        script.innerHTML = `
+            <header class="f-table-header">
+                <div class="f-table-header-group">
+                    <span class='f-table-label'>Reserves</span>
+                    <span class="f-tag">13 total</span>
+                </div>
+                <div class="f-table-header-group">
+                    <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-plus"></i><span>Add Reserve</span></div></button>
+                    <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></div></button>
+                </div>
+            </header>
+        `
+        return script;
+    }
+
+    getDetailTemplate() {
+        const script = document.createElement('script');
+        script.setAttribute('id', this.getAttribute('data-detail-template'));
+        script.setAttribute('type', 'text/x-kendo-template');
+        script.innerHTML = `
+            <div class="f-inner-table-container">
+                <div
+                    data-role="grid"
+                    data-columns="[
+                        { field: 'Group' },
+                        { field: 'Reserved' },
+                        { field: 'Paid' },
+                        { field: 'Incurred' },
+                        { field: 'Status' },
+                    ]"
+                    data-bind="source: otherDummyData"
+                >
+
+                </div>
+            </div>
+        `
+        return script;
+    }
+}
+
 class MyCard extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -114,3 +176,4 @@ customElements.define('my-card', MyCard);
 customElements.define('finys-timepicker', FinysTimePicker, {extends: 'input'})
 customElements.define('finys-dropdownlist', FinysDropDownList, {extends: 'input'})
 customElements.define('finys-detailed-dropdownlist', FinysDetailedDropDownList, {extends: 'input'})
+customElements.define('finys-nested-grid', FinysNestedGrid, {extends:  'div'})
