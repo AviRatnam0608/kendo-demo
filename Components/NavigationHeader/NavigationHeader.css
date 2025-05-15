@@ -141,6 +141,37 @@
   color: var(--neutral-darker);
 }
 
+.f-nav-bar-rhs-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.f-search-element-container {
+  display: flex;
+}
+
+.f-avatar-no-margin {
+  margin: 0;
+}
+
+.f-header-search-input-textbox {
+  border: none !important;
+}
+
+.f-search-input .k-input-solid.k-input:focus {
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+.f-search-icon {
+  color: var(--neutral); opacity: 60%;
+}
+
+.f-action-icons-container {
+  display: flex; align-items: center; gap: 16px;
+}
+
 .f-avatar-container {
   display: flex;
   align-items: center;

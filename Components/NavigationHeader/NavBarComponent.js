@@ -150,7 +150,9 @@ class FNavBar extends HTMLElement {
     navigationOptions.appendChild(img);
     navigationOptions.appendChild(navigationOptionWrapper);
 
-    // RHS of the NavBar
+    const searchAndProfile = document.createElement("div");
+    searchAndProfile.classList.add("f-nav-bar-rhs-group");
+
     const headerSearchAndShortcutsContainer = document.createElement("div");
     headerSearchAndShortcutsContainer.classList.add("f-avatar-section");
 
@@ -192,14 +194,34 @@ class FNavBar extends HTMLElement {
     }
 
     // Profile and User Section
-    
+    const avatarContainer = document.createElement("div");
+    avatarContainer.classList.add("f-avatar-container");
+
+    const userImg = document.createElement("img");
+    userImg.classList.add("f-avatar", "f-avatar-no-margin");
+    userImg.setAttribute("src", this.getAttribute("user-img"))
+    userImg.alt = 'User Avatar';
+
+    const userNameSpan = document.createElement("span");
+    userNameSpan.classList.add("f-text-tiny", "f-weight-medium");
+    userNameSpan.innerText = this.getAttribute("user-name");
+
+    const userIconElement = document.createElement("i");
+    userIconElement.classList.add("ph-light", `ph-caret-down`);
+
+    avatarContainer.appendChild(userImg);
+    avatarContainer.appendChild(userNameSpan);
+    avatarContainer.appendChild(userIconElement);
 
     headerSearchAndShortcutsContainer.appendChild(actionIconsContainer);
     searchBarSection.appendChild(searchIcon);
     searchBarSection.appendChild(headerSearchInput);
     headerSearchContainer.appendChild(searchBarSection);
     
-    navigationMainWrapper.appendChild(headerSearchAndShortcutsContainer);
+    searchAndProfile.appendChild(headerSearchAndShortcutsContainer);
+    searchAndProfile.appendChild(avatarContainer);
+
+    navigationMainWrapper.appendChild(searchAndProfile);
   }
 }
 
