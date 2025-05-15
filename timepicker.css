@@ -1,3 +1,20 @@
+.k-timepicker {
+    flex-direction: row-reverse;
+}
+
+
+.k-timepicker input[is="finys-timepicker"] {
+    background-color: var(--neutral-lightest);
+}
+
+.k-timepicker > button.k-input-button {
+    background-color: var(--neutral-lightest);
+}
+
+.k-timepicker > button.k-input-button:hover {
+    background-color: var(--neutral-lighter);
+}
+
 .k-popup:has(.k-timeselector) {
     border-radius: 0.375rem;
     margin-top: 0.5rem;
@@ -20,9 +37,9 @@
     display: none;
 }
 
-.k-time-highlight {
+/* .k-time-highlight {
     background-color: var(--primary-lightest)
-}
+} */
 
 .k-time-footer {
     flex-direction: row-reverse;
@@ -34,7 +51,11 @@
 
 .k-time-footer > .k-time-accept {
     background-color: var(--primary);
-    border-color: var(--primary-darker)
+    border-color: var(--primary-darker);
+}
+
+.k-popup .k-time-footer {
+    margin-top: 0;
 }
 
 .k-time-footer > .k-time-accept:hover {
@@ -57,13 +78,17 @@
     cursor: pointer;
 }
 
+.k-time-list .k-item {
+    display: flex;
+}
+
 .k-time-list .k-item > span {
-    padding: 0.375rem 0.85rem;
+    flex: 1 0 100%;
     border-radius: 0.375rem;
 }
 
 .k-time-list .k-item > span:hover {
-    background-color: var(--primary-lighter)
+    outline: 0.0625rem solid var(--primary-lighter);
 }
 
 .k-time-header .k-time-now {
@@ -74,7 +99,7 @@
 
 .k-time-header .k-time-now:hover {
     color: var(--primary);
-    background-color: var(--primary-lightest);
+    background-color: var(--primary-lightest) !important;
 }
 
 .k-time-list-wrapper {
