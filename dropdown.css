@@ -171,3 +171,7 @@
     font-weight: normal;
     box-shadow: none;
   }
+
+  .k-list-item-text:has(.f-templated-item-dropdown-container) {
+    display: flex;
+  }
