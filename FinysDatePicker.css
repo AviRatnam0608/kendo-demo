@@ -131,7 +131,7 @@ div.k-calendar-view.k-calendar-monthview > table > tbody  td.k-calendar-td.k-tod
 
 
 .k-calendar-container .k-child-animation-container{
-    width: unset !important;
+    width: 100% !important;
 }
 
 
@@ -144,7 +144,7 @@ div.k-calendar-view.k-calendar-monthview > table > tbody  td.k-calendar-td.k-tod
 }
 
 .k-calendar-container.k-popup,.k-calendar-container.k-popup .k-child-animation-container,.k-calendar-container.k-popup .k-animation-container.k-animation-container-shown,.k-calendar-container.k-popup .k-list-container.k-popup {
-    width: 110px !important;
+    /* width: 110px !important; */
 }
 
 /* 
