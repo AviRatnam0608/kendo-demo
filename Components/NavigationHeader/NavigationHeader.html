@@ -6,28 +6,11 @@
     <title></title>
 </head>
 <body>
-      <div class="f-navigation-header-main" id="header" data-role="view">
-        <div>
-          <f-nav-bar 
-            menu-id="main-menu" 
-          />
-        </div>
-        
-        <div class="f-avatar-section">
-          <div class="f-action-icons-container">
-            <div class="f-avatar-container">
-              <img
-                class="f-avatar"
-                style="margin: 0;"
-                src="https://randomuser.me/api/portraits/men/36.jpg"
-                alt="User Avatar"
-              />
-              <span class="f-text-tiny f-weight-medium">Dwight Schrute</span>
-              <i class="ph-light ph-caret-down"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+    <f-nav-bar 
+      menu-id="main-menu"
+      user-img="https://randomuser.me/api/portraits/men/36.jpg"
+      user-name="Lebron James"
+    />
 </body>
 
 <style>
@@ -36,27 +19,6 @@
     content: "\e136";
     font-size: 20px;
     font-weight: 100;
-  }
-
-  .f-search-element-container {
-    display: flex; align-items: center;
-  }
-
-  .f-header-search-input-textbox {
-    border: none !important;
-  }
-
-  .f-search-input .k-input-solid.k-input:focus {
-    box-shadow: none !important;
-    border-color: transparent !important;
-  }
-
-  .f-search-icon {
-    color: var(--neutral); opacity: 60%;
-  }
-
-  .f-action-icons-container {
-    display: flex; align-items: center; gap: 16px;
   }
 </style>
 </html>
