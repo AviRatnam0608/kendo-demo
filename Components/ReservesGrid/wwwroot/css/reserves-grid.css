@@ -253,9 +253,9 @@ tr.k-detail-row > td.k-table-td {
 }
 
 tr.k-detail-row > td.k-table-td:first-child {
-    box-shadow: inset 0.188rem 0 0 0 black;
+    box-shadow: inset 0.188rem 0 0 0 var(--neutral-darkest);
 }
 
 tr.k-detail-row > td.k-table-td:last-child {
-    box-shadow: inset -0.188rem 0 0 0 black;
+    box-shadow: inset -0.188rem 0 0 0 var(--neutral-darkest);
 }

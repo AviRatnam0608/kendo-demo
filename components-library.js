@@ -111,6 +111,9 @@ class FinysNestedGrid extends HTMLDivElement {
         if(!document.getElementById(this.getAttribute('data-detail-template'))) {
             document.querySelector('body').appendChild(this.getDetailTemplate())
         }
+        if(!document.getElementById('data-detail-template-2')) {
+            document.querySelector('body').appendChild(this.getNestedDetailTemplate())
+        }
         if(!document.getElementById('table-header')) {
             document.querySelector('body').appendChild(this.getHeaderTemplate())
         }
@@ -142,7 +145,8 @@ class FinysNestedGrid extends HTMLDivElement {
         script.innerHTML = `
             <div class="f-inner-table-container">
                 <div
-                    data-role="grid"
+                    is="finys-nested-grid"
+                    data-toolbar="null"
                     data-columns="[
                         { field: 'Group' },
                         { field: 'Reserved' },
@@ -150,10 +154,24 @@ class FinysNestedGrid extends HTMLDivElement {
                         { field: 'Incurred' },
                         { field: 'Status' },
                     ]"
-                    data-bind="source: otherDummyData"
+                    data-detail-template="detail-template-2"
+                    data-bind="source: otherDummyData,
+                                events: { detailInit: initDetail }"
                 >
 
                 </div>
+            </div>
+        `
+        return script;
+    }
+
+    getNestedDetailTemplate() {
+        const script = document.createElement('script');
+        script.setAttribute('id', 'detail-template-2');
+        script.setAttribute('type', 'text/x-kendo-template');
+        script.innerHTML = `
+            <div class="f-inner-table-container">
+                this is a test
             </div>
         `
         return script;
