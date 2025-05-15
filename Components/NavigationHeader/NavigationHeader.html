@@ -6,111 +6,20 @@
     <title></title>
 </head>
 <body>
-    <div
-      id="header"
-      class="f-navigation-header-main"
-      data-role="view"
-    >
-      <div class="f-navigation-header-main-top">
-        <div class="f-navigation-options">
-          <img src="https://289umysog9.ufs.sh/f/k8fEief3SftoJw81KumkcXjto4vAEwiRkseDlPd29gSL81p5" class="f-company-logo" />
-          <button class="f-burger" data-bind="click: toggleMenu">
-            &#9776;
-          </button>
-          <div class="f-navigation f-desktop-nav">
-            <!-- <div class="f-navigation-item">
-              <a class="f-navigation-link" href="#">
-                <span>Accounting</span>
-                <i class="ph ph-caret-down"></i>
-              </a>
-            </div> -->
-            <div class="f-navigation-item">
-              <ul
-                  data-role="menu"
-                  data-bind="events: { select: onSelect },
-                              visible: isVisible"
-                  style="width: 100%;">
-                  <li>
-                      <span class="f-navigation-link">Accounts</span>
-                      <ul>
-                          <li>
-                              Furniture
-                              <ul>
-                                  <li>Tables & Chairs</li>
-                                  <li>Sofas</li>
-                                  <li>Occasional Furniture</li>
-                                  <li>Children's Furniture</li>
-                                  <li>Beds</li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
-              </ul>
-            </div>
-            <div class="f-navigation-item">
-              <a class="f-navigation-link" href="#"><span>Claims</span>
-                <i class="ph ph-caret-down"></i></a>
-              <div class="f-dropdown">
-                <div><a class="f-navigation-link" href="#">Open Claims</a></div>
-                <div><a class="f-navigation-link" href="#">Archived Claims</a></div>
-              </div>
-            </div>
-            <div class="f-navigation-item">
-              <a class="f-navigation-link" href="#"><span>Policy</span>
-                <i class="ph ph-caret-down"></i></a>
-            </div>
-            <div class="f-navigation-item">
-              <a class="f-navigation-link" href="#"><span>Billing</span>
-                <i class="ph ph-caret-down"></i></a>
-              <div class="f-dropdown">
-                <div><a class="f-navigation-link" href="#">Invoices</a></div>
-                <div><a class="f-navigation-link" href="#">Payments</a></div>
-              </div>
-            </div>
-            <div class="f-navigation-item">
-              <a class="f-navigation-link" href="#"><span>Reports</span>
-                <i class="ph ph-caret-down" ></i></a>
-            </div>
-          </div>
+      <div class="f-navigation-header-main" id="header" data-role="view">
+        <div>
+          <f-nav-bar 
+            menu-id="main-menu" 
+          />
         </div>
-
+        
         <div class="f-avatar-section">
-          <div style="display: flex; align-items: center;">
-            <div id="dropdown-section">
-              <input 
-                    class="f-dropdown-styles f-border-rounded-left f-text-small f-weight-semi-bold"
-                    data-role="dropdownlist"
-                    data-auto-bind="false"
-                    data-value-primitive="true"
-                    data-text-field="Name"
-                    data-value-field="Id"
-                    data-bind="value: selectedName,
-                                source: dummyDropdownData" />
-            </div>
-            <div class="f-search-input">
-              <i class="ph-light ph-magnifying-glass" style="color: var(--neutral); opacity: 60%;"></i>
-              <input style="border: none; outline: none;" placeholder="Search"></input>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <button class="f-icon-btn">
-              <i class="ph-light ph-clock-counter-clockwise"></i>
-            </button>
-            <button class="f-icon-btn">
-              <i class="ph-light ph-star"></i>
-            </button>
-            <hr class="f-divider">
-            <button class="f-icon-btn">
-              <i class="ph-light ph-bell"></i>
-            </button>
-            <button class="f-icon-btn">
-              <i class="ph-light ph-gear"></i>
-            </button>
+          <div class="f-action-icons-container">
             <div class="f-avatar-container">
               <img
                 class="f-avatar"
                 style="margin: 0;"
-                src="https://randomuser.me/api/portraits/men/32.jpg"
+                src="https://randomuser.me/api/portraits/men/36.jpg"
                 alt="User Avatar"
               />
               <span class="f-text-tiny f-weight-medium">Dwight Schrute</span>
@@ -119,80 +28,35 @@
           </div>
         </div>
       </div>
-
-      <!-- Mobile Popup Menu -->
-      <div
-        id="mobileMenu"
-        class="f-navigation f-mobile-nav"
-        data-bind="visible: menuVisible"
-        style="
-          display: none;
-          padding: 12px;
-          border: 1px solid var(--f-border-color);
-          margin-top: 12px;
-        "
-      >
-        <div class="f-navigation-item">
-          <a class="f-navigation-link" href="#">Accounting</a>
-        </div>
-        <div class="f-navigation-item">
-          <a class="f-navigation-link" href="#">Claims</a>
-          <div class="f-dropdown" style="position: relative; display: block">
-            <div><a class="f-navigation-link" href="#">Open Claims</a></div>
-            <div><a class="f-navigation-link" href="#">Archived Claims</a></div>
-          </div>
-        </div>
-        <div class="f-navigation-item"><a class="f-navigation-link" href="#">Policy</a></div>
-        <div class="f-navigation-item">
-          <a class="f-navigation-link" href="#">Billing</a>
-          <div class="f-dropdown" style="position: relative; display: block">
-            <div><a class="f-navigation-link" href="#">Invoices</a></div>
-            <div><a class="f-navigation-link" href="#">Payments</a></div>
-          </div>
-        </div>
-        <div class="f-navigation-item"><a class="f-navigation-link" href="#">Reports</a></div>
-      </div>
-    </div>
 </body>
-<script>
-  const vm1 = kendo.observable({
-        selectedName: 2,
-        isVisible: true,
-        onSelect: function (e) {
-            var text = $(e.item).children(".k-link").text();
-            console.log("event :: select(" + text + ")");
-        },
-        dummyDropdownData: new kendo.data.DataSource({
-            data: [
-                {
-                    Id: 1,
-                    Name: "All"
-                },
-                {
-                    Id: 2,
-                    Name: "Claims"
-                },
-                {
-                    Id: 3,
-                    Name: "Policy"
-                },
-                {
-                    Id: 4,
-                    Name: "Billing"
-                }
-            ]
-        })
-    })
-    $(document).ready(() => {
-        kendo.bind($('#header'), vm1);
-    })
-</script>
+
 <style>
   .k-dropdownlist .k-icon:before {
     font-family: "Phosphor";
     content: "\e136";
     font-size: 20px;
     font-weight: 100;
+  }
+
+  .f-search-element-container {
+    display: flex; align-items: center;
+  }
+
+  .f-header-search-input-textbox {
+    border: none !important;
+  }
+
+  .f-search-input .k-input-solid.k-input:focus {
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  .f-search-icon {
+    color: var(--neutral); opacity: 60%;
+  }
+
+  .f-action-icons-container {
+    display: flex; align-items: center; gap: 16px;
   }
 </style>
 </html>
