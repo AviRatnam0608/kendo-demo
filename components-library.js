@@ -124,12 +124,13 @@ class FinysNestedGrid extends HTMLDivElement {
         script.setAttribute('id', 'table-header');
         script.setAttribute('type', 'text/x-kendo-template');
         script.innerHTML = `
-            <header class="f-table-header">
+            <header class="f-table-header f-generated-template">
                 <div class="f-table-header-group">
-                    <span class='f-table-label'>Reserves</span>
-                    <span class="f-tag">13 total</span>
+                    <span class='f-table-label'>${this.getAttribute('data-finys-label')}</span>
+                    <span class="f-tag" data-bind="text: ${this.getAttribute('data-finys-tag')}"></span>
                 </div>
                 <div class="f-table-header-group">
+                    ${this.getAttribute('data-finys-header-buttons') || ''}
                     <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-plus"></i><span>Add Reserve</span></div></button>
                     <button class='f-button f-clickable'><div class='f-button-content'><i class="ph ph-pencil-simple-line"></i><span>Edit Reserve</span></div></button>
                 </div>
@@ -143,7 +144,7 @@ class FinysNestedGrid extends HTMLDivElement {
         script.setAttribute('id', this.getAttribute('data-detail-template'));
         script.setAttribute('type', 'text/x-kendo-template');
         script.innerHTML = `
-            <div class="f-inner-table-container">
+            <div class="f-inner-table-container f-generated-template">
                 ${this.templateHTML}
             </div>
         `
@@ -151,19 +152,6 @@ class FinysNestedGrid extends HTMLDivElement {
     }
 }
 
-class MyCard extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <div class="card">
-            <h2>${this.getAttribute('title')}</h2>
-            <p>${this.getAttribute('content')}</p>
-            ${this.innerHTML}
-        </div>
-        `;
-    }
-}
-
-customElements.define('my-card', MyCard);
 customElements.define('finys-timepicker', FinysTimePicker, {extends: 'input'})
 customElements.define('finys-dropdownlist', FinysDropDownList, {extends: 'input'})
 customElements.define('finys-detailed-dropdownlist', FinysDetailedDropDownList, {extends: 'input'})

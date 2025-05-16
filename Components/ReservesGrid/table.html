@@ -11,6 +11,12 @@
     <main class="claims-summary-main-content">
         <div
             is="finys-nested-grid"
+            data-finys-label="Reserves"
+            data-finys-tag="headerTagValue"
+            data-finys-header-buttons="
+                <button data-bind='click: clickAddReserve'>Add Reserve</button>
+                <button data-bind='click: clickEditReserve'>Edit Reserve</button>
+            "
             data-columns="[
                 { 
                     field: 'Id',
@@ -77,6 +83,13 @@
         initDetail: function(e) {
             kendo.bind($(e.detailRow), this)
         },
+        headerTagValue: '16 total',
+        clickAddReserve: function() {
+            console.log('click add reserve')
+        },
+        clickEditReserve: function() {
+            console.log('click edit reserve');
+        },
         dummyData: new kendo.data.DataSource({
             data: [
                 {
@@ -141,6 +154,9 @@
                 type: 'text',
                 text: $(element).data('text'),
             })
+        })
+        $('.f-generated-template').each((i, element) => {
+            kendo.bind($(element), window.vm)
         })
     })
 </script>
