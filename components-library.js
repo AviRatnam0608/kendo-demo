@@ -99,13 +99,16 @@ class FinysDetailedDropDownList extends HTMLInputElement {
 }
 
 class FinysNestedGrid extends HTMLDivElement {
-    // nested grids inside of nested grids must have a different data-detail-template-id
-    // and they must be bound to different data sources
+    // nested grids inside of nested grids must have a different dataSources
+    // they must also define events: { detailInit: someInitFunc }
     connectedCallback() {
+        if(!this._dataDetailTemplateId) {
+            this._dataDetailTemplateId = `${crypto.randomUUID()}-detail-template`
+        }
         this.setAttribute('data-role', 'grid');
         this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
         this.setAttribute('data-scrollable', this.getAttribute('data-scrollable') || 'false');
-        this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || 'detail-template');
+        this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || this._dataDetailTemplateId);
         this.templateHTML = this.innerHTML;
         this.innerHTML = '';
         if(!document.getElementById(this.getAttribute('data-detail-template'))) {
