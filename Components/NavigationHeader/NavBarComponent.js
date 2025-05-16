@@ -1,38 +1,40 @@
-const navItems = [
+const navBarMenuItems = [
   {
-    "label":"Accounts",
-    "subitems":[
+    label: "Accounts",
+    subitems: [
       {
-        "label":"Furniture",
-        "subitems":[
+        label: "Furniture",
+        subitems: [
           {
-            "label":"Tables & Chairs",
-            "route": "www.youtube.com"
+            label: "Tables & Chairs",
+            route: "www.youtube.com",
           },
-          {"label":"Sofas"},
-          {"label":"Occasional Furniture"},
-          {"label":"Childrens Furniture"},
-          {"label":"Beds"}
-        ]
-      }
-    ]
+          { label: "Sofas" },
+          { label: "Occasional Furniture" },
+          { label: "Childrens Furniture" },
+          { label: "Beds" },
+        ],
+      },
+    ],
   },
   {
-    "label":"Reports",
-    "subitems":[
-      {"label":"Daily"},
-      {"label":"Monthly"},
-      {"label":"Annual"}
-    ]
-  }
+    label: "Reports",
+    subitems: [{ label: "Daily" }, { label: "Monthly" }, { label: "Annual" }],
+  },
 ];
 
-const logoUrl = "https://289umysog9.ufs.sh/f/k8fEief3SftoJw81KumkcXjto4vAEwiRkseDlPd29gSL81p5"
+const logoUrl =
+  "https://289umysog9.ufs.sh/f/k8fEief3SftoJw81KumkcXjto4vAEwiRkseDlPd29gSL81p5";
 
-const iconsList = ["clock-counter-clockwise", "star", "f-divider", "bell", "gear"];
+const iconsList = [
+  "clock-counter-clockwise",
+  "star",
+  "f-divider",
+  "bell",
+  "gear",
+];
 
 class FNavBar extends HTMLElement {
-
   constructor() {
     super();
 
@@ -41,36 +43,36 @@ class FNavBar extends HTMLElement {
       isVisible: true,
       textboxValue: "",
       onSelect: function (e) {
-          var text = $(e.item).children(".k-link").text();
-          console.log("event :: select(" + text + ")");
+        var text = $(e.item).children(".k-link").text();
+        console.log("event :: select(" + text + ")");
       },
       dummyDropdownData: new kendo.data.DataSource({
-          data: [
-              {
-                  Id: 1,
-                  Name: "All"
-              },
-              {
-                  Id: 2,
-                  Name: "Claims"
-              },
-              {
-                  Id: 3,
-                  Name: "Policy"
-              },
-              {
-                  Id: 4,
-                  Name: "Billing"
-              }
-          ]
-      })
-    })
+        data: [
+          {
+            Id: 1,
+            Name: "All",
+          },
+          {
+            Id: 2,
+            Name: "Claims",
+          },
+          {
+            Id: 3,
+            Name: "Policy",
+          },
+          {
+            Id: 4,
+            Name: "Billing",
+          },
+        ],
+      }),
+    });
   }
 
   connectedCallback() {
     // initial render
     this.render();
-    const searchSection = this.querySelector("#nav-header")
+    const searchSection = this.querySelector("#nav-header");
     if (searchSection) {
       kendo.bind(searchSection, this.vm);
     }
@@ -78,63 +80,63 @@ class FNavBar extends HTMLElement {
 
   render() {
     // clear out any previous content
-    this.innerHTML = '';
+    this.innerHTML = "";
 
     // Making main Nav wrappper -> contains all nav items
-    const navigationMainWrapper = document.createElement('div');
-    navigationMainWrapper.classList.add('f-navigation-header-main');
-    navigationMainWrapper.setAttribute('data-role', 'view');
-    navigationMainWrapper.setAttribute('id', 'nav-header');
+    const navigationMainWrapper = document.createElement("div");
+    navigationMainWrapper.classList.add("f-navigation-header-main");
+    navigationMainWrapper.setAttribute("data-role", "view");
+    navigationMainWrapper.setAttribute("id", "nav-header");
 
     // LHS of the NavBar
-    const navigationOptions = document.createElement('div');
-    navigationOptions.classList.add('f-navigation-options');
+    const navigationOptions = document.createElement("div");
+    navigationOptions.classList.add("f-navigation-options");
 
     // Company Logo
-    const img = document.createElement('img');
-    img.classList.add('f-company-logo');
+    const img = document.createElement("img");
+    img.classList.add("f-company-logo");
     img.src = logoUrl;
-    img.alt = 'Company Logo';
+    img.alt = "Company Logo";
 
-    const navigationOptionWrapper = document.createElement('div');
-    navigationOptionWrapper.classList.add('f-navigation', 'f-desktop-nav');
+    const navigationOptionWrapper = document.createElement("div");
+    navigationOptionWrapper.classList.add("f-navigation", "f-desktop-nav");
 
     // build the <ul id="nav-bar" ...>
-    const ul = document.createElement('ul');
-    ul.id = this.getAttribute('menu-id') || 'nav-bar';
-    ul.setAttribute('data-role', 'menu');
-    ul.style.width = '100%';
+    const ul = document.createElement("ul");
+    ul.id = this.getAttribute("menu-id") || "nav-bar";
+    ul.setAttribute("data-role", "menu");
+    ul.style.width = "100%";
 
     // Start of the RHS side of the nav bar
-    const navigationIconsWrapperSection = document.createElement('div');
-    navigationIconsWrapperSection.classList.add('f-avatar-section');
-    
-    let items = navItems;
+    const navigationIconsWrapperSection = document.createElement("div");
+    navigationIconsWrapperSection.classList.add("f-avatar-section");
+
+    let items = navBarMenuItems;
     const buildList = (arr, parentUl) => {
-      arr.forEach(item => {
-        const li = document.createElement('li');
-        li.classList.add('f-navigation-item');
+      arr.forEach((item) => {
+        const li = document.createElement("li");
+        li.classList.add("f-navigation-item");
 
         let linkEl;
         if (item.route) {
-          linkEl = document.createElement('a');
+          linkEl = document.createElement("a");
           linkEl.href = item.route;
-          
+
           // Intercept clicks for client-side routing:
-          linkEl.addEventListener('click', e => {
+          linkEl.addEventListener("click", (e) => {
             e.preventDefault();
-            console.log("click evbent", item.route)
+            console.log("click evbent", item.route);
           });
         } else {
-          linkEl = document.createElement('span');
+          linkEl = document.createElement("span");
         }
 
-        linkEl.classList.add('f-navigation-link');
+        linkEl.classList.add("f-navigation-link");
         linkEl.textContent = item.label;
         li.appendChild(linkEl);
 
         if (item.subitems && item.subitems.length) {
-          const subUl = document.createElement('ul');
+          const subUl = document.createElement("ul");
           buildList(item.subitems, subUl);
           li.appendChild(subUl);
         }
@@ -145,7 +147,7 @@ class FNavBar extends HTMLElement {
 
     buildList(items, ul);
     navigationOptionWrapper.appendChild(ul);
-    
+
     navigationMainWrapper.appendChild(navigationOptions);
     navigationOptions.appendChild(img);
     navigationOptions.appendChild(navigationOptionWrapper);
@@ -157,9 +159,16 @@ class FNavBar extends HTMLElement {
     headerSearchAndShortcutsContainer.classList.add("f-avatar-section");
 
     // Search item
-    const headerSearchContainer = new FHeaderSearchElementContainer();
-    const headerSearchDropdown = new FHeaderSearchElementDropdown();
-    const headerSearchInput = new FHeaderSearchElementInput();
+    const headerSearchContainer = document.createElement(
+      "f-header-search-container"
+    );
+    const headerSearchDropdown = document.createElement("input", {
+      is: "f-header-search-dropdown",
+    });
+    const headerSearchInput = document.createElement("input", {
+      is: "f-header-search-input",
+    });
+
     headerSearchAndShortcutsContainer.appendChild(headerSearchContainer);
     headerSearchContainer.appendChild(headerSearchDropdown);
 
@@ -167,30 +176,33 @@ class FNavBar extends HTMLElement {
     searchBarSection.classList.add("f-search-input");
 
     const searchIcon = document.createElement("i");
-    searchIcon.classList.add("ph-light", "ph-magnifying-glass", "f-search-icon");
+    searchIcon.classList.add(
+      "ph-light",
+      "ph-magnifying-glass",
+      "f-search-icon"
+    );
 
     // Icons Buttons
     const actionIconsContainer = document.createElement("div");
-    actionIconsContainer.classList.add("f-action-icons-container")
+    actionIconsContainer.classList.add("f-action-icons-container");
 
     this.appendChild(navigationMainWrapper);
 
-    for(let icon of iconsList)
-    {
-      if(icon === "f-divider"){
+    for (let icon of iconsList) {
+      if (icon === "f-divider") {
         const divider = document.createElement("hr");
-        divider.classList.add("f-divider")
+        divider.classList.add("f-divider");
         actionIconsContainer.appendChild(divider);
         continue;
       }
 
       const iconButton = document.createElement("button");
-      iconButton.classList.add("f-icon-btn")
+      iconButton.classList.add("f-icon-btn");
       const iconElement = document.createElement("i");
       iconElement.classList.add("ph-light", `ph-${icon}`);
       iconButton.appendChild(iconElement);
 
-      actionIconsContainer.appendChild(iconButton);        
+      actionIconsContainer.appendChild(iconButton);
     }
 
     // Profile and User Section
@@ -198,9 +210,17 @@ class FNavBar extends HTMLElement {
     avatarContainer.classList.add("f-avatar-container");
 
     const userImg = document.createElement("img");
-    userImg.classList.add("f-avatar", "f-avatar-no-margin");
-    userImg.setAttribute("src", this.getAttribute("user-img"))
-    userImg.alt = 'User Avatar';
+    userImg.classList.add(
+      "f-avatar",
+      "f-avatar-no-margin",
+      "k-avatar",
+      "k-avatar-solid-primary",
+      "k-avatar-solid",
+      "k-avatar-md",
+      "k-rounded-full"
+    );
+    userImg.setAttribute("src", this.getAttribute("user-img"));
+    userImg.alt = "User Avatar";
 
     const userNameSpan = document.createElement("span");
     userNameSpan.classList.add("f-text-tiny", "f-weight-medium");
@@ -217,7 +237,7 @@ class FNavBar extends HTMLElement {
     searchBarSection.appendChild(searchIcon);
     searchBarSection.appendChild(headerSearchInput);
     headerSearchContainer.appendChild(searchBarSection);
-    
+
     searchAndProfile.appendChild(headerSearchAndShortcutsContainer);
     searchAndProfile.appendChild(avatarContainer);
 
@@ -226,9 +246,8 @@ class FNavBar extends HTMLElement {
 }
 
 class FHeaderSearchElementContainer extends HTMLElement {
-  
   static get observedAttributes() {
-    return ['dropdownItems'];
+    return ["dropdownItems"];
   }
 
   constructor() {
@@ -238,67 +257,83 @@ class FHeaderSearchElementContainer extends HTMLElement {
   connectedCallback() {
     // initial render
     this.classList.add("f-search-element-container");
-    this.setAttribute("id", "f-search-container")
+    this.setAttribute("id", "f-search-container");
     this.render();
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name === 'dropdownItems' && oldVal !== newVal) {
+    if (name === "dropdownItems" && oldVal !== newVal) {
       this.render();
     }
   }
 
-  render(){
-  }
+  render() {}
 }
 
 class FHeaderSearchElementDropdown extends HTMLInputElement {
-  constructor(){
+  constructor() {
     super();
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
-    this.setAttribute('data-role', 'dropdownlist');
-    this.setAttribute('data-auto-bind', 'false');
-    this.setAttribute('data-value-primitive', 'true');
+  render() {
+    this.setAttribute("data-role", "dropdownlist");
+    this.setAttribute("data-auto-bind", "false");
+    this.setAttribute("data-value-primitive", "true");
     // this.setAttribute('data-text-field', this.getAttribute('data-text-field') || "Name");
     // this.setAttribute('data-value-field', this.getAttribute('data-value-field') || "Id");
     // this.setAttribute('data-bind', this.getAttribute('data-bind') || "value: selectedName, source: dummyDropdownData" );
 
-    this.setAttribute('data-text-field', "Name");
-    this.setAttribute('data-value-field', "Id");
-    this.setAttribute('data-bind', "value: selectedName, source: dummyDropdownData" );
+    this.setAttribute("data-text-field", "Name");
+    this.setAttribute("data-value-field", "Id");
+    this.setAttribute(
+      "data-bind",
+      "value: selectedName, source: dummyDropdownData"
+    );
 
-    this.classList.add('f-dropdown-styles', 'f-border-rounded-left', 'f-text-small', 'f-weight-semi-bold');
+    this.classList.add(
+      "f-dropdown-styles",
+      "f-border-rounded-left",
+      "f-text-small",
+      "f-weight-semi-bold"
+    );
   }
 }
 
 class FHeaderSearchElementInput extends HTMLInputElement {
-  constructor(){
+  constructor() {
     super();
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
 
-  render(){
-    this.setAttribute('data-role', 'textbox');
-    this.setAttribute('data-format', 'c');
-    this.setAttribute('data-min', '0');
-    this.setAttribute('data-max', '100');
-    this.setAttribute('placeholder', 'Search');
-    this.setAttribute('data-bind', "value: textboxValue");
+  render() {
+    this.setAttribute("data-role", "textbox");
+    this.setAttribute("data-format", "c");
+    this.setAttribute("data-min", "0");
+    this.setAttribute("data-max", "100");
+    this.setAttribute("placeholder", "Search");
+    this.setAttribute("data-bind", "value: textboxValue");
 
-    this.classList.add('f-header-search-input-textbox')
+    this.classList.add("f-header-search-input-textbox");
   }
 }
 
-customElements.define('f-nav-bar', FNavBar);
-customElements.define('f-header-search-container', FHeaderSearchElementContainer);
-customElements.define('f-header-search-dropdown', FHeaderSearchElementDropdown, {extends: 'input'});
-customElements.define('f-header-search-input', FHeaderSearchElementInput, {extends: 'input'});
+customElements.define("f-nav-bar", FNavBar);
+customElements.define(
+  "f-header-search-container",
+  FHeaderSearchElementContainer
+);
+customElements.define(
+  "f-header-search-dropdown",
+  FHeaderSearchElementDropdown,
+  { extends: "input" }
+);
+customElements.define("f-header-search-input", FHeaderSearchElementInput, {
+  extends: "input",
+});

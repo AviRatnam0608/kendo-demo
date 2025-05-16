@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="MainStyles.css" />
     <script src="kendo.all.min.js"></script>
     <script src="kendo-ui-jquery-license.js"></script>
-    <script defer src="./Components/NavigationHeader/NavBarComponent.js"></script>
     <script defer src="./components-library.js"></script>
+    <script
+      defer
+      src="./Components/NavigationHeader/NavBarComponent.js"
+    ></script>
     <!-- ComponentStyles -->
     <link rel="stylesheet" href="./Components/ClaimsHeader/ClaimsHeader.css" />
     <link
@@ -45,7 +48,10 @@
     />
   </head>
   <body class="f-bg-gradient-shapes">
-    <nav-header id="nav-header"></nav-header>
+    <f-nav-bar
+      user-name="Lebron James"
+      user-img="https://randomuser.me/api/portraits/men/36.jpg"
+    ></f-nav-bar>
     <Claims-summary id="claims-summary"></Claims-summary>
     <reserve-grid id="reserve-grid"></reserve-grid>
   </body>
@@ -53,9 +59,6 @@
   <script>
     $(document).ready(() => {
       $("#claims-summary").load("./Components/ClaimsHeader/ClaimsHeader.html");
-      $("#nav-header").load(
-        "./Components/NavigationHeader/NavigationHeader.html"
-      );
       $("#reserve-grid").load("./Components/ReservesGrid/table.html");
     });
   </script>

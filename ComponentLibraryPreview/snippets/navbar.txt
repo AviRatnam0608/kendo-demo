@@ -1,0 +1,4 @@
+<f-nav-bar
+    user-name="Lebron James"
+    user-img="https://randomuser.me/api/portraits/men/36.jpg"
+></f-nav-bar>
