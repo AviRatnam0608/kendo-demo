@@ -1,41 +1,39 @@
-const navItems = [
-  {
-    "label":"Accounts",
-    "subitems":[
-      {
-        "label":"Furniture",
-        "subitems":[
-          {
-            "label":"Tables & Chairs",
-            "route": "www.youtube.com"
-          },
-          {"label":"Sofas"},
-          {"label":"Occasional Furniture"},
-          {"label":"Childrens Furniture"},
-          {"label":"Beds"}
-        ]
-      }
-    ]
-  },
-  {
-    "label":"Reports",
-    "subitems":[
-      {"label":"Daily"},
-      {"label":"Monthly"},
-      {"label":"Annual"}
-    ]
-  }
-];
-
-const logoUrl = "https://289umysog9.ufs.sh/f/k8fEief3SftoJw81KumkcXjto4vAEwiRkseDlPd29gSL81p5"
-
-const iconsList = ["clock-counter-clockwise", "star", "f-divider", "bell", "gear"];
-
 class FNavBar extends HTMLElement {
+  static navItems = [
+    {
+      "label":"Accounts",
+      "subitems":[
+        {
+          "label":"Furniture",
+          "subitems":[
+            {
+              "label":"Tables & Chairs",
+              "route": "www.youtube.com"
+            },
+            {"label":"Sofas"},
+            {"label":"Occasional Furniture"},
+            {"label":"Childrens Furniture"},
+            {"label":"Beds"}
+          ]
+        }
+      ]
+    },
+    {
+      "label":"Reports",
+      "subitems":[
+        {"label":"Daily"},
+        {"label":"Monthly"},
+        {"label":"Annual"}
+      ]
+    }
+  ];
+
+  static logoUrl = "https://289umysog9.ufs.sh/f/k8fEief3SftoJw81KumkcXjto4vAEwiRkseDlPd29gSL81p5"
+
+  static iconList = ["clock-counter-clockwise", "star", "f-divider", "bell", "gear"];
 
   constructor() {
     super();
-
     this.vm = kendo.observable({
       selectedName: 1,
       isVisible: true,
@@ -76,15 +74,17 @@ class FNavBar extends HTMLElement {
     }
   }
 
+  //make all of these methods on the class not comments
+  renderNavWrapper() {
+    this.navigationMainWrapper = document.createElement('div');
+    this.navigationMainWrapper.classList.add('f-navigation-header-main');
+    this.navigationMainWrapper.setAttribute('data-role', 'view');
+    this.navigationMainWrapper.setAttribute('id', 'nav-header');
+  }
+
   render() {
     // clear out any previous content
     this.innerHTML = '';
-
-    // Making main Nav wrappper -> contains all nav items
-    const navigationMainWrapper = document.createElement('div');
-    navigationMainWrapper.classList.add('f-navigation-header-main');
-    navigationMainWrapper.setAttribute('data-role', 'view');
-    navigationMainWrapper.setAttribute('id', 'nav-header');
 
     // LHS of the NavBar
     const navigationOptions = document.createElement('div');
@@ -109,7 +109,9 @@ class FNavBar extends HTMLElement {
     const navigationIconsWrapperSection = document.createElement('div');
     navigationIconsWrapperSection.classList.add('f-avatar-section');
     
-    let items = navItems;
+    let items = navItems; // remove this
+    // Don't define functions in your render method
+    // make a method on the class for this.
     const buildList = (arr, parentUl) => {
       arr.forEach(item => {
         const li = document.createElement('li');
@@ -146,7 +148,7 @@ class FNavBar extends HTMLElement {
     buildList(items, ul);
     navigationOptionWrapper.appendChild(ul);
     
-    navigationMainWrapper.appendChild(navigationOptions);
+    this.navigationMainWrapper.appendChild(navigationOptions);
     navigationOptions.appendChild(img);
     navigationOptions.appendChild(navigationOptionWrapper);
 
@@ -173,9 +175,11 @@ class FNavBar extends HTMLElement {
     const actionIconsContainer = document.createElement("div");
     actionIconsContainer.classList.add("f-action-icons-container")
 
-    this.appendChild(navigationMainWrapper);
+    this.appendChild(this.navigationMainWrapper);
 
-    for(let icon of iconsList)
+    // it's javascript convention to use the array methods (.map, .forEach, .filter, .reduce, etc.)
+    // rather than for loops. Try using forEach here.
+    for(let icon of this.constructor.iconsList)
     {
       if(icon === "f-divider"){
         const divider = document.createElement("hr");
@@ -194,6 +198,7 @@ class FNavBar extends HTMLElement {
     }
 
     // Profile and User Section
+    // Make this a method
     const avatarContainer = document.createElement("div");
     avatarContainer.classList.add("f-avatar-container");
 
@@ -221,7 +226,7 @@ class FNavBar extends HTMLElement {
     searchAndProfile.appendChild(headerSearchAndShortcutsContainer);
     searchAndProfile.appendChild(avatarContainer);
 
-    navigationMainWrapper.appendChild(searchAndProfile);
+    this.navigationMainWrapper.appendChild(searchAndProfile);
   }
 }
 
