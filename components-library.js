@@ -96,24 +96,13 @@ class FinysDetailedDropDownList extends HTMLInputElement {
         `
         return script;
     }
-}
+} 
 
-class FinysNestedGrid extends HTMLDivElement {
-    // nested grids inside of nested grids must have a different dataSources
-    // they must also define events: { detailInit: someInitFunc }
+class FinysGrid extends HTMLDivElement {
     connectedCallback() {
-        if(!this._dataDetailTemplateId) {
-            this._dataDetailTemplateId = `${crypto.randomUUID()}-detail-template`
-        }
         this.setAttribute('data-role', 'grid');
         this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
         this.setAttribute('data-scrollable', this.getAttribute('data-scrollable') || 'false');
-        this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || this._dataDetailTemplateId);
-        this.templateHTML = this.innerHTML;
-        this.innerHTML = '';
-        if(!document.getElementById(this.getAttribute('data-detail-template'))) {
-            document.querySelector('body').appendChild(this.getDetailTemplate())
-        }
         if(!document.getElementById('table-header')) {
             document.querySelector('body').appendChild(this.getHeaderTemplate())
         }
@@ -138,6 +127,28 @@ class FinysNestedGrid extends HTMLDivElement {
         `
         return script;
     }
+}
+
+class FinysNestedGrid extends FinysGrid {
+    // nested grids inside of nested grids must have a different dataSources
+    // they must also define events: { detailInit: someInitFunc }
+    connectedCallback() {
+        if(!this._dataDetailTemplateId) {
+            this._dataDetailTemplateId = `${crypto.randomUUID()}-detail-template`
+        }
+        this.setAttribute('data-role', 'grid');
+        this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
+        this.setAttribute('data-scrollable', this.getAttribute('data-scrollable') || 'false');
+        this.setAttribute('data-detail-template', this.getAttribute('data-detail-template') || this._dataDetailTemplateId);
+        this.templateHTML = this.innerHTML;
+        this.innerHTML = '';
+        if(!document.getElementById(this.getAttribute('data-detail-template'))) {
+            document.querySelector('body').appendChild(this.getDetailTemplate())
+        }
+        if(!document.getElementById('table-header')) {
+            document.querySelector('body').appendChild(this.getHeaderTemplate())
+        }
+    }
 
     getDetailTemplate() {
         const script = document.createElement('script');
@@ -156,3 +167,4 @@ customElements.define('finys-timepicker', FinysTimePicker, {extends: 'input'})
 customElements.define('finys-dropdownlist', FinysDropDownList, {extends: 'input'})
 customElements.define('finys-detailed-dropdownlist', FinysDetailedDropDownList, {extends: 'input'})
 customElements.define('finys-nested-grid', FinysNestedGrid, {extends:  'div'})
+customElements.define('finys-grid', FinysGrid, {extends:  'div'})

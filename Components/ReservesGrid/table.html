@@ -26,20 +26,17 @@
                 },
                 { 
                     'field': 'Claimant', 
-                    title: 'CLAIMANT',
                     template: '<a href=\'\\\\#\'>#=Claimant#</a>'
                 },
                 { 'field': 'CoveredItem', title: 'COVERED ITEM'},
                 {
                     field: 'Adjuster', 
-                    title: 'ADJUSTER',
                     template: vm.getAdjusterTemplate
                 },
-                { 'field': 'Coverage', title: 'COVERAGE'},
-                { 'field': 'Cause', title: 'CAUSE'},
+                { 'field': 'Coverage' },
+                { 'field': 'Cause' },
                 { 
                     field: 'Actions', 
-                    title: 'ACTIONS',
                     template: kendo.template($('#dropdown-button-template').html()),
                 },
             ]"
@@ -53,15 +50,24 @@
                 data-toolbar="null"
                 data-columns="[
                     { field: 'Group' },
-                    { field: 'Reserved' },
-                    { field: 'Paid' },
-                    { field: 'Incurred' },
+                    { 
+                      field: 'Reserved',
+                      format: '{0:c}'
+                    },
+                    { 
+                        field: 'Paid',
+                        format: '{0:c}'
+                    },
+                    { 
+                        field: 'Incurred',
+                        format: '{0:c}'
+                    },
                     { field: 'Status' },
                 ]"
                 data-bind="source: otherDummyData, events: { detailInit: initDetail }"
             >
                 <div
-                    is="finys-nested-grid"
+                    is="finys-grid"
                     data-toolbar="null"
                     data-columns="[
                         { field: 'Group' },
@@ -70,9 +76,8 @@
                         { field: 'Incurred' },
                         { field: 'Status' },
                     ]"
-                    data-bind="source: anotherDummyData, events: { detailInit: initDetail }"
+                    data-bind="source: anotherDummyData"
                 >
-                    <button>This is a button</button>
                 </div>
             </div>
         </div>
@@ -123,9 +128,9 @@
                 {
                     Id: 1,
                     Group: 'Indemnity',
-                    Reserved: '99800',
-                    Paid: "200",
-                    Incurred: '10000',
+                    Reserved: 99800,
+                    Paid: 200,
+                    Incurred: 10000,
                     Status: 'Open',
                 },
             ]
