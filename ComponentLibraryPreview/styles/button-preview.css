@@ -1,9 +1,11 @@
 finys-button-preview.screen.active {
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 3rem 3rem 3rem 3rem;
-    place-items: center;
+    grid-template-rows: 1fr 5rem 1fr 1fr;
     grid-auto-flow: column;
+    justify-items: center;
+    align-items: flex-start;
     gap: 1rem;
 }
 
@@ -13,16 +15,24 @@ finys-button-preview > .f-button {
 }
 
 finys-button-controls {
-    grid-column: 1 / 2;
+    width: 100%;
+    grid-column: 1 / 4;
     grid-row: 1 / 2;
     display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+finys-button-controls > section {
+    display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 finys-code-viewer {
     grid-column: 1 / 4;
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     justify-self: stretch;
 }
