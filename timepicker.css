@@ -1,17 +1,17 @@
-.k-timepicker {
+.f-timepicker {
     flex-direction: row-reverse;
 }
 
 
-.k-timepicker input[is="finys-timepicker"] {
+.f-timepicker input[is="finys-timepicker"] {
     background-color: var(--neutral-lightest);
 }
 
-.k-timepicker > button.k-input-button {
+.f-timepicker > button.k-input-button {
     background-color: var(--neutral-lightest);
 }
 
-.k-timepicker > button.k-input-button:hover {
+.f-timepicker > button.k-input-button:hover {
     background-color: var(--neutral-lighter);
 }
 
