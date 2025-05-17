@@ -1,121 +1,88 @@
 <!DOCTYPE html>
 <html style="height: 100%" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ui Mockups</title>
-    <link
-      href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="MainVariables.css" />
-    <link rel="stylesheet" href="FinysUtilityClasses.css" />
-    <link rel="stylesheet" href="MainStyles.css" />
-    <link rel="stylesheet" href="./FinysToggleSwitchStyles.css" />
-    <link rel="stylesheet" href="./FinysModalStyles2.css" />
-    <link rel="stylesheet" href="./FinysTextInputStyles.css" />
-    <link rel="stylesheet" href="./FinysButtonStyles.css" />
-    <link rel="stylesheet" href="./FinysDatePicker.css" />
-    <link rel="stylesheet" href="./FinysGridControlStyles.css" />
-    <link rel="stylesheet" href="./timepicker.css" />
 
-    <script src="kendo.all.min.js"></script>
-    <script src="kendo-ui-jquery-license.js"></script>
-    <script defer src="components-library.js"></script>
-    <!-- ComponentStyles -->
-    <link rel="stylesheet" href="dropdown.css" />
-    <link rel="stylesheet" href="editor.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
-    />
-    <style>
-      /* transient styles */
-      .my-dropdown {
-        max-width: 200px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ui Mockups</title>
+  <link href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="MainVariables.css" />
+  <link rel="stylesheet" href="FinysUtilityClasses.css" />
+  <link rel="stylesheet" href="MainStyles.css" />
+  <link rel="stylesheet" href="./FinysToggleSwitchStyles.css" />
+  <link rel="stylesheet" href="./FinysModalStyles2.css" />
+  <link rel="stylesheet" href="./FinysTextInputStyles.css" />
+  <link rel="stylesheet" href="./FinysButtonStyles.css" />
+  <link rel="stylesheet" href="./FinysDatePicker.css" />
+  <link rel="stylesheet" href="./FinysGridControlStyles.css" />
+  <link rel="stylesheet" href="./timepicker.css" />
 
-      .templated-dropdown,
-      .timepicker {
-        max-width: 300px;
-      }
+  <script src="kendo.all.min.js"></script>
+  <script src="kendo-ui-jquery-license.js"></script>
+  <script defer src="components-library.js"></script>
+  <!-- ComponentStyles -->
+  <link rel="stylesheet" href="dropdown.css" />
+  <link rel="stylesheet" href="editor.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css" />
+  <style>
+    /* transient styles */
+    .my-dropdown {
+      max-width: 200px;
+    }
 
-      .container,
-      section {
-        max-width: 80%;
-        margin: 1rem auto;
-        gap: 2rem;
-      }
-    </style>
-  </head>
-  <body class="">
-    <section>
-      <h1>Dropdown</h1>
-      <div id="dropdowns-container" class="container">
-        <input 
-          is="finys-dropdownlist" 
-          class="my-dropdown" 
-          data-text-field="name" 
-          data-bind="value: basicDropdownValue,
+    .templated-dropdown,
+    .timepicker {
+      max-width: 300px;
+    }
+
+    .container,
+    section {
+      max-width: 80%;
+      margin: 1rem auto;
+      gap: 2rem;
+    }
+  </style>
+</head>
+
+<body class="">
+  <section>
+    <h1>Dropdown</h1>
+    <div id="dropdowns-container" class="container">
+      <input is="finys-dropdownlist" class="my-dropdown" data-text-field="name" data-bind="value: basicDropdownValue,
                             source: listData, 
-                            isSelected: basicDropdownValue" 
-          />
+                            isSelected: basicDropdownValue" />
 
-        <input 
-          is="finys-dropdownlist" 
-          class="my-dropdown" 
-          data-text-field="name" 
-          data-bind="value: groupDropdownValue,
+      <input is="finys-dropdownlist" class="my-dropdown" data-text-field="name" data-bind="value: groupDropdownValue,
                             source: groupListData, 
-                            isSelected: groupDropdownValue" 
-          />
+                            isSelected: groupDropdownValue" />
 
-        <input
-          is="finys-detailed-dropdownlist"
-          class="templated-dropdown"
-          data-text-field="AgentName"
-          data-value-field="AgentCode"
-          data-detail-left="AgencyCode"
-          data-detail-right="AgencyName"
-          data-detail-bottom="Address"
-          data-bind="
+      <input is="finys-detailed-dropdownlist" class="templated-dropdown" data-text-field="AgentName"
+        data-value-field="AgentCode" data-detail-left="AgencyCode" data-detail-right="AgencyName"
+        data-detail-bottom="Address" data-bind="
               value: templatedDropdownValue, 
               source: templatedListData, 
-              isSelected: templatedDropdownValue"
-        />
-      </div>
-    </section>
-    <hr />
+              isSelected: templatedDropdownValue" />
+    </div>
+  </section>
+  <hr />
 
-    <section>
-      <h1>Time Picker</h1>
-      <input
-        is="finys-timepicker"
-        class="timepicker"
-      />
-      
+  <section>
+    <h1>Time Picker</h1>
+    <input is="finys-timepicker" class="timepicker" />
 
-    </section>
 
-    <section>
-      <h1>Text Editor</h1>
-      <textarea
-        class="f-editor"
-        data-role="editor"
-        data-tools="[
+  </section>
+
+  <section>
+    <h1>Text Editor</h1>
+    <textarea class="f-editor" data-role="editor" data-tools="[
             [
               'bold',
               'italic',
@@ -152,315 +119,297 @@
               }
             }
 
-          ]"
-      ></textarea>
-    </section>
-    <hr />
+          ]"></textarea>
+  </section>
+  <hr />
 
-    <section>
-      <h1>Toggle</h1>
-      <div class="container">
-        <input
-          class="f-toggle-switch f-toggle-switch-large"
-          data-role="switch"
-          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
-        />
-        <label class="f-text-regular">Some text</label>
-      </div>
-      <div class="container">
-        <input
-          class="f-toggle-switch f-toggle-switch-medium"
-          data-role="switch"
-          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
-        />
-        <label class="f-text-small">Some text</label>
-      </div>
-      <div class="container">
-        <input
-          class="f-toggle-switch f-toggle-switch-small"
-          data-role="switch"
-          data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled"
-        />
-        <label class="f-text-tiny">Some text</label>
-      </div>
-    </section>
-    <hr />
+  <section>
+    <h1>Toggle</h1>
+    <div class="container">
+      <input class="f-toggle-switch f-toggle-switch-large" data-role="switch"
+        data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
+      <label class="f-text-regular">Some text</label>
+    </div>
+    <div class="container">
+      <input class="f-toggle-switch f-toggle-switch-medium" data-role="switch"
+        data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
+      <label class="f-text-small">Some text</label>
+    </div>
+    <div class="container">
+      <input class="f-toggle-switch f-toggle-switch-small" data-role="switch"
+        data-bind="enabled: isEnabled, visible: isVisible, checked: isChecked, events: { change: onChange }, disabled: isDisabled" />
+      <label class="f-text-tiny">Some text</label>
+    </div>
+  </section>
+  <hr />
 
-    <section>
-      <h1>Modal</h1>
-      <div class="container">
-        <button data-bind="click: showModalLarge">Show Large Modal</button>
-        <button data-bind="click: showModalMedium">Show Medium Modal</button>
-        <button data-bind="click: showModalSmall">Show Small Modal</button>
-        <div
-          class="f-modal f-modal-large"
-          data-role="dialog"
-          data-title="Software Update"
-          data-width="450"
-          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
-          data-modal="false"
-          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalLargeVisible, events: { close: onClose}"
-        ></div>
-        <div
-          class="f-modal f-modal-medium"
-          data-role="dialog"
-          data-title="Software Update"
-          data-width="450"
-          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
-          data-modal="false"
-          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalMediumVisible, events: { close: onClose}"
-        ></div>
-        <div
-          class="f-modal f-modal-small"
-          data-role="dialog"
-          data-title="Software Update"
-          data-width="450"
-          data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
-          data-modal="false"
-          data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
-          data-bind="dialogOpen: isModalSmallVisible, events: { close: onClose}"
-        ></div>
-      </div>
-    </section>
-    <hr />
+  <section>
+    <h1>Modal</h1>
+    <div class="container">
+      <button data-bind="click: showModalLarge">Show Large Modal</button>
+      <button data-bind="click: showModalMedium">Show Medium Modal</button>
+      <button data-bind="click: showModalSmall">Show Small Modal</button>
+      <div class="f-modal f-modal-large" data-role="dialog" data-title="Software Update" data-width="450"
+        data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
+        data-modal="false"
+        data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+        data-bind="dialogOpen: isModalLargeVisible, events: { close: onClose}"></div>
+      <div class="f-modal f-modal-medium" data-role="dialog" data-title="Software Update" data-width="450"
+        data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
+        data-modal="false"
+        data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+        data-bind="dialogOpen: isModalMediumVisible, events: { close: onClose}"></div>
+      <div class="f-modal f-modal-small" data-role="dialog" data-title="Software Update" data-width="450"
+        data-actions="[{ text: 'Cancel', action: onRemind },{ text: 'Action', action: onInstall, primary: true }]"
+        data-modal="false"
+        data-content="<p>A new version of <strong>Kendo UI</strong> is available. Would you like to download and install it now?<p>"
+        data-bind="dialogOpen: isModalSmallVisible, events: { close: onClose}"></div>
+    </div>
+  </section>
+  <hr />
 
-    <section id="finys-text-input-container">
-      <h1>Text inputs</h1>
+  <section id="finys-text-input-container">
+    <h1>Text inputs</h1>
 
-      <div class="input-container">
-        <label class="f-h-label">Name</label>
-        <input id="textbox" />
-      </div>
+    <div class="input-container">
+      <label class="f-h-label">Name</label>
+      <input id="textbox" />
+    </div>
 
-      <div class="input-container">
-        <label class="f-h-label">Name</label>
-        <input name="username" required class="k-invalid" id="textbox2" />
-      </div>
+    <div class="input-container">
+      <label class="f-h-label">Name</label>
+      <input name="username" required class="k-invalid" id="textbox2" />
+    </div>
 
-      <div class="input-container">
-        <label class="f-h-label">Phone #</label>
-        <input placeholder="(___) ___-____" id="maskedtextbox" />
-      </div>
-    </section>
+    <div class="input-container">
+      <label class="f-h-label">Phone #</label>
+      <input placeholder="(___) ___-____" id="maskedtextbox" />
+    </div>
+  </section>
 
-    <hr />
-    <section>
-      <h1>Buttons</h1>
-      <div class="section">
-        <button class="f-button" data-bind="click: testClick">
-          <div class="f-button-content">Action</div>
-        </button>
-        <h3>Primary</h3>
-        <button
-          class="f-button f-button-primary f-button-large"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-primary f-button-medium"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-primary f-button-small"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-primary f-button-xsmall"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">
-            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
-          </div>
-        </button>
+  <hr />
+  <section>
+    <h1>Buttons</h1>
+    <div class="section">
+      <button is="finys-button" data-bind="click: testClick">Action</button>
+      <h3>Primary</h3>
+      <button is="finys-button" class="f-button-primary f-button-large" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-primary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-primary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
 
-        <h3>Secondary</h3>
-        <button
-          class="f-button f-button-secondary f-button-large"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-secondary f-button-medium"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-secondary f-button-small"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-secondary f-button-xsmall"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">
-            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
-          </div>
-        </button>
+      <button is="finys-button" class="f-button-primary f-button-xsmall" data-bind="click: testClick">
 
-        <h3>Tertiary</h3>
-        <button
-          class="f-button f-button-tertiary f-button-large"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-tertiary f-button-medium"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-tertiary f-button-small"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-tertiary f-button-xsmall"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">
-            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
-          </div>
-        </button>
+        <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
 
-        <h3>Destructive</h3>
-        <button
-          class="f-button f-button-destructive f-button-large"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-destructive f-button-medium"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-destructive f-button-small"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">Action</div>
-        </button>
-        <button
-          class="f-button f-button-destructive f-button-xsmall"
-          data-bind="click: testClick"
-        >
-          <div class="f-button-content">
-            <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
-          </div>
-        </button>
-      </div>
-    </section>
+      </button>
 
-    <hr />
-    <section id="date-picker-section">
-      <h1>Date Picker</h1>
-      <div class="section">
-        <input id="datepicker" title="datetimepicker" />
-      </div>
-    </section>
+      <h3>Secondary</h3>
+      <button is="finys-button" class="f-button-secondary f-button-large" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-secondary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-secondary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
 
-    <hr />
-    <section>
-      <h1>Grid Controls</h1>
-      <div class="section">
-        <div
-          class="f-grid"
-          data-role="grid"
-          data-editable="true"
-          data-columns="[
+      <button is="finys-button" class="f-button-secondary f-button-xsmall" data-bind="click: testClick">
+
+        <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+
+      </button>
+
+      <h3>Tertiary</h3>
+      <button is="finys-button" class="f-button-tertiary f-button-large" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-tertiary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-tertiary f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+
+      <button is="finys-button" class="f-button-tertiary f-button-xsmall" data-bind="click: testClick">
+
+        <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+
+      </button>
+
+      <h3>Destructive</h3>
+      <button is="finys-button" class="f-button-destructive f-button-large" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-destructive f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+      <button is="finys-button" class="f-button-destructive f-button-medium" data-bind="click: testClick">
+        Action
+      </button>
+
+      <button is="finys-button" class="f-button-destructive f-button-xsmall" data-bind="click: testClick">
+        <i class="ph ph-cheers" style="font-size: 0.75rem"></i>
+      </button>
+    </div>
+  </section>
+
+  <hr />
+  <section id="date-picker-section">
+    <h1>Date Picker</h1>
+    <div class="section">
+      <input id="datepicker" title="datetimepicker" />
+    </div>
+  </section>
+
+  <hr />
+  <section>
+    <h1>Grid Controls</h1>
+    <div class="section">
+      <div class="f-grid" data-role="grid" data-editable="true" data-columns="[
                         { 'field': 'id', 'width': 270 },
                         { 'field': 'name' }
                      ]"
-          data-pageable="{refresh:true, pageable:true, pageSize:10, pageSizes:[10,20,30,40,50,60,70,80,90,100], responsive: false}"
-          data-sortable="true"
-          data-filterable="true"
-          data-scrollable="true"
-          data-bind="source: products,
+        data-pageable="{refresh:true, pageable:true, pageSize:10, pageSizes:[10,20,30,40,50,60,70,80,90,100], responsive: false}"
+        data-sortable="true" data-filterable="true" data-scrollable="true" data-bind="source: products,
                    visible: isVisible,
-                   events: { dataBound: showGridCounter }"
-          style="height: 400px"
-        ></div>
-      </div>
-    </section>
-  </body>
+                   events: { dataBound: showGridCounter }" style="height: 400px"></div>
+    </div>
+  </section>
+</body>
 
-  <script>
+<script>
 
-    // function showGridCounter(){
-    //   const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
-    //   const stringItem = $(".f-grid .k-pager-info.k-label").text();
+  // function showGridCounter(){
+  //   const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
+  //   const stringItem = $(".f-grid .k-pager-info.k-label").text();
 
-    //   const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
+  //   const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
 
-    //   $(".f-grid .k-pager-info.k-label").html(`
-    //     <span>Items ${start} - ${end}  </span>
-    //     <span style="
-    //         color: var(--neutral);
-    //         margin-left: 4px;
-    //     "> of ${total}</span>`
-    //   );
-    // }
+  //   $(".f-grid .k-pager-info.k-label").html(`
+  //     <span>Items ${start} - ${end}  </span>
+  //     <span style="
+  //         color: var(--neutral);
+  //         margin-left: 4px;
+  //     "> of ${total}</span>`
+  //   );
+  // }
 
-    //isSelected: basicDropdownValue
-    kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
-      init: function (widget, bindings, options) {
-        kendo.data.Binder.fn.init.call(
-          this,
-          widget.element[0],
-          bindings,
-          options
-        );
+  //isSelected: basicDropdownValue
+  kendo.data.binders.widget.dialogOpen = kendo.data.Binder.extend({
+    init: function (widget, bindings, options) {
+      kendo.data.Binder.fn.init.call(
+        this,
+        widget.element[0],
+        bindings,
+        options
+      );
+    },
+    refresh: function () {
+      var that = this;
+      var value = that.bindings["dialogOpen"].get();
+      var dialog = $(that.element).data("kendoDialog");
+
+      if (value) {
+        dialog.open();
+      } else {
+        dialog.close();
+      }
+    },
+  });
+  kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
+    refresh: function () {
+      const value = this.bindings["isSelected"].get();
+      if (!value?.id) {
+        $(this.element.element)
+          .closest(".f-dropdown.k-picker")
+          .removeClass("f-selected");
+      } else {
+        $(this.element.element)
+          .closest(".f-dropdown.k-picker")
+          .addClass("f-selected");
+      }
+    },
+  });
+
+  $(".f-group-dropdown-input").on("focus", function (e) {
+    $(e.currentTarget).next().addClass("f-focus");
+  });
+  $(".f-group-dropdown-input").on("blur", function (e) {
+    $(e.currentTarget).next().removeClass("f-focus");
+  });
+
+  const listData = new kendo.data.DataSource({
+    data: [
+      {
+        id: 1,
+        name: "test1",
       },
-      refresh: function () {
-        var that = this;
-        var value = that.bindings["dialogOpen"].get();
-        var dialog = $(that.element).data("kendoDialog");
-
-        if (value) {
-          dialog.open();
-        } else {
-          dialog.close();
-        }
+      {
+        id: 2,
+        name: "test1",
       },
-    });
-    kendo.data.binders.widget.isSelected = kendo.data.Binder.extend({
-      refresh: function () {
-        const value = this.bindings["isSelected"].get();
-        if (!value?.id) {
-          $(this.element.element)
-            .closest(".f-dropdown.k-picker")
-            .removeClass("f-selected");
-        } else {
-          $(this.element.element)
-            .closest(".f-dropdown.k-picker")
-            .addClass("f-selected");
-        }
+      {
+        id: 3,
+        name: "test1",
       },
-    });
+    ],
+  });
+  const vm = kendo.observable({
+    isChecked: true,
+    isEnabled: true,
+    isVisible: true,
+    isModalLargeVisible: false,
+    isModalMediumVisible: false,
+    isModalSmallVisible: false,
+    isModalEnabled: true,
+    isDisabled: false,
+    showGridCounter: function () {
+      const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
+      const stringItem = $(".f-grid .k-pager-info.k-label").text();
+      const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
 
-    $(".f-group-dropdown-input").on("focus", function (e) {
-      $(e.currentTarget).next().addClass("f-focus");
-    });
-    $(".f-group-dropdown-input").on("blur", function (e) {
-      $(e.currentTarget).next().removeClass("f-focus");
-    });
-
-    const listData = new kendo.data.DataSource({
+      $(".f-grid .k-pager-info.k-label::before").html(`
+          <span>Items ${start} - ${end}  </span>
+          <span style="
+              color: var(--neutral);
+              margin-left: 4px;
+          "> of ${total}</span>`
+      );
+    },
+    onChange: function (e) {
+      console.log(
+        "event :: change (" + (e.checked ? "checked" : "unchecked") + ")"
+      );
+    },
+    testClick: function () {
+      console.log("test");
+    },
+    isClosable: true,
+    isEnabled: false,
+    onClose: function (e) {
+      this.set("isModalVisible", false);
+      this.set("isModalEnabled", true);
+    },
+    showModalLarge: function (e) {
+      this.set("isModalLargeVisible", true);
+      this.set("isModalEnabled", false);
+    },
+    showModalMedium: function (e) {
+      this.set("isModalMediumVisible", true);
+      this.set("isModalEnabled", false);
+    },
+    showModalSmall: function (e) {
+      this.set("isModalSmallVisible", true);
+      this.set("isModalEnabled", false);
+    },
+    listData: new kendo.data.DataSource({
       data: [
         {
           id: 1,
@@ -468,283 +417,219 @@
         },
         {
           id: 2,
-          name: "test1",
+          name: "test2",
         },
         {
           id: 3,
-          name: "test1",
+          name: "test3",
         },
       ],
+    }),
+    products: new kendo.data.DataSource({
+      data: [
+        {
+          id: 1,
+          name: "test1",
+        },
+        {
+          id: 2,
+          name: "test2",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+        {
+          id: 3,
+          name: "test3",
+        },
+      ],
+      pageSize: 10
+    }),
+
+    groupListData: new kendo.data.DataSource({
+      data: [
+        {
+          id: 1,
+          name: "Apple",
+          group: "Eins",
+        },
+        {
+          id: 2,
+          name: "Banana",
+          group: "Eins",
+        },
+        {
+          id: 3,
+          name: "Beef",
+          group: "Zwei",
+        },
+        {
+          id: 4,
+          name: "Pork",
+          group: "Zwei",
+        },
+        {
+          id: 5,
+          name: "Poultry",
+          group: "Zwei",
+        },
+
+        {
+          id: 6,
+          name: "Water",
+          group: "Drei",
+        },
+        {
+          id: 7,
+          name: "Water",
+          group: "Drei",
+        },
+        {
+          id: 8,
+          name: "Water",
+          group: "Drei",
+        },
+        {
+          id: 9,
+          name: "Water",
+          group: "Drei",
+        },
+        {
+          id: 10,
+          name: "Water",
+          group: "Drei",
+        },
+        {
+          id: 11,
+          name: "Water",
+          group: "Drei",
+        },
+      ],
+      group: { field: "group" },
+    }),
+    templatedListData: new kendo.data.DataSource({
+      data: [{
+        id: 1,
+        AgentCode: "AgentCode",
+        AgentName: 'AgentName',
+        AgencyCode: 'AgencyCode',
+        AgencyName: 'AgencyName',
+        Address: 'Address'
+      },
+      {
+        id: 2,
+        AgentCode: "AgentCode",
+        AgentName: 'AgentName',
+        AgencyCode: 'AgencyCode',
+        AgencyName: 'AgencyName',
+        Address: 'Address'
+      }
+      ],
+    }),
+    basicDropdownValue: null,
+    groupDropdownValue: null,
+    templatedDropdownValue: null,
+  });
+
+  function onRemind(e) {
+    console.log("Action :: Cancel");
+  }
+
+  function onInstall(e) {
+    console.log("Action :: Action");
+  }
+
+  $(document).ready(() => {
+    const obj = new FinysTimePicker({ target: '#dropdowns-container' })
+    console.log(obj);
+    kendo.bind($("body"), vm);
+
+    //text inputs
+    $("#textbox").kendoTextBox({
+      value: "John Smith",
+      clearButton: true,
     });
-    const vm = kendo.observable({
-      isChecked: true,
-      isEnabled: true,
-      isVisible: true,
-      isModalLargeVisible: false,
-      isModalMediumVisible: false,
-      isModalSmallVisible: false,
-      isModalEnabled: true,
-      isDisabled: false,
-      showGridCounter: function (){
-        const regex = /(?<start>\d+)\s*-\s*(?<end>\d+)\s*of\s*(?<total>\d+)/i;
-        const stringItem = $(".f-grid .k-pager-info.k-label").text();
-        const { groups: { start, end, total } = {} } = stringItem.match(regex) || {};
+    $("#textbox2").kendoTextBox({
+      value: "",
+      clearButton: true,
+    });
+    $("#finys-text-input-container")
+      .kendoValidator()
+      .data("kendoValidator")
+      .validateInput($("input[name=username]"));
 
-        $(".f-grid .k-pager-info.k-label::before").html(`
-          <span>Items ${start} - ${end}  </span>
-          <span style="
-              color: var(--neutral);
-              margin-left: 4px;
-          "> of ${total}</span>`
-        );
-      },
-      onChange: function (e) {
-        console.log(
-          "event :: change (" + (e.checked ? "checked" : "unchecked") + ")"
-        );
-      },
-      testClick: function () {
-        console.log("test");
-      },
-      isClosable: true,
-      isEnabled: false,
-      onClose: function (e) {
-        this.set("isModalVisible", false);
-        this.set("isModalEnabled", true);
-      },
-      showModalLarge: function (e) {
-        this.set("isModalLargeVisible", true);
-        this.set("isModalEnabled", false);
-      },
-      showModalMedium: function (e) {
-        this.set("isModalMediumVisible", true);
-        this.set("isModalEnabled", false);
-      },
-      showModalSmall: function (e) {
-        this.set("isModalSmallVisible", true);
-        this.set("isModalEnabled", false);
-      },
-      listData: new kendo.data.DataSource({
-        data: [
-          {
-            id: 1,
-            name: "test1",
-          },
-          {
-            id: 2,
-            name: "test2",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-        ],
-      }),
-      products: new kendo.data.DataSource({
-        data: [
-          {
-            id: 1,
-            name: "test1",
-          },
-          {
-            id: 2,
-            name: "test2",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-          {
-            id: 3,
-            name: "test3",
-          },
-        ],
-        pageSize: 10
-      }),
-      
-      groupListData: new kendo.data.DataSource({
-        data: [
-          {
-            id: 1,
-            name: "Apple",
-            group: "Eins",
-          },
-          {
-            id: 2,
-            name: "Banana",
-            group: "Eins",
-          },
-          {
-            id: 3,
-            name: "Beef",
-            group: "Zwei",
-          },
-          {
-            id: 4,
-            name: "Pork",
-            group: "Zwei",
-          },
-          {
-            id: 5,
-            name: "Poultry",
-            group: "Zwei",
-          },
-
-          {
-            id: 6,
-            name: "Water",
-            group: "Drei",
-          },
-          {
-            id: 7,
-            name: "Water",
-            group: "Drei",
-          },
-          {
-            id: 8,
-            name: "Water",
-            group: "Drei",
-          },
-          {
-            id: 9,
-            name: "Water",
-            group: "Drei",
-          },
-          {
-            id: 10,
-            name: "Water",
-            group: "Drei",
-          },
-          {
-            id: 11,
-            name: "Water",
-            group: "Drei",
-          },
-        ],
-        group: { field: "group" },
-      }),
-      templatedListData: new kendo.data.DataSource({
-        data:[{
-            id: 1,
-            AgentCode: "AgentCode",
-            AgentName: 'AgentName',
-            AgencyCode: 'AgencyCode',
-            AgencyName: 'AgencyName',
-            Address: 'Address'
-          },
-          {
-            id: 2,
-            AgentCode: "AgentCode",
-            AgentName: 'AgentName',
-            AgencyCode: 'AgencyCode',
-            AgencyName: 'AgencyName',
-            Address: 'Address'
-          }
-        ],
-      }),
-      basicDropdownValue: null,
-      groupDropdownValue: null,
-      templatedDropdownValue: null,
+    $("#maskedtextbox").kendoMaskedTextBox({
+      mask: "(000) 000-0000",
     });
 
-    function onRemind(e) {
-      console.log("Action :: Cancel");
-    }
+    createFinysDatePicker("datepicker");
+  });
 
-    function onInstall(e) {
-      console.log("Action :: Action");
-    }
-    
-    $(document).ready(() => {
-      const obj = new FinysTimePicker({ target: '#dropdowns-container'})
-      console.log(obj);
-      kendo.bind($("body"), vm);
+  function createFinysDatePicker(id) {
+    let callBack = (e) => {
+      const datePicker = $(`#${id}`).data("kendoDatePicker");
+      const calendar = datePicker.dateView.calendar;
+      const calendarElement = calendar.element;
 
-      //text inputs
-      $("#textbox").kendoTextBox({
-        value: "John Smith",
-        clearButton: true,
-      });
-      $("#textbox2").kendoTextBox({
-        value: "",
-        clearButton: true,
-      });
-      $("#finys-text-input-container")
-        .kendoValidator()
-        .data("kendoValidator")
-        .validateInput($("input[name=username]"));
+      const minYear = 1900,
+        maxYear = 2100;
 
-      $("#maskedtextbox").kendoMaskedTextBox({
-        mask: "(000) 000-0000",
-      });
+      const yearList = Array.from(
+        { length: maxYear - minYear + 1 },
+        (_, i) => minYear + i
+      );
 
-      createFinysDatePicker("datepicker");
-    });
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
 
-    function createFinysDatePicker(id) {
-      let callBack = (e) => {
-        const datePicker = $(`#${id}`).data("kendoDatePicker");
-        const calendar = datePicker.dateView.calendar;
-        const calendarElement = calendar.element;
+      if (calendarElement.find(".f-calendar-header").length) return;
 
-        const minYear = 1900,
-          maxYear = 2100;
-
-        const yearList = Array.from(
-          { length: maxYear - minYear + 1 },
-          (_, i) => minYear + i
-        );
-
-        const monthNames = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-
-        if (calendarElement.find(".f-calendar-header").length) return;
-
-        let customHeader = $(`
+      let customHeader = $(`
             <div class="f-calendar-header">
               <a class="f-previous-month-arrow"><i class="ph ph-caret-left"></i></a>
               <div class="f-calendar-header-dropdown-group">
@@ -756,108 +641,109 @@
             </div>
               `);
 
-        //replace with new header
-        $(".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack"
-        ).replaceWith(customHeader);
+      //replace with new header
+      $(".k-widget.k-calendar.k-calendar-md > .k-header.k-hstack"
+      ).replaceWith(customHeader);
 
-        //remove footer
-        $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
+      //remove footer
+      $(".k-widget.k-calendar.k-calendar-md .k-footer").remove();
 
-        let onMonthChange = (e) => {
-          currentMonth = parseInt(e.sender.select() - 1);
-          if(isNaN(currentMonth) == false)
-            updateCalendar();
-        };
-        let onYearChange = (e) => {
-          currentYear = parseInt(e.sender.value(), 10);
-          if(isNaN(currentYear) == false)
-            updateCalendar();
-        };
-
-        let currentDate = calendar.current();
-        let currentMonth = currentDate.getMonth();
-        let currentYear = currentDate.getFullYear();
-
-        const monthDropDown = $(".f-calendar-month-dropdown")
-          .kendoDropDownList({
-            optionLabel: "Select a month",
-            dataSource: monthNames,
-            value: monthNames[currentMonth],
-            change: onMonthChange,
-          })
-          .data("kendoDropDownList");
-
-        const yearDropDown = $(".f-calendar-year-dropdown")
-          .kendoDropDownList({
-            optionLabel: "Select a year",
-            dataSource: yearList,
-            value: currentYear,
-            change: onYearChange,
-          })
-          .data("kendoDropDownList");
-
-
-          $(".f-calendar-month-dropdown").on("mousedown", e => 
-            $(e.target).attr("hasClosed", true)
-          ); 
-          $(".f-calendar-year-dropdown").on("mousedown", e => 
-            $(e.target).attr("hasClosed", true)
-          ); 
-          
-          
-
-        function updateCalendar() {
-          const newDate = new Date(currentYear, currentMonth, 1);
-          calendar.navigate(newDate, "month");
-        }
-
-        customHeader.find(".f-previous-month-arrow").on("click", () => {
-          let newDate = new Date(currentYear, currentMonth - 1, 1);
-          currentMonth = newDate.getMonth();
-          currentYear = newDate.getFullYear();
-          monthDropDown.value(monthNames[currentMonth]);
-          yearDropDown.value(currentYear);
+      let onMonthChange = (e) => {
+        currentMonth = parseInt(e.sender.select() - 1);
+        if (isNaN(currentMonth) == false)
           updateCalendar();
-        });
-
-        customHeader.find(".f-next-month-arrow").on("click", () => {
-          let newDate = new Date(currentYear, currentMonth + 1, 1);
-          currentMonth = newDate.getMonth();
-          currentYear = newDate.getFullYear();
-          monthDropDown.value(monthNames[currentMonth]);
-          yearDropDown.value(currentYear);
+      };
+      let onYearChange = (e) => {
+        currentYear = parseInt(e.sender.value(), 10);
+        if (isNaN(currentYear) == false)
           updateCalendar();
-        });
       };
 
-      let calendar = $(`#${id}`)
-        .kendoDatePicker({
-          value: new Date(),
-          format: "MM/dd/yyyy",
-          open: callBack,
-          close: (e) => {
+      let currentDate = calendar.current();
+      let currentMonth = currentDate.getMonth();
+      let currentYear = currentDate.getFullYear();
 
-            let monthDD = $(".f-calendar-month-dropdown > span  >span.k-input-value-text");
-            let yearDD = $(".f-calendar-year-dropdown > span  >span.k-input-value-text");
-
-            if((monthDD && monthDD.attr("hasClosed") == "true") || (yearDD && yearDD.attr("hasClosed") == "true")){
-              e.preventDefault();
-            }
-            monthDD.attr("hasClosed", false)
-            yearDD.attr("hasClosed", false)
-            
-          },
+      const monthDropDown = $(".f-calendar-month-dropdown")
+        .kendoDropDownList({
+          optionLabel: "Select a month",
+          dataSource: monthNames,
+          value: monthNames[currentMonth],
+          change: onMonthChange,
         })
-        .data("kendoDatePicker");
-      calendar.element.addClass("FinysDatePicker");
+        .data("kendoDropDownList");
 
-      //move calendar button
-      let calButton = calendar.element.parent().find("button");
-      calButton.prev().insertAfter(calButton)
+      const yearDropDown = $(".f-calendar-year-dropdown")
+        .kendoDropDownList({
+          optionLabel: "Select a year",
+          dataSource: yearList,
+          value: currentYear,
+          change: onYearChange,
+        })
+        .data("kendoDropDownList");
 
-      //replace with phosphor icon
-      calButton.find("span").removeClass().addClass("ph ph-calendar-blank").find("svg").remove();
 
-    }
-  </script>
+      $(".f-calendar-month-dropdown").on("mousedown", e =>
+        $(e.target).attr("hasClosed", true)
+      );
+      $(".f-calendar-year-dropdown").on("mousedown", e =>
+        $(e.target).attr("hasClosed", true)
+      );
+
+
+
+      function updateCalendar() {
+        const newDate = new Date(currentYear, currentMonth, 1);
+        calendar.navigate(newDate, "month");
+      }
+
+      customHeader.find(".f-previous-month-arrow").on("click", () => {
+        let newDate = new Date(currentYear, currentMonth - 1, 1);
+        currentMonth = newDate.getMonth();
+        currentYear = newDate.getFullYear();
+        monthDropDown.value(monthNames[currentMonth]);
+        yearDropDown.value(currentYear);
+        updateCalendar();
+      });
+
+      customHeader.find(".f-next-month-arrow").on("click", () => {
+        let newDate = new Date(currentYear, currentMonth + 1, 1);
+        currentMonth = newDate.getMonth();
+        currentYear = newDate.getFullYear();
+        monthDropDown.value(monthNames[currentMonth]);
+        yearDropDown.value(currentYear);
+        updateCalendar();
+      });
+    };
+
+    let calendar = $(`#${id}`)
+      .kendoDatePicker({
+        value: new Date(),
+        format: "MM/dd/yyyy",
+        open: callBack,
+        close: (e) => {
+
+          let monthDD = $(".f-calendar-month-dropdown > span  >span.k-input-value-text");
+          let yearDD = $(".f-calendar-year-dropdown > span  >span.k-input-value-text");
+
+          if ((monthDD && monthDD.attr("hasClosed") == "true") || (yearDD && yearDD.attr("hasClosed") == "true")) {
+            e.preventDefault();
+          }
+          monthDD.attr("hasClosed", false)
+          yearDD.attr("hasClosed", false)
+
+        },
+      })
+      .data("kendoDatePicker");
+    calendar.element.addClass("FinysDatePicker");
+
+    //move calendar button
+    let calButton = calendar.element.parent().find("button");
+    calButton.prev().insertAfter(calButton)
+
+    //replace with phosphor icon
+    calButton.find("span").removeClass().addClass("ph ph-calendar-blank").find("svg").remove();
+
+  }
+</script>
+
 </html>

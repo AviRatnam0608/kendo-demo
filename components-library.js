@@ -1,5 +1,15 @@
+class FinysButton extends HTMLButtonElement {
+    connectedCallback() {
+        this.classList.add('f-button');
+        this.innerHTML = `
+            <span class='f-button-content'>${this.innerHTML}</span>
+        `
+    }
+}
+
 class FinysTimePicker extends HTMLInputElement {
     connectedCallback() {
+      this.classList.add('f-timepicker');
       this.setAttribute('data-role', 'timepicker');
       this.setAttribute('data-component-type', 'modern');
       this.setAttribute('data-messages', `{set: 'Apply'}`)
@@ -169,3 +179,4 @@ customElements.define('finys-dropdownlist', FinysDropDownList, {extends: 'input'
 customElements.define('finys-detailed-dropdownlist', FinysDetailedDropDownList, {extends: 'input'})
 customElements.define('finys-nested-grid', FinysNestedGrid, {extends:  'div'})
 customElements.define('finys-grid', FinysGrid, {extends:  'div'})
+customElements.define('finys-button', FinysButton, {extends: 'button'})
