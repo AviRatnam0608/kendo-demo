@@ -12,11 +12,15 @@
   <script src="../kendo-ui-jquery-license.js"></script>
   <!-- Component Imports -->
   <script defer src="../Components/NavigationHeader/NavBarComponent.js"></script>
+  <script defer src="../components-library.js"></script>
+  <script defer src="./button-preview.js"></script>
   <link rel="stylesheet" href="../Components/NavigationHeader/NavigationHeader.css" />
   <!-- Other Styles -->
   <link rel="stylesheet" href="../MainVariables.css" />
   <link rel="stylesheet" href="../FinysUtilityClasses.css" />
   <link rel="stylesheet" href="../MainStyles.css" />
+  <link rel="stylesheet" href="../FinysButtonStyles.css" />
+  <link rel="stylesheet" href="./styles/button-preview.css" />
   <!-- Icon Imports -->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
@@ -42,7 +46,10 @@
       </ul>
     </nav>
     <main class="content">
-      <div id="buttons" class="screen active">Buttons Component Preview</div>
+      <finys-button-preview id="buttons" class="screen active">
+        <finys-code-viewer></finys-code-viewer>
+        <finys-button-controls></finys-button-controls>
+      </finys-button-preview>
       <div id="modals" class="screen">Modals Component Preview</div>
       <div id="forms" class="screen">Forms Component Preview</div>
       <div id="navbar" class="screen">
