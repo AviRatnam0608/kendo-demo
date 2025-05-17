@@ -1,228 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Component Viewer</title>
-    <!-- Kendo Imports -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link
-      href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css"
-      rel="stylesheet"
-    />
-    <script src="../kendo.all.min.js"></script>
-    <script src="../kendo-ui-jquery-license.js"></script>
-    <!-- Component Imports -->
-    <script
-      defer
-      src="../Components/NavigationHeader/NavBarComponent.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="../Components/NavigationHeader/NavigationHeader.css"
-    />
-    <!-- Other Styles -->
-    <link rel="stylesheet" href="../MainVariables.css" />
-    <link rel="stylesheet" href="../FinysUtilityClasses.css" />
-    <link rel="stylesheet" href="../MainStyles.css" />
-    <!-- Icon Imports -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
-    />
-    <!-- Prism Code Preview Imports -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
-  </head>
-  <body>
-    <div class="layout">
-      <nav class="sidebar">
-        <h2>Components</h2>
-        <ul>
-          <li><a href="#" onclick="showContent('buttons')">Buttons</a></li>
-          <li><a href="#" onclick="showContent('modals')">Modals</a></li>
-          <li><a href="#" onclick="showContent('forms')">Forms</a></li>
-          <li><a href="#" onclick="showContent('navbar')">NavBar</a></li>
-        </ul>
-      </nav>
-      <main class="content">
-        <div id="buttons" class="screen active">Buttons Component Preview</div>
-        <div id="modals" class="screen">Modals Component Preview</div>
-        <div id="forms" class="screen">Forms Component Preview</div>
-        <div id="navbar" class="screen">
-          <p>NavBar Component Preview</p>
-          <f-nav-bar
-            user-name="Lebron James"
-            user-img="https://randomuser.me/api/portraits/men/36.jpg"
-          ></f-nav-bar>
-          <hr />
-          <p>Implementation</p>
-          <div class="code-container">
-            <div class="code-toolbar">
-              <span>HTML</span>
-              <button onclick="copyCode()" class="copy-button">Copy</button>
-            </div>
-            <pre><code id="code-display" class="language-html"></code></pre>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Component Viewer</title>
+  <!-- Kendo Imports -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://kendo.cdn.telerik.com/themes/8.2.1/default/default-main.css" rel="stylesheet" />
+  <script src="../kendo.all.min.js"></script>
+  <script src="../kendo-ui-jquery-license.js"></script>
+  <!-- Component Imports -->
+  <script defer src="../Components/NavigationHeader/NavBarComponent.js"></script>
+  <link rel="stylesheet" href="../Components/NavigationHeader/NavigationHeader.css" />
+  <!-- Other Styles -->
+  <link rel="stylesheet" href="../MainVariables.css" />
+  <link rel="stylesheet" href="../FinysUtilityClasses.css" />
+  <link rel="stylesheet" href="../MainStyles.css" />
+  <!-- Icon Imports -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/light/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <!-- Prism Code Preview Imports -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+
+<body>
+  <div class="layout">
+    <nav class="sidebar">
+      <h2>Components</h2>
+      <ul>
+        <li><a href="#" onclick="showContent('buttons')">Buttons</a></li>
+        <li><a href="#" onclick="showContent('modals')">Modals</a></li>
+        <li><a href="#" onclick="showContent('forms')">Forms</a></li>
+        <li><a href="#" onclick="showContent('navbar')">NavBar</a></li>
+      </ul>
+    </nav>
+    <main class="content">
+      <div id="buttons" class="screen active">Buttons Component Preview</div>
+      <div id="modals" class="screen">Modals Component Preview</div>
+      <div id="forms" class="screen">Forms Component Preview</div>
+      <div id="navbar" class="screen">
+        <p>NavBar Component Preview</p>
+        <f-nav-bar user-name="Lebron James" user-img="https://randomuser.me/api/portraits/men/36.jpg"></f-nav-bar>
+        <hr />
+        <p>Implementation</p>
+        <div class="code-container">
+          <div class="code-toolbar">
+            <span>HTML</span>
+            <button onclick="copyCode()" class="copy-button">Copy</button>
           </div>
-          <hr />
-          <p>Details (?)</p>
+          <pre><code id="code-display" class="language-html"></code></pre>
         </div>
-      </main>
-    </div>
+        <hr />
+        <p>Details (?)</p>
+      </div>
+    </main>
+  </div>
 
-    <script>
-      function showContent(id) {
-        document.querySelectorAll(".screen").forEach((screen) => {
-          screen.classList.remove("active");
+  <script>
+    function showContent(id) {
+      document.querySelectorAll(".screen").forEach((screen) => {
+        screen.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+      fetch(`./snippets/${id}.txt`)
+        .then((res) => res.text())
+        .then((text) => {
+          const codeEl = document.getElementById("code-display");
+          codeEl.innerHTML = Prism.highlight(
+            text,
+            Prism.languages.html,
+            "html"
+          );
         });
-        document.getElementById(id).classList.add("active");
-        fetch(`./snippets/${id}.txt`)
-          .then((res) => res.text())
-          .then((text) => {
-            const codeEl = document.getElementById("code-display");
-            codeEl.innerHTML = Prism.highlight(
-              text,
-              Prism.languages.html,
-              "html"
-            );
-          });
-      }
-
-      function copyCode() {
-        const code = document.getElementById("code-display").innerText;
-        navigator.clipboard.writeText(code).then(() => {
-          const btn = document.querySelector(".copy-button");
-          btn.textContent = "Copied!";
-          setTimeout(() => (btn.textContent = "Copy"), 1500);
-        });
-      }
-    </script>
-  </body>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
     }
 
-    .layout {
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
+    function copyCode() {
+      const code = document.getElementById("code-display").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector(".copy-button");
+        btn.textContent = "Copied!";
+        setTimeout(() => (btn.textContent = "Copy"), 1500);
+      });
     }
+  </script>
+</body>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
 
-    .sidebar {
-      width: 220px;
-      background-color: #2c3e50;
-      color: white;
-      padding: 1em;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-    }
+  .layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    .sidebar h2 {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
+  .sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1em;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
 
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
+  .sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
 
-    .sidebar li {
-      margin-bottom: 0.75em;
-    }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
 
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+  .sidebar li {
+    margin-bottom: 0.75em;
+  }
 
-    .sidebar a:hover {
-      text-decoration: underline;
-    }
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
 
-    .content {
-      margin-left: 220px;
-      padding: 2em;
-      flex-grow: 1;
-      background-color: #f4f6f8;
-      overflow-y: auto;
-    }
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
 
-    .screen {
-      display: none;
-      padding: 5px;
-    }
+  .content {
+    margin-left: 220px;
+    padding: 2em;
+    flex-grow: 1;
+    background-color: #f4f6f8;
+    overflow-y: auto;
+  }
 
-    .code-container * {
-      text-shadow: none !important;
-    }
+  .screen {
+    display: none;
+    padding: 5px;
+  }
 
-    .screen.active {
-      display: block;
-      pad: 5px;
-    }
-    .code-container {
-      background: #2d2d2d;
-      border-radius: 6px;
-      overflow: hidden;
-      font-family: "Courier New", monospace;
-      margin-top: 1em;
-      box-shadow: 0 0 0 1px #1a1a1a;
-      /* Ensure no text-shadow is set here */
-    }
+  .code-container * {
+    text-shadow: none !important;
+  }
 
-    .code-toolbar {
-      background: #1e1e1e;
-      color: #ccc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5em 1em;
-      font-size: 0.9em;
-      border-bottom: 1px solid #333;
-    }
+  .screen.active {
+    display: block;
+    pad: 5px;
+  }
 
-    .copy-button {
-      background: #444;
-      border: none;
-      color: white;
-      padding: 0.3em 0.6em;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 0.85em;
-    }
+  .code-container {
+    background: #2d2d2d;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: "Courier New", monospace;
+    margin-top: 1em;
+    box-shadow: 0 0 0 1px #1a1a1a;
+    /* Ensure no text-shadow is set here */
+  }
 
-    .copy-button:hover {
-      background: #666;
-    }
+  .code-toolbar {
+    background: #1e1e1e;
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    border-bottom: 1px solid #333;
+  }
 
-    pre {
-      margin: 0;
-      padding: 1em;
-      overflow-x: auto;
-      background: #2d2d2d !important;
-      color: #f8f8f2;
-    }
-  </style>
+  .copy-button {
+    background: #444;
+    border: none;
+    color: white;
+    padding: 0.3em 0.6em;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.85em;
+  }
+
+  .copy-button:hover {
+    background: #666;
+  }
+
+  pre {
+    margin: 0;
+    padding: 1em;
+    overflow-x: auto;
+    background: #2d2d2d !important;
+    color: #f8f8f2;
+  }
+</style>
+
 </html>
