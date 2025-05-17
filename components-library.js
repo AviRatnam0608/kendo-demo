@@ -99,6 +99,7 @@ class FinysDetailedDropDownList extends HTMLInputElement {
 } 
 
 class FinysGrid extends HTMLDivElement {
+    // do not include events: {detailInit}, this causes misalignment of columns
     connectedCallback() {
         this.setAttribute('data-role', 'grid');
         this.setAttribute('data-toolbar', this.getAttribute('data-toolbar') || "[{template: kendo.template($('#table-header').html())}]")
